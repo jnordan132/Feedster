@@ -154,3 +154,4 @@ dist
 # Custom
 
 desktop.ini
+.env
