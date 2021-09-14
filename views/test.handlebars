@@ -1,3 +1,29 @@
 <div>
     Test rendering from get controller/router!
 </div>
+<div>
+    {{exampleValueFromController}}
+</div>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th style="padding:20px">ID</th>
+                <th style="padding:20px">Test</th>
+                <th style="padding:20px">createdAt</th>
+                <th style="padding:20px">updatedAt</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {{#each testsFromDb}}
+                <tr>
+                    <td style="padding:20px">{{this.id}}</td>
+                    <td style="padding:20px">{{this.test}}</td>
+                    <td style="padding:20px">{{format_time this.createdAt}}</td>
+                    <td style="padding:20px">{{format_time this.updatedAt}}</td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
