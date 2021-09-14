@@ -1,8 +1,8 @@
 const router = require("express").Router();
 
-const userRoutes = require("./test-routes.js");
+const testRoutes = require("./test-routes.js");
 
 //pass each API route to router
-router.use("/test", userRoutes);
+router.use("/test", testRoutes);
 
 module.exports = router;
