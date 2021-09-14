@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS feedster_db;
+CREATE DATABASE feedster_db;
