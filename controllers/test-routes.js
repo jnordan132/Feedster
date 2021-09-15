@@ -9,7 +9,6 @@ router.get("/", async (req, res) => {
         const testData = await Test.findAll({
             order: [["createdAt", "DESC"]],
         });
-        // console.log(testData);
         const tests = testData.map((testRecord) =>
             testRecord.get({ plain: true })
         );

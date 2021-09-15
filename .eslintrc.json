@@ -1,27 +1,14 @@
 {
-  "root": true,
-  "env": {
-    "browser": true,
-    "commonjs": true,
-    "node": true,
-    "es6": true,
-    "es2017": true
-  },
-  "rules": {
-    "no-undef-init": "error",
-    "no-empty": "error",
-    "no-extra-semi": "error",
-    "no-func-assign": "error",
-    "no-irregular-whitespace": "error",
-    "no-unreachable": "error",
-    "no-empty-function": "error",
-    "no-fallthrough": "error",
-    "no-unused-vars": "error",
-    "no-use-before-define": "error",
-    "no-redeclare": "error",
-    "brace-style": "error",
-    "no-multiple-empty-lines": "error",
-    "no-compare-neg-zero": "error",
-    "no-extra-boolean-cast": "error"
-  }
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es2021": true,
+        "node": true
+    },
+    "extends": "eslint:recommended",
+    "parserOptions": {
+        "ecmaVersion": 12
+    },
+    "rules": {
+    }
 }
