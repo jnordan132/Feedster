@@ -7,7 +7,8 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "node server.js",
         "seed": "node seeds/index.js",
-        "dev": "nodemon server.js"
+        "dev": "nodemon server.js",
+        "lint": "eslint ./"
     },
     "repository": {
         "type": "git",
