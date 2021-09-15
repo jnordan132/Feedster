@@ -24,7 +24,7 @@ router.delete("/:id", async(req, res) => {
     try {
         const deleteCommentData = await Test.destroy({
             where: {
-                test: req.body.test,
+                id: req.body.id,
             }
         });
         return res.status(200).json(deleteCommentData);
