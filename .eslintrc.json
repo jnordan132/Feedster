@@ -9,7 +9,6 @@
   },
   "rules": {
     "no-undef-init": "error",
-    "no_undefined": "error",
     "no-empty": "error",
     "no-extra-semi": "error",
     "no-func-assign": "error",
