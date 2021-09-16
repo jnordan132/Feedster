@@ -1,1 +1,39 @@
-
+<nav class="navbar navbar-light" style="background: #55acee">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" style="color: #ffffff">Feedster</a>
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-house-fill" style="color: #ffff"></i
+            ></a>
+                </li>
+                <li class="nav-item">
+                    {{#if logged_in}}
+                    <button class="no-button" id="logout" style="
+                background-color: #66757f;
+                color: #e1e8ed;
+                border-radius: 5px;
+                border: 1px solid #595959;
+              ">
+              Logout
+            </button> {{else}}
+                    <button href="/login" style="
+                background-color: #66757f;
+                color: #e1e8ed;
+                border-radius: 5px;
+                border: 1px solid #595959;
+              ">
+              Login
+            </button> {{/if}}
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <section class="container" style="margin-top: 2%"></section>
+    <main class="container rounded" style="background: #e1e8ed">
+        <div class="accountDetails">
+            <label class="header"> </label>
+            <i class="bi bi-person-circle" style="font-size: 350%"></i>
+        </div>
+    </main>
+    <script src="/public/js/logout.js"></script>
+</body>
