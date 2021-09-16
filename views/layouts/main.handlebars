@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Feedster</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+        <link rel="stylesheet" href="./public/css/login.css">
     </head>
 
     <body>
@@ -17,13 +18,10 @@
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Profile</a>
-                    </li>
-                    <li class="nav-item">
                         {{#if logged_in}}
-                        <a href="/profile">profile</a> <button class="no-button" id="logout">logout</button>
+                        <a class="nav-link" href="/views/profile.handlebars">profile</a> <button class="no-button" id="logout">logout</button>
                         {{else}}
-                        <a href="/login">login</a>
+                        <a href="/public/js/login.js">login</a>
                         {{/if}}
                     </li>
                 </ul>
@@ -32,7 +30,9 @@
         <main>
             {{{body}}}
         </main>
-        <script src="/public/js/logout.js"></script> 
+        {{#if logged_in}}
+        <script src="/public/js/logout.js"></script>
+        {{/if}} 
     </body>
 
 </html>
