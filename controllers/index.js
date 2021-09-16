@@ -7,4 +7,11 @@ const apiRoutes = require("./api");
 router.use("/test", testRoutes);
 router.use("/api", apiRoutes);
 
+router.get("/signup", async (req, res) => {
+    res.render("signup", {
+        loggedIn: req.session.loggedIn,
+        loggedInUserData: req.session.loggedInUserData,
+    });
+});
+
 module.exports = router;
