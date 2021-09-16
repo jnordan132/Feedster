@@ -5,12 +5,14 @@ const {
     Feeds,
     FeedSources,
     FeedFollowers,
+    Comments,
 } = require("../models/");
 const testData = require("./test-seeds.json");
 const usersData = require("./users-seeds.json");
 const feedsData = require("./feeds-seeds.json");
 const feedSourcesData = require("./feedsources-seeds.json");
 const feedFollowersData = require("./feedfollowers-seeds.json");
+const commentsData = require("./comments-seeds.json");
 
 //create tables and seed with test data
 const seedDatabase = async () => {
@@ -37,6 +39,11 @@ const seedDatabase = async () => {
     });
 
     await FeedFollowers.bulkCreate(feedFollowersData, {
+        individualHooks: false,
+        returning: true,
+    });
+
+    await Comments.bulkCreate(commentsData, {
         individualHooks: false,
         returning: true,
     });

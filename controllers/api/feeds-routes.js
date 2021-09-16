@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Feeds, FeedSources } = require("../../models");
+const { Feeds, FeedSources, Users, Comments } = require("../../models");
 
 //create feed: http://localhost:3001/api/feeds/
 /*
@@ -59,6 +59,32 @@ router.get("/:id", async (req, res) => {
         if (feed) {
             console.log(feed);
             return res.status(200).json(feed);
+        } else {
+            res.status(404).json({ message: "Feed not found." });
+        }
+    } catch (err) {
+        console.log(err);
+        return res.status(500).json(err);
+    }
+});
+
+//get comments for a feed: http://localhost:3001/api/feeds/comments/1
+router.get("/comments/:id", async (req, res) => {
+    try {
+        const commentData = await Comments.findAll({
+            where: {
+                feed_id: req.params.id,
+            },
+            include: [
+                {
+                    model: Users,
+                    attributes: { exclude: ["password"] },
+                },
+            ],
+        });
+        const comments = commentData.map((post) => post.get({ plain: true }));
+        if (comments) {
+            return res.status(200).json(comments);
         } else {
             res.status(404).json({ message: "Feed not found." });
         }
