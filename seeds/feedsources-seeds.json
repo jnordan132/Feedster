@@ -1,0 +1,38 @@
+[
+    {
+        "feed_id": 1,
+        "source": "@nodejs"
+    },
+    {
+        "feed_id": 1,
+        "source": "@trott"
+    },
+    {
+        "feed_id": 1,
+        "source": "@adamzdanielle"
+    },
+    {
+        "feed_id": 2,
+        "source": "@IAJournal_CH"
+    },
+    {
+        "feed_id": 2,
+        "source": "@007"
+    },
+    {
+        "feed_id": 3,
+        "source": "@starwars"
+    },
+    {
+        "feed_id": 3,
+        "source": "@StarWarsExplain"
+    },
+    {
+        "feed_id": 3,
+        "source": "@SWTOR"
+    },
+    {
+        "feed_id": 3,
+        "source": "@HamillHimself"
+    }
+]
