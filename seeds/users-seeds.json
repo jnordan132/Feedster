@@ -1,0 +1,21 @@
+[
+    {
+        "username": "Testy_McTesterson",
+        "email": "test@gmail.com",
+        "password": "123456",
+        "is_admin": true
+    },
+    {
+        "username": "James_Bond",
+        "email": "test2@gmail.com",
+        "password": "123456",
+        "is_admin": false
+    },
+    {
+        "username": "Darth_Vader",
+        "email": "test3@gmail.com",
+        "password": "123456",
+        "is_admin": false
+    }
+]
+

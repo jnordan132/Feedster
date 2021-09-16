@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Feeds, FeedSources } = require("../../models");
+const { Feeds, FeedSources, Users, Comments } = require("../../models");
 
 //create feed: http://localhost:3001/api/feeds/
 /*
@@ -68,6 +68,32 @@ router.get("/:id", async (req, res) => {
     }
 });
 
+//get comments for a feed: http://localhost:3001/api/feeds/comments/1
+router.get("/comments/:id", async (req, res) => {
+    try {
+        const commentData = await Comments.findAll({
+            where: {
+                feed_id: req.params.id,
+            },
+            include: [
+                {
+                    model: Users,
+                    attributes: { exclude: ["password"] },
+                },
+            ],
+        });
+        const comments = commentData.map((post) => post.get({ plain: true }));
+        if (comments) {
+            return res.status(200).json(comments);
+        } else {
+            res.status(404).json({ message: "Feed not found." });
+        }
+    } catch (err) {
+        console.log(err);
+        return res.status(500).json(err);
+    }
+});
+
 //update a feed: http://localhost:3001/api/feeds/10
 /*
 {
@@ -124,7 +150,7 @@ router.put("/:id", async (req, res) => {
     }
 });
 
-// delete comment
+// delete feed: http://localhost:3001/api/feeds/
 router.delete("/:id", async (req, res) => {
     try {
         await FeedSources.destroy({
@@ -142,8 +168,6 @@ router.delete("/:id", async (req, res) => {
         console.log(err);
         return res.status(500).json(err);
     }
-
-    //there are still orphans
 });
 
 module.exports = router;

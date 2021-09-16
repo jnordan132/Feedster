@@ -1,0 +1,26 @@
+[
+    {
+        "feed_id": "1",
+        "user_id": "1"
+    },
+    {
+        "feed_id": "1",
+        "user_id": "2"
+    },
+    {
+        "feed_id": "1",
+        "user_id": "3"
+    },
+    {
+        "feed_id": "2",
+        "user_id": "2"
+    },
+    {
+        "feed_id": "3",
+        "user_id": "3"
+    },
+    {
+        "feed_id": "3",
+        "user_id": "2"
+    }
+]
