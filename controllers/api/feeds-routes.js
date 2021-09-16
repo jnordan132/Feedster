@@ -124,7 +124,7 @@ router.put("/:id", async (req, res) => {
     }
 });
 
-// delete comment
+// delete feed: http://localhost:3001/api/feeds/
 router.delete("/:id", async (req, res) => {
     try {
         await FeedSources.destroy({
@@ -142,8 +142,6 @@ router.delete("/:id", async (req, res) => {
         console.log(err);
         return res.status(500).json(err);
     }
-
-    //there are still orphans
 });
 
 module.exports = router;
