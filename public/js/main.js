@@ -1,68 +1,34 @@
-const loginFormHandler = async (event) => {
-    event.preventDefault();
-
-    // Collect values from the login form
-    const username = document.querySelector("#username-login").value.trim();
-    const password = document.querySelector("#password-login").value.trim();
-
-    if (username && password) {
-        // Send a POST request to the API endpoint
-        const response = await fetch("/api/users/login", {
-            method: "POST",
-            body: JSON.stringify({ username, password }),
-            headers: { "Content-Type": "application/json" },
-        });
-
-        if (response.ok) {
-            // If successful, redirect the browser to the profile page
-            document.location.replace("/profile");
-        } else {
-            alert(response.statusText);
-        }
-    }
-};
-
 const signupFormHandler = async (event) => {
     event.preventDefault();
 
-    const name = document.querySelector("#name-signup").value.trim();
-    const email = document.querySelector("#email-signup").value.trim();
-    const password = document.querySelector("#password-signup").value.trim();
-
-    if (name && email && password) {
-        const response = await fetch("/api/users", {
+    const username = document.querySelector("#typeUsernameX").value.trim();
+    const email = document.querySelector("#typeEmailX").value.trim();
+    const password = document.querySelector("#typePasswordX").value.trim();
+    console.log(username);
+    //new accounts by default are not admins
+    const is_admin = false;
+    console.log(JSON.stringify({ username, email, password, is_admin }));
+    if (username && email && password) {
+        const response = await fetch("/api/users/", {
             method: "POST",
-            body: JSON.stringify({ name, email, password }),
+            body: JSON.stringify({ username, email, password, is_admin }),
             headers: { "Content-Type": "application/json" },
         });
-
         if (response.ok) {
-            document.location.replace("/profile");
+            document.location.replace("/");
         } else {
-            alert(response.statusText);
+            alert(
+                "Failed to sign up. " +
+                    response.status +
+                    ": " +
+                    response.statusText
+            );
         }
-    }
-};
-
-const logout = async () => {
-    const response = await fetch("/api/users/logout", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-    });
-
-    if (response.ok) {
-        document.location.replace("/");
     } else {
-        alert(response.statusText);
+        alert("Please fill out all fields.");
     }
 };
 
 document
-    .querySelector(".login-form")
-    .addEventListener("submit", loginFormHandler);
-
-document
-    .querySelector(".signup-form")
-    .addEventListener("submit", signupFormHandler);
-
-document.querySelector("#logout").addEventListener("click", logout);
+    .querySelector(".submit-signup")
+    .addEventListener("click", signupFormHandler);
