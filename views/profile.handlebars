@@ -49,7 +49,12 @@
                                     style="background: #ccd6dd"
                                 >
                                     <h5 style="float: left">{{this.title}}</h5>
-                                    <button style="float: right" class="follow-feed-button">+</button>
+                            {{#if ../loggedIn}}
+                                <button
+                                    style="float: right"
+                                    class="follow-feed-button"
+                                >+</button>
+                            {{/if}}
                                 </li>
                                 <ul class="list-group list-group-flush">
                                     {{#each this.feed_sources}}

@@ -17,7 +17,7 @@ router.get("/", async (req, res) => {
         const feedsDataCleaned = feedsData.map((record) =>
             record.get({ plain: true })
         );
-        console.log(feedsDataCleaned);
+        console.log(req.session.loggedIn);
         res.render("homepage", {
             UserAndFeedData: feedsDataCleaned,
             loggedIn: req.session.loggedIn,

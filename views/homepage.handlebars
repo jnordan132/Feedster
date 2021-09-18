@@ -1,3 +1,4 @@
+
 <section class="feeds" style="margin-top: 3%">
     <ul>
         {{#each UserAndFeedData}}
@@ -9,12 +10,14 @@
                     >
                         <li class="list-group-item" style="background: #ccd6dd">
                             <h5 style="float: left"><a
-                                    href="/feed/"
-                                >{{this.title}}</a></h5>
-                            <button
-                                style="float: right"
-                                class="follow-feed-button"
-                            >+</button>
+                                    href="/feed/{{this.id}}"
+                                >{{this.title}}</a> by <a href="/profile/{{this.user.id}}">{{this.user.username}}</a></h5>
+                            {{#if ../loggedIn}}
+                                <button
+                                    style="float: right"
+                                    class="follow-feed-button"
+                                >+</button>
+                            {{/if}}
                         </li>
                         <ul class="list-group list-group-flush">
                             {{#each this.feed_sources}}
