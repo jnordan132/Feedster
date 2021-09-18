@@ -2,20 +2,19 @@
     {
         "username": "Testy_McTesterson",
         "email": "test@gmail.com",
-        "password": "123456",
+        "password": "$2b$10$v4MFt8W2KYTVzhBM8dj6GuJqfBb4RxO6qaUoJWoTKwvt8wzGbXlKe",
         "is_admin": true
     },
     {
         "username": "James_Bond",
         "email": "test2@gmail.com",
-        "password": "123456",
+        "password": "$2b$10$v4MFt8W2KYTVzhBM8dj6GuJqfBb4RxO6qaUoJWoTKwvt8wzGbXlKe",
         "is_admin": false
     },
     {
         "username": "Darth_Vader",
         "email": "test3@gmail.com",
-        "password": "123456",
+        "password": "$2b$10$v4MFt8W2KYTVzhBM8dj6GuJqfBb4RxO6qaUoJWoTKwvt8wzGbXlKe",
         "is_admin": false
     }
 ]
-
