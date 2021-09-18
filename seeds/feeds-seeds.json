@@ -10,5 +10,9 @@
     {
         "title": "Star Wars",
         "user_id": "3"
+    },
+    {
+        "title": "MySQL",
+        "user_id": "1"
     }
 ]

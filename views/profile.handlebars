@@ -1,18 +1,32 @@
 <body>
     <nav class="navbar" style="background: #55acee; border: 1px solid #595959">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#" style="color: #ffffff; font-size: 30px; margin-left: 10px; padding: 0; font-family: Arial; font-weight: bold;">Feedster</a>
+            <a
+                class="navbar-brand"
+                href="#"
+                style="color: #ffffff; font-size: 30px; margin-left: 10px; padding: 0; font-family: Arial; font-weight: bold;"
+            >Feedster</a>
             <ul class="nav justify-content-end">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-house-fill" style="color: #ffff; font-size: 20px"></i></a>
+                    <a class="nav-link active" aria-current="page" href="#"><i
+                            class="bi bi-house-fill"
+                            style="color: #ffff; font-size: 20px"
+                        ></i></a>
                 </li>
                 <li class="nav-item">
                     {{#if logged_in}}
-                        <button class="no-button" id="logout" style="background-color: #66757f; color: #e1e8ed; border-radius: 5px; border: 1px solid #595959;">
+                        <button
+                            class="no-button"
+                            id="logout"
+                            style="background-color: #66757f; color: #e1e8ed; border-radius: 5px; border: 1px solid #595959;"
+                        >
                             Logout
                         </button>
                     {{else}}
-                        <button href="/login" style="background-color: #66757f; color: #e1e8ed; border-radius: 5px; border: 1px solid #595959; margin-top: 12px; margin-left: 5px; margin-right: 10px;">
+                        <button
+                            href="/login"
+                            style="background-color: #66757f; color: #e1e8ed; border-radius: 5px; border: 1px solid #595959; margin-top: 12px; margin-left: 5px; margin-right: 10px;"
+                        >
                             Login
                         </button>
                     {{/if}}
@@ -21,39 +35,81 @@
         </div>
     </nav>
     <section class="container" style="margin-top: 1.25%"></section>
-    <main class="accountDetails">
-        <div class="container" style="background: #e1e8ed; border: 1px solid #595959; border-radius: 18px;">
-      <i class="bi-person-circle" style="font-size: 700%; margin: 0%; padding: 0%; margin-left: -24%"></i>
-      <label class="header" style="padding-left: 3%; font-size: 325%; margin-bottom: 4%">First Last</label>
-      <button style="background-color: #66757f; color: #e1e8ed; border-radius: 5px; border: 1px solid #595959; margin-left: 2%;">
-        FOLLOW
-      </button>
-
-      <div
-        style="display: flex; flex-direction: row; float: left; margin-top: 1.25%;">
-        <h4 style="margin-left: 235%">FEEDS</h4>
-        <h4 style="margin-left: 15%">FOLLOWERS</h4>
-        <h4 style="margin-left: 15%">FOLLOWING</h4>
-      </div>
-      <div style="display: flex; flex-direction: row; margin-top: -8%; margin-bottom: 4%;">
-        <h2 style="margin-left: 63.5%">3</h2>
-        <h2 style="margin-left: 10%">42</h2>
-        <h2 style="margin-left: 12.5%">20</h2>
-      </div>
-    </div>
-    <div class="container">
-            <i class="bi-person-circle" style="font-size: 700%; margin: 0%; padding: 0%"></i>
-            <label class="header" style="padding-left: 3%; font-size: 250%">First Last</label>
+    <section style="margin-top:2em;margin-bottom:2em;">
+        <div>
+            <button class="new-feed-button">New Feed</button>
+            <ul>
+                <li>Username: {{UserAndFeedData.username}}</li>
+                <li>Feeds: {{profileCreatedCount}}</li>
+                <li>Followers: {{profileFollowersCount}}</li>
+                <li>Following: {{profileFollowedCount}}</li>
+                <li>Feeds:
+                    {{#each UserAndFeedData.feeds}}{{this.title}},
+                    {{/each}}</li>
+            </ul>
         </div>
-        <div class="container" style="background: #e1e8ed; margin-top: 0.75%; text-align: center; font-size: 32.5px; border: 1px solid #595959;">
+    <main class="accountDetails">
+        <div
+            class="container"
+            style="background: #e1e8ed; border: 1px solid #595959; border-radius: 18px;"
+        >
+            <i
+                class="bi-person-circle"
+                style="font-size: 700%; margin: 0%; padding: 0%; margin-left: -24%"
+            ></i>
+            <label
+                class="header"
+                style="padding-left: 3%; font-size: 325%; margin-bottom: 4%"
+            >First Last</label>
+            <button
+                style="background-color: #66757f; color: #e1e8ed; border-radius: 5px; border: 1px solid #595959; margin-left: 2%;"
+            >
+                FOLLOW
+            </button>
+
+            <div
+                style="display: flex; flex-direction: row; float: left; margin-top: 1.25%;"
+            >
+                <h4 style="margin-left: 235%">FEEDS</h4>
+                <h4 style="margin-left: 15%">FOLLOWERS</h4>
+                <h4 style="margin-left: 15%">FOLLOWING</h4>
+            </div>
+            <div
+                style="display: flex; flex-direction: row; margin-top: -8%; margin-bottom: 4%;"
+            >
+                <h2 style="margin-left: 63.5%">3</h2>
+                <h2 style="margin-left: 10%">42</h2>
+                <h2 style="margin-left: 12.5%">20</h2>
+            </div>
+        </div>
+        <div class="container">
+            <i
+                class="bi-person-circle"
+                style="font-size: 700%; margin: 0%; padding: 0%"
+            ></i>
+            <label
+                class="header"
+                style="padding-left: 3%; font-size: 250%"
+            >First Last</label>
+        </div>
+        <div
+            class="container"
+            style="background: #e1e8ed; margin-top: 0.75%; text-align: center; font-size: 32.5px; border: 1px solid #595959;"
+        >
             Feeds
         </div>
         <section class="feeds" style="margin-top: 3%">
             <ul>
                 <div>
                     <ol>
-                        <div class="card" style="width: 20%; float: left; margin-left: 7%">
-                            <li class="list-group-item" style="background: #ccd6dd">
+                        <div
+                            class="card"
+                            style="width: 20%; float: left; margin-left: 7%"
+                        >
+                            <li
+                                class="list-group-item"
+                                style="background: #ccd6dd"
+                            >
                                 <h5 style="float: left">Feed title</h5>
                                 <button style="float: right">+</button>
                             </li>
@@ -69,8 +125,14 @@
                 </div>
                 <div>
                     <ol>
-                        <div class="card" style="width: 20%; float: left; margin-left: 2%">
-                            <li class="list-group-item" style="background: #ccd6dd">
+                        <div
+                            class="card"
+                            style="width: 20%; float: left; margin-left: 2%"
+                        >
+                            <li
+                                class="list-group-item"
+                                style="background: #ccd6dd"
+                            >
                                 <h5 style="float: left">Feed title</h5>
                                 <button style="float: right">+</button>
                             </li>
@@ -86,8 +148,14 @@
                 </div>
                 <div>
                     <ol>
-                        <div class="card" style="width: 20%; float: left; margin-left: 2%">
-                            <li class="list-group-item" style="background: #ccd6dd">
+                        <div
+                            class="card"
+                            style="width: 20%; float: left; margin-left: 2%"
+                        >
+                            <li
+                                class="list-group-item"
+                                style="background: #ccd6dd"
+                            >
                                 <h5 style="float: left">Feed title</h5>
                                 <button style="float: right">+</button>
                             </li>
@@ -102,9 +170,13 @@
                     </ol>
                 </div>
                 <div>
-                    <button style="background: #ccd6dd; font-size: 2em; width: 10%; margin-left: 8%; margin-top: 5%;">+</button>
+                    <button
+                        style="background: #ccd6dd; font-size: 2em; width: 10%; margin-left: 8%; margin-top: 5%;"
+                    >+</button>
                 </div>
             </ul>
         </section>
+
     </main>
 </body>
+<script src="../js/profile.js"></script>
