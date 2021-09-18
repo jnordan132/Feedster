@@ -1,6 +1,12 @@
+
 .gradient-custom {
-    background-image: linear-gradient(to right, #fff, #55aceeff);
-}
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to bottom right, rgb(236, 234, 234), #55aceeff);
+    /* fallback for old browsers */
+      background: #55aceeff;
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to bottom right, rgb(236, 234, 234), #55aceeff)
+  }
 
 .main-card {
     background-color: #e1e8ed;
