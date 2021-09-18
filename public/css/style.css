@@ -8,6 +8,19 @@
     background: linear-gradient(to bottom right, rgb(236, 234, 234), #55aceeff)
   }
 
+  /* input validation on the client side */
+input:invalid {
+  border: 2px dashed #55aceeff;
+}
+
+input:invalid:required {
+  background-image: linear-gradient(to right, rgb(255, 199, 192), rgb(238, 155, 144));
+}
+
+input:valid {
+  border: 2px solid green;
+}
+
 .main-card {
     background-color: #e1e8ed;
     border-radius: 5px;
