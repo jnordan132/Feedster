@@ -1,20 +1,39 @@
+
 .gradient-custom {
-    background-image: linear-gradient(to right, #fff, #55aceeff);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to bottom right, rgb(236, 234, 234), #55aceeff);
+    /* fallback for old browsers */
+      background: #55aceeff;
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to bottom right, rgb(236, 234, 234), #55aceeff)
+  }
+
+  /* input validation on the client side */
+input:invalid {
+  border: 2px dashed #55aceeff;
+}
+
+input:invalid:required {
+  background-image: linear-gradient(to right, rgb(255, 199, 192), rgb(238, 155, 144));
+}
+
+input:valid {
+  border: 2px solid green;
 }
 
 .main-card {
     background-color: #e1e8ed;
     border-radius: 5px;
-    border: 1px solid #595959;
+    border: 1px solid #888888;
 }
 
-.submit-signup {
+/* .submit-signup {
     background-color: #66757f;
     color: #e1e8ed;
     border-radius: 5px;
     border: 1px solid #595959;
-}
+} */
 
 .form-control {
-    border: 1px solid #595959;
+    border: 1px solid #888888;
 }
