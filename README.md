@@ -38,7 +38,7 @@ SO AS to view a mix of content on my account page that others can follow along t
 ## Project Requirements
 
 Apply everything we’ve learnt over the past six units to create a real-world full-stack application that we'll showcase to potential employers. Besides the user story and acceptance criteria our project fulfils the following requirements:
-
+```
 ✔️ Use Node.js and Express.js to create a RESTful API.
 ✔️ Use Handlebars.js as the template engine.
 ✔️ Use MySQL and the Sequelize ORM for the database.
@@ -53,7 +53,7 @@ Apply everything we’ve learnt over the past six units to create a real-world f
 ✔️ Be interactive (i.e., accept and respond to user input).
 ✔️ Meet good-quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc.).
 ✔️ Have a professional README (with unique name, description, technologies used, screenshot, and link to deployed application).
-
+```
 
 ## Project Future Enhancements
 ⏭️More Social Media Handles <br/>
