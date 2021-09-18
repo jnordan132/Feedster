@@ -1,42 +1,6 @@
-<body>
-    <nav class="navbar" style="background: #55acee; border: 1px solid #595959">
-        <div class="container-fluid">
-            <a
-                class="navbar-brand"
-                href="#"
-                style="color: #ffffff; font-size: 30px; margin-left: 10px; padding: 0; font-family: Arial; font-weight: bold;"
-            >Feedster</a>
-            <ul class="nav justify-content-end">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#"><i
-                            class="bi bi-house-fill"
-                            style="color: #ffff; font-size: 20px"
-                        ></i></a>
-                </li>
-                <li class="nav-item">
-                    {{#if logged_in}}
-                        <button
-                            class="no-button"
-                            id="logout"
-                            style="background-color: #66757f; color: #e1e8ed; border-radius: 5px; border: 1px solid #595959;"
-                        >
-                            Logout
-                        </button>
-                    {{else}}
-                        <button
-                            href="/login"
-                            style="background-color: #66757f; color: #e1e8ed; border-radius: 5px; border: 1px solid #595959; margin-top: 12px; margin-left: 5px; margin-right: 10px;"
-                        >
-                            Login
-                        </button>
-                    {{/if}}
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <section class="container" style="margin-top: 1.25%"></section>
-    <section style="margin-top:2em;margin-bottom:2em;">
-        <div>
+<section class="container" style="margin-top: 1.25%"></section>
+    <section style="margin-top: 2em; margin-bottom: 2em;">
+        <!-- <div>
             <button class="new-feed-button">New Feed</button>
             <ul>
                 <li>Username: {{UserAndFeedData.username}}</li>
@@ -47,50 +11,34 @@
                     {{#each UserAndFeedData.feeds}}{{this.title}},
                     {{/each}}</li>
             </ul>
-        </div>
+        </div> -->
     <main class="accountDetails">
-        <div
-            class="container"
-            style="background: #e1e8ed; border: 1px solid #595959; border-radius: 18px;"
-        >
-            <i
-                class="bi-person-circle"
-                style="font-size: 700%; margin: 0%; padding: 0%; margin-left: -24%"
-            ></i>
-            <label
-                class="header"
-                style="padding-left: 3%; font-size: 325%; margin-bottom: 4%"
-            >First Last</label>
-            <button
-                style="background-color: #66757f; color: #e1e8ed; border-radius: 5px; border: 1px solid #595959; margin-left: 2%;"
-            >
-                FOLLOW
-            </button>
-
-            <div
-                style="display: flex; flex-direction: row; float: left; margin-top: 1.25%;"
-            >
-                <h4 style="margin-left: 235%">FEEDS</h4>
-                <h4 style="margin-left: 15%">FOLLOWERS</h4>
-                <h4 style="margin-left: 15%">FOLLOWING</h4>
+        <div class="container" style="background: #e1e8ed; border: 1px solid #595959; border-radius: 18px; display: flex; flex-direction: row; flex-wrap: wrap;">
+            <div style="display: flex; flex-direction: row; float: left; flex-wrap: wrap; align-items: center; width: 30rem; margin-top: 1%; margin-bottom: 1%;">
+                <i
+                    class="bi-person-circle"
+                    style="font-size: 700%; margin: 0%; padding-left: .8rem;"></i>
+                <label
+                    class="header"
+                    style="padding-left: .8rem; font-size: 250%"
+                >Leland Hayes</label>
+                <button
+                    style="background-color: #66757f; color: #e1e8ed; border-radius: 5px; border: 1px solid #595959; margin-left: .8rem; height: 3rem; vertical-align: center;">
+                    FOLLOW
+                </button>
             </div>
             <div
-                style="display: flex; flex-direction: row; margin-top: -8%; margin-bottom: 4%;"
-            >
-                <h2 style="margin-left: 63.5%">3</h2>
-                <h2 style="margin-left: 10%">42</h2>
-                <h2 style="margin-left: 12.5%">20</h2>
+                style="display: flex; flex-direction: row; float: left; flex-wrap: wrap; margin-top: 2%; justify-content: stretch; height: 2rem; width: 28rem;">
+                <h4 style="margin-left: 1.5rem;">FEEDS</h4>
+                <h4 style="margin-left: 1.5rem;">FOLLOWERS</h4>
+                <h4 style="margin-left: 1.5rem;">FOLLOWING</h4>
             </div>
-        </div>
-        <div class="container">
-            <i
-                class="bi-person-circle"
-                style="font-size: 700%; margin: 0%; padding: 0%"
-            ></i>
-            <label
-                class="header"
-                style="padding-left: 3%; font-size: 250%"
-            >First Last</label>
+            <div
+                style="display: flex; flex-direction: row; justify-content: stretch; margin-top: -6%; margin-left: 31.5rem; width: 28rem;">
+                <h2 style="margin-left: 1.5rem;">3</h2>
+                <h2 style="margin-left: 4rem;">42000</h2>
+                <h2 style="margin-left: 4rem;">20000</h2>
+            </div>
         </div>
         <div
             class="container"
@@ -176,7 +124,5 @@
                 </div>
             </ul>
         </section>
-
     </main>
-</body>
 <script src="../js/profile.js"></script>
