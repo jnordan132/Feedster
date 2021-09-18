@@ -1,21 +1,13 @@
 const router = require("express").Router();
 
 const apiRoutes = require("./api");
-const testRoutes = require("./test-routes");
 const profileRoutes = require("./profile-routes");
+const homepageRoutes = require("./homepage-routes");
 
 //use each of the routes files in the controllers folder
-router.use("/test", testRoutes);
 router.use("/api", apiRoutes);
 router.use("/profile", profileRoutes);
-
-router.get("/", async (req, res) => {
-    console.log(req.session.loggedIn);
-    res.render("index", {
-        loggedIn: req.session.loggedIn,
-        loggedInUserData: req.session.loggedInUserData,
-    });
-});
+router.use("/", homepageRoutes);
 
 router.get("/signup", async (req, res) => {
     res.render("signup", {
@@ -35,13 +27,6 @@ router.get("/logout", async (req, res) => {
     res.render("logout", {
         loggedIn: false,
         loggedInUserData: null,
-    });
-});
-
-router.get("/profile", async (req, res) => {
-    res.render("profile", {
-        loggedIn: req.session.loggedIn,
-        loggedInUserData: req.session.loggedInUserData,
     });
 });
 

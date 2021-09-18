@@ -1,5 +1,4 @@
 // import models
-const Test = require("./Test");
 const Users = require("./Users");
 const Feeds = require("./Feeds");
 const FeedSources = require("./FeedSources");
@@ -61,7 +60,6 @@ Users.hasMany(FeedFollowers, {
 });
 
 module.exports = {
-    Test,
     Users,
     Feeds,
     FeedSources,

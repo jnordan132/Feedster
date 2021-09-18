@@ -51,18 +51,26 @@
                     </li>
                     <li class="nav-item">
                         {{#if loggedIn}}
-                            <a
-                                style="background-color: #66757f; color: #000000; border-radius: 5px; border: 1px solid #595959; margin-top: 4px; margin-left: 5px; margin-right: 10px;"
-                                href="/profile"
-                            >profile</a>
+                            <a href="/profile/{{loggedInUserData.id}}">
+                                <button
+                                    class="no-button"
+                                    style="background-color: #66757f; color: #000000; border-radius: 5px; border: 1px solid #595959; margin-left: 4px; margin-right: 10px;"
+                                    id="logout"
+                                >Profile</button></a>
                             <a href="/logout/">
                                 <button
                                     class="no-button"
                                     style="background-color: #66757f; color: #000000; border-radius: 5px; border: 1px solid #595959; margin-left: 4px; margin-right: 10px;"
                                     id="logout"
-                                >logout</button></a>
+                                >Logout</button></a>
 
                         {{else}}
+                            <a href="/signup/">
+                                <button
+                                    style="background-color: #66757f; color: #000000; border-radius: 5px; border: 1px solid #595959; margin-top: 4px; margin-right: 10px;"
+                                >
+                                    Sign up
+                                </button></a>
                             <a href="/login/">
                                 <button
                                     style="background-color: #66757f; color: #000000; border-radius: 5px; border: 1px solid #595959; margin-top: 4px; margin-right: 10px;"
