@@ -1,56 +1,45 @@
-<section class="vh-100 gradient-custom">
+<section class="w-auto p-3 gradient-custom">
     <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-                <div
-                    class="card bg-white text-black"
-                    style="border-radius: 1rem;"
-                >
+                <div class="card bg-white text-black" style="border-radius: 1rem;">
                     <div class="card-body p-5 text-center">
-
                         <div class="mb-md-5 mt-md-4 pb-5">
-
                             <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
-                            <p class="text-black mb-5">Please enter your email
+                            <p class="text-black mb-5">Please enter your registered email
                                 and password!</p>
-
                             <div class="form-outline form-white mb-4">
-                                <input
-                                    type="email"
-                                    id="typeEmailX"
-                                    placeholder="email@gmail.com"
-                                    class="form-control form-control-lg"
-                                />
-                                <label
-                                    class="form-label"
-                                    for="typeEmailX"
-                                >E-mail</label>
+                                <div class="d-flex flex-row align-items-center mb-4">
+                                    <i class="fas fa-envelope fa-lg me-3 fa-fw"></i> {{!-- added a font icon --}}
+                                    <div class="form-outline flex-fill mb-0"></div> {{!-- mb-0 eliminates the margin
+                                    bottom --}}
+                                    <input type="email" id="typeEmailX"
+                                        placeholder="Email e.g. feedsterfan2021@gmail.com"
+                                        class="form-control form-control-lg" required
+                                        pattern="^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$" /> {{!-- marked the field
+                                    required and added
+                                    a pattern . referenced :
+                                    https://docs.netapp.com/oci-73/index.jsp?topic=%2Fcom.netapp.doc.oci-acg%2FGUID-452051E1-0F8B-415E-87FE-D8AD97881072.html
+                                    --}}
+                                    <label class="form-label" for="typeEmailX" placeholder="Email"></label>
+                                </div>
                             </div>
-
                             <div class="form-outline form-white mb-4">
-                                <input
-                                    type="password"
-                                    id="typePasswordX"
-                                    placeholder="******"
-                                    class="form-control form-control-lg"
-                                />
-                                <label
-                                    class="form-label"
-                                    for="typePasswordX"
-                                >Password</label>
+                                <div class="d-flex flex-row align-items-center mb-4">
+                                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>{{!-- added a font icon --}}
+                                    <div class="form-outline flex-fill mb-0"> {{!-- mb-0 eliminates the margin bottom
+                                        --}}
+                                        <input type="password" placeholder="Password (minimum 6 characters)"
+                                            id="typePasswordX" class="form-control form-control-lg" required min="6"
+                                            pattern="[A-Za-z0-9]" /> {{!-- marked
+                                        the field required and added a pattern --}}
+                                        <label class="form-label" for="typePasswordX"></label>
+                                    </div>
+                                </div>
                             </div>
-
-                            <button
-                                class="btn btn-black btn-outline-dark btn-lg px-5 login-submit"
-                                type="submit"
-                            >Login</button>
-                        </div>
-                        <div>
                             <p class="mb-0">Don't have an account?
-                                <a
-                                    href="/signup/"
-                                    class="text-black fw-bold"
-                                >Sign Up</a></p>
+                                <a href="/signup/" class="text-black fw-bold">Sign Up</a>
+                            </p>
                         </div>
                     </div>
                 </div>

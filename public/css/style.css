@@ -24,16 +24,16 @@ input:valid {
 .main-card {
     background-color: #e1e8ed;
     border-radius: 5px;
-    border: 1px solid #595959;
+    border: 1px solid #888888;
 }
 
-.submit-signup {
+/* .submit-signup {
     background-color: #66757f;
     color: #e1e8ed;
     border-radius: 5px;
     border: 1px solid #595959;
-}
+} */
 
 .form-control {
-    border: 1px solid #595959;
+    border: 1px solid #888888;
 }
