@@ -19,7 +19,15 @@ FeedFollowers.init(
                 key: "id",
             },
         },
-        user_id: {
+        user_following_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: "users",
+                key: "id",
+            },
+        },
+        user_created_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
