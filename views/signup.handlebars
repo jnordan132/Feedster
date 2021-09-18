@@ -12,13 +12,14 @@
                 Please enter a Username, an Email, and a Password!
               </p>
               {{!-- grouped all these inputs into a form for responsiveness --}}
-              <form class="mx-1 mx-md-4" >
+              <form class="mx-1 mx-md-4">
                 <div class="form-outline form-white mb-4">
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0"> {{!-- mb-0 eliminates the margin bottom --}}
                       <input type="username" id="typeUsernameX" placeholder="Username e.g. FeedsterFan2021"
-                        class="form-control form-control-lg" required pattern="[A-Za-z0-9]" /> {{!-- marked the field required and added a pattern --}}
+                        class="form-control form-control-lg" required pattern="[A-Za-z0-9]" /> {{!-- marked the field
+                      required and added a pattern --}}
                       <label class="form-label" for="typeUsernameX" placeholder="Username"></label>
                     </div>
                   </div>
@@ -28,7 +29,11 @@
                       <i class="fas fa-envelope fa-lg me-3 fa-fw"></i> {{!-- added a font icon --}}
                       <div class="form-outline flex-fill mb-0"></div> {{!-- mb-0 eliminates the margin bottom --}}
                       <input type="email" id="typeEmailX" placeholder="Email e.g. feedsterfan2021@gmail.com"
-                        class="form-control form-control-lg" required pattern="^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$" /> {{!-- marked the field required and added a pattern --}}
+                        class="form-control form-control-lg" required
+                        pattern="^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$" /> {{!-- marked the field required and added
+                      a pattern . referenced :
+                      https://docs.netapp.com/oci-73/index.jsp?topic=%2Fcom.netapp.doc.oci-acg%2FGUID-452051E1-0F8B-415E-87FE-D8AD97881072.html
+                      --}}
                       <label class="form-label" for="typeEmailX" placeholder="Email"></label>
                     </div>
                   </div>
@@ -38,8 +43,9 @@
                       <i class="fas fa-lock fa-lg me-3 fa-fw"></i>{{!-- added a font icon --}}
                       <div class="form-outline flex-fill mb-0"> {{!-- mb-0 eliminates the margin bottom --}}
                         <input type="password" placeholder="Password (minimum 6 characters)" id="typePasswordX"
-                          class="form-control form-control-lg" required min="6" pattern="[A-Za-z0-9]"/> {{!-- marked the field required and added a pattern --}}
-                        <label class="form-label" for="typePasswordX" ></label>
+                          class="form-control form-control-lg" required min="6" pattern="[A-Za-z0-9]" /> {{!-- marked
+                        the field required and added a pattern --}}
+                        <label class="form-label" for="typePasswordX"></label>
                       </div>
                     </div>
                   </div>
@@ -50,7 +56,8 @@
                       <i class="fas fa-key fa-lg me-3 fa-fw"></i>{{!-- added a font icon --}}
                       <div class="form-outline flex-fill mb-0"> {{!-- mb-0 eliminates the margin bottom --}}
                         <input type="password" placeholder="Repeat Password (should match what was entered above)"
-                          id="typePasswordAgainX" class="form-control form-control-lg" required pattern="[A-Za-z0-9]"/> {{!-- marked the field required and added a pattern --}}
+                          id="typePasswordAgainX" class="form-control form-control-lg" required pattern="[A-Za-z0-9]" />
+                        {{!-- marked the field required and added a pattern --}}
                         <label class="form-label" for="typePasswordAgainX"></label>
                       </div>
                     </div>
@@ -64,10 +71,12 @@
                     </label>
                   </div>
 
-                  <button class="btn text-black btn-black btn-outline-dark btn-lg px-5 gradient-custom submit-signup" type="submit">
+                  <button class="btn text-black btn-black btn-outline-dark btn-lg px-5 gradient-custom" type="submit">
                     Sign up
                   </button>
                 </div>
+                                <p class="text-center text-muted mt-5 mb-0">Already have an account? <a href="/login" class="fw-bold text-body"><u>Login here</u></a></p>
+
               </form>
               <!-- {{!
                 <div>
@@ -78,18 +87,11 @@
                 </div>
                 }} -->
             </div>
-            {{!-- <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-              <img src="./assets/mindless_scrolling.gif" title="Scrolling Feed image">
-              </div> --}}
           </div>
         </div>
       </div>
     </div>
-
+  </div>
 </section>
-    {{!-- <marquee direction="left" scrollamount="10" ><h5><!-- adds a script to display last modified date and time -->
-                <script> 
-                    document.write( "Last modified on: " + document.lastModified + "");
-                </script>
-            </h5></marquee> --}}
+
 <script src="../js/signup.js"></script>

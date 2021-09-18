@@ -1,11 +1,13 @@
 const router = require("express").Router();
 
-const testRoutes = require("./test-routes");
 const apiRoutes = require("./api");
+const testRoutes = require("./test-routes");
+const profileRoutes = require("./profile-routes");
 
 //use each of the routes files in the controllers folder
 router.use("/test", testRoutes);
 router.use("/api", apiRoutes);
+router.use("/profile", profileRoutes);
 
 router.get("/", async (req, res) => {
     res.render("index", {
@@ -32,6 +34,13 @@ router.get("/logout", async (req, res) => {
     res.render("logout", {
         loggedIn: false,
         loggedInUserData: null,
+    });
+});
+
+router.get("/profile", async (req, res) => {
+    res.render("profile", {
+        loggedIn: req.session.loggedIn,
+        loggedInUserData: req.session.loggedInUserData,
     });
 });
 
