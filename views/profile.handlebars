@@ -1,18 +1,18 @@
 <section class="container" style="margin-top: 1.25%"></section>
     <section style="margin-top: 2em; margin-bottom: 2em;">
 
-        <!-- <div>
+        {{!-- <div>
             <button class="new-feed-button">New Feed</button>
             <ul>
-                <li>Username: {{UserAndFeedData.username}}</li>
-                <li>Feeds: {{profileCreatedCount}}</li>
-                <li>Followers: {{profileFollowersCount}}</li>
-                <li>Following: {{profileFollowedCount}}</li>
+                <li>Username: </li>
+                <li>Feeds: </li>
+                <li>Followers: </li>
+                <li>Following: </li>
                 <li>Feeds:
                     {{#each UserAndFeedData.feeds}}{{this.title}},
                     {{/each}}</li>
             </ul>
-        </div> -->
+        </div> --}}
         
     <main class="accountDetails">
         <div class="container" style="background: #e1e8ed; border: 1px solid #595959; border-radius: 18px; display: flex; flex-direction: row; flex-wrap: wrap;">
@@ -23,7 +23,7 @@
                 <label
                     class="header"
                     style="padding-left: .8rem; font-size: 250%"
-                >Leland Hayes</label>
+                >{{UserAndFeedData.username}}</label>
                 <button
                     style="background-color: #66757f; color: #e1e8ed; border-radius: 5px; border: 1px solid #595959; margin-left: .8rem; height: 3rem; vertical-align: center;">
                     FOLLOW
@@ -37,9 +37,9 @@
             </div>
             <div
                 style="display: flex; flex-direction: row; justify-content: stretch; margin-top: -6%; margin-left: 31.5rem; width: 28rem;">
-                <h2 style="margin-left: 1.5rem;">3</h2>
-                <h2 style="margin-left: 4rem;">42000</h2>
-                <h2 style="margin-left: 4rem;">20000</h2>
+                <h2 style="margin-left: 1.5rem;">{{profileCreatedCount}}</h2>
+                <h2 style="margin-left: 4rem;">{{profileFollowersCount}}</h2>
+                <h2 style="margin-left: 4rem;">{{profileFollowedCount}}</h2>
             </div>
         </div>
         <div

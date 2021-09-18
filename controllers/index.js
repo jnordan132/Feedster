@@ -10,6 +10,7 @@ router.use("/api", apiRoutes);
 router.use("/profile", profileRoutes);
 
 router.get("/", async (req, res) => {
+    console.log(req.session.loggedIn);
     res.render("index", {
         loggedIn: req.session.loggedIn,
         loggedInUserData: req.session.loggedInUserData,

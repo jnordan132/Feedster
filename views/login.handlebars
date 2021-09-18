@@ -19,9 +19,8 @@
                                         bottom --}}
                                         <input type="email" id="typeEmailX"
                                             placeholder="Email e.g. feedsterfan2021@gmail.com"
-                                            class="form-control form-control-lg" required
-                                            pattern="^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$" /> {{!-- marked the field
-                                        required and added a pattern --}}
+                                            class="form-control form-control-lg" required/> {{!-- marked the field
+                                        required and added a pattern pattern="^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$" --}}
                                         <label class="form-label" for="typeEmailX" placeholder="Email"></label>
                                     </div>
                                 </div>
@@ -32,14 +31,13 @@
                                         <div class="form-outline flex-fill mb-0"> {{!-- mb-0 eliminates the margin
                                             bottom --}}
                                             <input type="password" placeholder="Password (minimum 6 characters)"
-                                                id="typePasswordX" class="form-control form-control-lg" required min="6"
-                                                pattern="[A-Za-z0-9]" /> {{!-- marked the field required and added a
-                                            pattern --}}
+                                                id="typePasswordX" class="form-control form-control-lg" required min="6"/> {{!-- marked the field required and added a
+                                            pattern pattern="[A-Za-z0-9]"--}}
                                             <label class="form-label" for="typePasswordX"></label>
                                         </div>
                                     </div>
                                 </div>
-                                <button class="btn btn-black btn-outline-dark btn-lg px-5 gradient-custom"
+                                <button class="btn btn-black btn-outline-dark btn-lg px-5 gradient-custom login-submit"
                                     type="submit">Login</button>
 
                             </div>
@@ -51,8 +49,6 @@
                 </form>
             </div>
         </div>
-    </div>
-    </div>
     </div>
 </section>
 <script src="../js/login.js"></script>
