@@ -1,0 +1,40 @@
+<body>
+<section style="background-image: linear-gradient(to top, #fff, #55aceeff)">
+        <div class="container my-5 py-5">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-12 col-lg-6">
+                    <div class="card text-dark">
+                        <div class="card-body p-4">
+                            <div class="d-flex flex-start">
+                                <img class="rounded-circle shadow-1-strong me-3" src="blank-profile-picture-973460_640.png" alt="avatar" width="60" height="60" />
+                                <div>
+                                    <h6 class="fw-bold mb-1">David Tunnell</h6>
+                                    <div class="d-flex align-items-center mb-3"></div>
+                                    <p class="mb-0 commentText">
+                                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum reprehenderit unde est.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        {{#each}}<div class="card-body p-4">
+                        <div class="d-flex flex-start">
+                            <img class="rounded-circle shadow-1-strong me-3" src="blank-profile-picture-973460_640.png" alt="avatar" width="60" height="60" />
+                            <div>
+                                <h6 class="fw-bold mb-0">First Last</h6>
+                                <div class="d-flex align-items-center mb-3"></div>
+                                <p class="mb-0">
+                                    {{commentsArr}}
+                                </p>
+                            </div>
+                            </div>
+                        </div>
+                        {{/each}}
+                        <hr class="my-0" />
+                        <input placeholder="Write a comment..." type="comment"><button id="postBtn">Post</button></input>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+<script src="../public/js/comment.js"></script>
