@@ -24,7 +24,7 @@ input:valid {
 .main-card {
     background-color: #e1e8ed;
     border-radius: 5px;
-    border: 1px solid #595959;
+    border: 1px solid #888888;
 }
 
 /* .submit-signup {
@@ -35,5 +35,5 @@ input:valid {
 } */
 
 .form-control {
-    border: 1px solid #595959;
+    border: 1px solid #888888;
 }
