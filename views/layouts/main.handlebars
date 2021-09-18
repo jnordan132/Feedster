@@ -1,55 +1,66 @@
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Feedster</title>
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
-            crossorigin="anonymous"
-        />
-        <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
-        />
-        <link rel="stylesheet" href="../css/style.css" />
-    </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feedster</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
 
-    <body>
-        <nav class="navbar navbar-light bg-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Feedster</a>
-                <ul class="nav justify-content-end">
-                    <li class="nav-item">
-                        <a
-                            class="nav-link active"
-                            aria-current="page"
-                            href="#"
-                        >Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Profile</a>
-                    </li>
-                    <li class="nav-item">
-                        {{#if logged_in}}
-                            <a href="/profile">profile</a>
-                            <button
-                                class="no-button"
-                                id="logout"
-                            >logout</button>
-                        {{else}}
-                            <a href="/login">login</a>
-                        {{/if}}
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <main>
-            {{{body}}}
-        </main>
-        <script src="../js/main.js"></script>
-    </body>
+  <body>
+    <nav
+      style="background-image: linear-gradient(to right, #fff, #55aceeff);"
+      class="navbar"
+    >
+      <div class="container-fluid">
+        <a style="color: black" class="navbar-brand" href="#">Feedster</a>
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#"><i
+                class="bi bi-house-fill"
+                style="color: rgb(0, 0, 0); font-size: 21px"
+              ></i></a>
+          </li>
+          <li class="nav-item">
+
+          </li>
+          <li class="nav-item">
+            {{#if logged_in}}
+              <a
+                style="background-color: #66757f; color: #000000; border-radius: 5px; border: 1px solid #595959; margin-top: 4px; margin-left: 5px; margin-right: 10px;"
+                href="/profile"
+              >profile</a>
+              <button
+                class="no-button"
+                style="background-color: #66757f; color: #000000; border-radius: 5px; border: 1px solid #595959; margin-left: 4px; margin-right: 10px;"
+                id="logout"
+              >logout</button>
+            {{else}}
+              <button
+                href="/login"
+                style="background-color: #66757f; color: #000000; border-radius: 5px; border: 1px solid #595959; margin-top: 4px; margin-right: 10px;"
+              >
+                Login
+              </button>
+            {{/if}}
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <main>
+      {{{body}}}
+    </main>
+    <script src="../js/main.js"></script>
+  </body>
 
 </html>
