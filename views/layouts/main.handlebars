@@ -24,39 +24,50 @@
         <link rel="stylesheet" href="../css/style.css" />
     </head>
 
-    <body>
-        <nav class="navbar navbar-light bg-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Feedster</a>
-                <ul class="nav justify-content-end">
-                    <li class="nav-item">
-                        <a
-                            class="nav-link active"
-                            aria-current="page"
-                            href="#"
-                        >Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Profile</a>
-                    </li>
-                    <li class="nav-item">
-                        {{#if logged_in}}
-                            <a href="/profile">profile</a>
-                            <button
-                                class="no-button"
-                                id="logout"
-                            >logout</button>
-                        {{else}}
-                            <a href="/login">login</a>
-                        {{/if}}
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <main>
-            {{{body}}}
-        </main>
-        <script src="../js/main.js"></script>
-    </body>
+  <body>
+    <nav
+      style="background-image: linear-gradient(to right, #fff, #55aceeff);"
+      class="navbar"
+    >
+      <div class="container-fluid">
+        <a style="color: black" class="navbar-brand" href="#">Feedster</a>
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#"><i
+                class="bi bi-house-fill"
+                style="color: rgb(0, 0, 0); font-size: 21px"
+              ></i></a>
+          </li>
+          <li class="nav-item">
+
+          </li>
+          <li class="nav-item">
+            {{#if logged_in}}
+              <a
+                style="background-color: #66757f; color: #000000; border-radius: 5px; border: 1px solid #595959; margin-top: 4px; margin-left: 5px; margin-right: 10px;"
+                href="/profile"
+              >profile</a>
+              <button
+                class="no-button"
+                style="background-color: #66757f; color: #000000; border-radius: 5px; border: 1px solid #595959; margin-left: 4px; margin-right: 10px;"
+                id="logout"
+              >logout</button>
+            {{else}}
+              <button
+                href="/login"
+                style="background-color: #66757f; color: #000000; border-radius: 5px; border: 1px solid #595959; margin-top: 4px; margin-right: 10px;"
+              >
+                Login
+              </button>
+            {{/if}}
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <main>
+      {{{body}}}
+    </main>
+    <script src="../js/main.js"></script>
+  </body>
 
 </html>
