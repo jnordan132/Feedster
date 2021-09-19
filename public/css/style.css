@@ -1,14 +1,12 @@
 .gradient-custom {
     /* Chrome 10-25, Safari 5.1-6 */
-    background: -webkit-linear-gradient(
-        to bottom right,
-        rgb(236, 234, 234),
-        #55aceeff
-    );
+    background: -webkit-linear-gradient(to bottom right,
+            rgb(247, 246, 246),
+            #55aceeff);
     /* fallback for old browsers */
     background: #55aceeff;
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(to bottom right, rgb(236, 234, 234), #55aceeff);
+    background: linear-gradient(to bottom right, rgb(247, 246, 246), #55aceeff);
 }
 
 /* input validation on the client side */
@@ -17,11 +15,9 @@ input:invalid {
 }
 
 input:invalid:required {
-    background-image: linear-gradient(
-        to right,
-        rgb(255, 199, 192),
-        rgb(238, 155, 144)
-    );
+    background-image: linear-gradient(to right,
+            rgb(255, 199, 192),
+            rgb(238, 155, 144));
 }
 
 input:valid {
@@ -34,13 +30,19 @@ input:valid {
     border: 1px solid #888888;
 }
 
-/* .submit-signup {
-    background-color: #66757f;
+.submit-signup {
+    background-color: #6d7981;
     color: #e1e8ed;
     border-radius: 5px;
-    border: 1px solid #595959;
-} */
+    border: 1px solid #7a7a7a;
+}
 
 .form-control {
     border: 1px solid #888888;
+}
+
+/* footer h5 */
+
+h5 {
+    text-align: center;
 }

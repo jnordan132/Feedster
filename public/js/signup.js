@@ -7,21 +7,33 @@ const signupFormHandler = async (event) => {
     console.log(username);
     //new accounts by default are not admins
     const is_admin = false;
-    console.log(JSON.stringify({ username, email, password, is_admin }));
+    console.log(JSON.stringify({
+        username,
+        email,
+        password,
+        is_admin
+    }));
     if (username && email && password) {
         const response = await fetch("/api/users/", {
             method: "POST",
-            body: JSON.stringify({ username, email, password, is_admin }),
-            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                username,
+                email,
+                password,
+                is_admin
+            }),
+            headers: {
+                "Content-Type": "application/json"
+            },
         });
         if (response.ok) {
             document.location.replace("/");
         } else {
             alert(
                 "Failed to sign up. " +
-                    response.status +
-                    ": " +
-                    response.statusText
+                response.status +
+                ": " +
+                response.statusText
             );
         }
     } else {
