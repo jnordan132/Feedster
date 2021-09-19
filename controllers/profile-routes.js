@@ -16,6 +16,9 @@ router.get("/:id", async (req, res) => {
                         {
                             model: FeedSources,
                         },
+                        {
+                            model: Users,
+                        },
                     ],
                 },
             ],
@@ -52,6 +55,9 @@ router.get("/:id", async (req, res) => {
                         {
                             model: FeedSources,
                         },
+                        {
+                            model: Users,
+                        },
                     ],
                 },
             ],
@@ -60,7 +66,7 @@ router.get("/:id", async (req, res) => {
         const followedFeedDataCleaned = followedFeedData.map((record) =>
             record.get({ plain: true })
         );
-        // console.log(followedFeedDataCleaned);
+        console.log(userDataCleaned);
         res.render("profile", {
             UserAndFeedData: userDataCleaned,
             profileFollowersCount: feedFollowersCountData,
