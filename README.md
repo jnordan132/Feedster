@@ -6,7 +6,7 @@ This repository is for group 8's Project2 - Interactive Full-Stack Application: 
 <thead>
 <tr>
 <th><a href="https://github.com/DavidTunnell">David Tunnell</a></th>
-<th><a href="https://github.com/jnordan132">Jacob Nordani</a></th>
+<th><a href="https://github.com/jnordan132">Jacob Nordan</a></th>
 <th><a href="https://github.com/ilelandhayes">Leland Hayes</a></th>
 <th><a href="https://github.com/DionneNoellaBarretto">Dionne Noella Barretto</a></th>
 </tr>
