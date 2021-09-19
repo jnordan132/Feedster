@@ -16,6 +16,9 @@
                                 <button
                                     style="float: right"
                                     class="follow-feed-button"
+                                    data-feed-id="{{this.id}}"
+                                    data-logged-in-user-id="{{../loggedInUserData.id}}"
+                                    data-user-created-id="{{this.user_id}}"
                                 >+</button>
                             {{/if}}
                         </li>
@@ -30,3 +33,4 @@
         {{/each}}
     </ul>
 </section>
+<script src="../js/homepage.js"></script>

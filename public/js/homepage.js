@@ -1,30 +1,3 @@
-const createFeedHandler = async (event) => {
-    event.preventDefault();
-    console.log("createFeedHandler");
-    // const email = document.querySelector("#typeEmailX").value.trim();
-    // const password = document.querySelector("#typePasswordX").value.trim();
-    // if (email && password) {
-    //     const response = await fetch("/api/users/login", {
-    //         method: "POST",
-    //         body: JSON.stringify({ email, password }),
-    //         headers: { "Content-Type": "application/json" },
-    //     });
-
-    //     if (response.ok) {
-    //         document.location.replace("/");
-    //     } else {
-    //         alert(
-    //             "Failed to login. " +
-    //                 response.status +
-    //                 ": " +
-    //                 response.statusText
-    //         );
-    //     }
-    // } else {
-    //     alert("Please fill out all fields.");
-    // }
-};
-
 const followFeedHandler = async (event) => {
     event.preventDefault();
 
@@ -58,10 +31,6 @@ const followFeedHandler = async (event) => {
         alert("Error");
     }
 };
-
-document
-    .querySelector(".new-feed-button")
-    .addEventListener("click", createFeedHandler);
 
 const followFeedButtons = document.querySelectorAll(".follow-feed-button");
 followFeedButtons.forEach((el) =>

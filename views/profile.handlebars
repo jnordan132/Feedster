@@ -36,7 +36,37 @@
         </div>
         <section class="feeds" style="margin-top: 3%">
             <ul>
-
+                    {{#each profileFollowedFeeds}}
+                    <div>
+                        <ol>
+                            <div
+                                class="card"
+                                style="width: 20%; float: left; margin-left: 7%"
+                            >
+                                <li
+                                    class="list-group-item"
+                                    style="background: #ccd6dd"
+                                >
+                                    <h5 style="float: left">{{this.feed.title}}</h5>
+                            {{#if ../loggedIn}}
+                                <button
+                                    style="float: right"
+                                    class="follow-feed-button"
+                                    data-feed-id="{{this.feed.id}}"
+                                    data-logged-in-user-id="{{../loggedInUserData.id}}"
+                                    data-user-created-id="{{this.feed.user_id}}"
+                                >+</button>
+                            {{/if}}
+                                </li>
+                                <ul class="list-group list-group-flush">
+                                    {{#each this.feed.feed_sources}}
+                                        <li class="list-group-item">{{this.source}}</li>
+                                    {{/each}}
+                                </ul>
+                            </div>
+                        </ol>
+                    </div>
+                {{/each}}
                 {{#each UserAndFeedData.feeds}}
                     <div>
                         <ol>
@@ -53,6 +83,9 @@
                                 <button
                                     style="float: right"
                                     class="follow-feed-button"
+                                    data-feed-id="{{this.id}}"
+                                    data-logged-in-user-id="{{../loggedInUserData.id}}"
+                                    data-user-created-id="{{this.user_id}}"
                                 >+</button>
                             {{/if}}
                                 </li>
@@ -65,9 +98,6 @@
                         </ol>
                     </div>
                 {{/each}}
-
-
-
                 <div>
                     <button class="new-feed-button"
                         style="background: #ccd6dd; font-size: 2em; width: 10%; margin-left: 8%; margin-top: 5%;"
