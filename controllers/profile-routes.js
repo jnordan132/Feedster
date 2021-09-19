@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Users, Feeds, FeedFollowers } = require("../models");
+const { Users, Feeds, FeedFollowers, FeedSources } = require("../models");
 
 router.get("/:id", async (req, res) => {
     try {
@@ -11,6 +11,11 @@ router.get("/:id", async (req, res) => {
             include: [
                 {
                     model: Feeds,
+                    include: [
+                        {
+                            model: FeedSources,
+                        },
+                    ],
                 },
             ],
         });
@@ -32,12 +37,14 @@ router.get("/:id", async (req, res) => {
                 user_id: req.params.id,
             },
         });
-
+        console.log(userDataCleaned);
         res.render("profile", {
             UserAndFeedData: userDataCleaned,
             profileFollowersCount: feedFollowersCountData,
             profileFollowedCount: feedFollowedCountData,
             profileCreatedCount: feedCreatedCountData,
+            loggedIn: req.session.loggedIn,
+            loggedInUserData: req.session.loggedInUserData,
         });
     } catch (err) {
         res.status(500).json(err);
