@@ -13,9 +13,10 @@ const feedFollowersData = require("./feedfollowers-seeds.json");
 const commentsData = require("./comments-seeds.json");
 
 //create tables and seed with test data
-const seedDatabase = async () => {
+const seedDatabase = async ()  => {
+    
     await sequelize.sync({ force: true });
-    console.log('\n----- DATABASE SUCCESSFULLY SYNCED -----\n');
+    console.log('\n----- DATABASE SUCCESSFULLY CHECKED AND DROPPED TABLES IF THEY PREVIOUSLY EXISTED TO AVOID CONFLICTS PRIOR TO SEEDING / SYNCING DATA-----\n')
     await Users.bulkCreate(usersData, {
         individualHooks: false,
         returning: true,
@@ -45,8 +46,10 @@ const seedDatabase = async () => {
         returning: true,
     });
     console.log('\n----- COMMENTS DATA SUCCESSFULLY SYNCED -----\n');
-
+    console.log('\n----- DATABASE CONNECTION NOW INITIATES A SUCCESSFUL EXIT -----\n');
     process.exit(0);
+    
+
 };
 
 //call the function
