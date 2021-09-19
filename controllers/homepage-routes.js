@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const { Users, Feeds, FeedSources } = require("../models");
 
+
 router.get("/", async (req, res) => {
     try {
         const feedsData = await Feeds.findAll({

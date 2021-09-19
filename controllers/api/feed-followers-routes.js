@@ -5,14 +5,23 @@ const { Feeds, Users, FeedFollowers } = require("../../models");
 /*
 {
    "feed_id":"1",
-   "user_id":"2"
+   "user_following_id":"2",
+   "user_created_id":"1"
 }
 */
 router.post("/", async (req, res) => {
     try {
-        const feedFollowersData = await FeedFollowers.create({
-            feed_id: req.body.feed_id,
-            user_id: req.body.user_id,
+        const feedFollowersData = await FeedFollowers.findOrCreate({
+            where: {
+                feed_id: req.body.feed_id,
+                user_following_id: req.body.user_following_id,
+                user_created_id: req.body.user_created_id,
+            },
+            defaults: {
+                feed_id: req.body.feed_id,
+                user_following_id: req.body.user_following_id,
+                user_created_id: req.body.user_created_id,
+            },
         });
         return res.status(200).json(feedFollowersData);
     } catch (err) {
