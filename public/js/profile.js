@@ -52,7 +52,43 @@ const followFeedHandler = async (event) => {
 
 const addFeedSource = async (event) => {
     event.preventDefault();
-    console.log("cc");
+    const feedEntryContainer = document.querySelector(".feed-entries");
+    const html =
+        "<label for='feedTitle'>Enter a Feed Source:</label><input type='text' class='form-control feed-sources' placeholder='@twitter'>";
+    feedEntryContainer.innerHTML += html;
+};
+
+//create feed: http://localhost:3001/api/feeds/
+/*
+{
+   "title":"Node.js Programming",
+   "user_id":"1",
+   "sources":[
+      {
+         "source":"@nodejs"
+      },
+      {
+         "source":"@trott"
+      },
+      {
+         "source":"@adamzdanielle"
+      }
+   ]
+}
+*/
+const submitNewFeed = async (event) => {
+    event.preventDefault();
+    const feedTitle = document.querySelector("#feedTitle").value;
+    const elements = document.querySelectorAll(".feed-sources");
+    const loggedInUserId = event.target.getAttribute("data-logged-in-user-id");
+
+    const sourceArray = [];
+    elements.forEach((element) => {
+        sourceArray.push(element.value);
+    });
+    console.log(loggedInUserId);
+    console.log(feedTitle);
+    console.log(sourceArray);
 };
 
 document
@@ -67,3 +103,5 @@ followFeedButtons.forEach((el) =>
 document
     .querySelector(".add-feed-button")
     .addEventListener("click", addFeedSource);
+
+document.querySelector(".submit-feed").addEventListener("click", submitNewFeed);
