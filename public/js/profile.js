@@ -1,28 +1,21 @@
-const createFeedHandler = async (event) => {
-    event.preventDefault();
-    console.log("createFeedHandler");
-    // const email = document.querySelector("#typeEmailX").value.trim();
-    // const password = document.querySelector("#typePasswordX").value.trim();
-    // if (email && password) {
-    //     const response = await fetch("/api/users/login", {
-    //         method: "POST",
-    //         body: JSON.stringify({ email, password }),
-    //         headers: { "Content-Type": "application/json" },
-    //     });
+// var createFeedmodal = document.getElementById("createFeedModal");
 
-    //     if (response.ok) {
-    //         document.location.replace("/");
-    //     } else {
-    //         alert(
-    //             "Failed to login. " +
-    //                 response.status +
-    //                 ": " +
-    //                 response.statusText
-    //         );
-    //     }
-    // } else {
-    //     alert("Please fill out all fields.");
-    // }
+//https://dev.to/ara225/how-to-use-bootstrap-modals-without-jquery-3475
+function openModal() {
+    document.getElementById("backdrop").style.display = "block";
+    document.getElementById("createFeedModal").style.display = "block";
+    document.getElementById("createFeedModal").classList.add("show");
+}
+
+function closeModal() {
+    document.getElementById("backdrop").style.display = "none";
+    document.getElementById("createFeedModal").style.display = "none";
+    document.getElementById("createFeedModal").classList.remove("show");
+}
+
+const openCreateFeedModal = async (event) => {
+    event.preventDefault();
+    openModal();
 };
 
 const followFeedHandler = async (event) => {
@@ -61,7 +54,7 @@ const followFeedHandler = async (event) => {
 
 document
     .querySelector(".new-feed-button")
-    .addEventListener("click", createFeedHandler);
+    .addEventListener("click", openCreateFeedModal);
 
 const followFeedButtons = document.querySelectorAll(".follow-feed-button");
 followFeedButtons.forEach((el) =>
