@@ -29,7 +29,6 @@ router.get("/:id", async (req, res) => {
         ],
     });
     const comments = commentData.map((post) => post.get({ plain: true }));
-    console.log(comments);
     res.render("feed", {
         loggedIn: req.session.loggedIn,
         loggedInUserData: req.session.loggedInUserData,

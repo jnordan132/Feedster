@@ -46,7 +46,9 @@
                             </div>
                         {{/each}}
                         <hr class="my-0" />
-                        <input placeholder="Write a comment..." type="comment"><button id="postBtn">Post</button></input>
+                        {{#if loggedIn}}
+                            <input placeholder="Write a comment..." type="comment" class="comment-input"><button id="postBtn" data-logged-in-user-id="{{loggedInUserData.id}}" data-current-feed-id="{{currentFeed.id}}">Post</button></input>
+                        {{/if}}
                     </div>
                 </div>
             </div>
