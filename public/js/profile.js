@@ -119,6 +119,17 @@ const submitNewFeed = async (event) => {
     }
 };
 
+function toggleAddButton() {
+    const loggedInUserId =
+        document.querySelector(".logged-in-user-id").innerHTML;
+    const profileId = document.querySelector(".current-profile-id").innerHTML;
+    if (loggedInUserId !== profileId) {
+        document.querySelector(".new-feed-button").classList.add("d-none");
+    }
+}
+
+toggleAddButton();
+
 document
     .querySelector(".new-feed-button")
     .addEventListener("click", openCreateFeedModal);
