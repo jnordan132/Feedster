@@ -1,6 +1,6 @@
 .gradient-custom {
     /* Chrome 10-25, Safari 5.1-6 */
-    background: -webkit-linear-gradient( to bottom right, rgb(247, 246, 246), #55aceeff);
+    background: -webkit-linear-gradient(to bottom right, rgb(247, 246, 246), #55aceeff);
     /* fallback for old browsers */
     background: #55aceeff;
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -15,16 +15,20 @@ body {
 /* input validation on the client side */
 
 input:invalid {
-    border: 2px solid #55aceeff;
+    /* visual indication of the field is highlighted in red if the input doesn't meet standards*/
+    border: 2px solid red;
 }
 
 input:invalid:required {
-    background-color: rgb(212, 226, 233);
+    /* background-color: rgb(212, 226, 233); */
+    background-color: #fff;
 }
 
 input:valid {
+    /* visual indication of the field is highlighted in green if the input does meet standards*/
     border: 2px solid green;
 }
+
 
 .main-card {
     background-color: #e1e8ed;
