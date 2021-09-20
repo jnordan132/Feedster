@@ -81,14 +81,42 @@ const submitNewFeed = async (event) => {
     const feedTitle = document.querySelector("#feedTitle").value;
     const elements = document.querySelectorAll(".feed-sources");
     const loggedInUserId = event.target.getAttribute("data-logged-in-user-id");
-
     const sourceArray = [];
     elements.forEach((element) => {
         sourceArray.push(element.value);
     });
-    console.log(loggedInUserId);
-    console.log(feedTitle);
-    console.log(sourceArray);
+    let json = `
+        {
+        "title":"${feedTitle}",
+        "user_id":"${loggedInUserId}",
+        "sources":[`;
+    let sourcesJson = "";
+    sourceArray.forEach((element) => {
+        sourcesJson += `{"source":"${element}"},`;
+    });
+    sourcesJson = sourcesJson.substring(0, sourcesJson.length - 1);
+    let endOfJson = "]}";
+    const combinedJson = json + sourcesJson + endOfJson;
+    console.log(combinedJson);
+    if (loggedInUserId && feedTitle && sourceArray) {
+        const response = await fetch("/api/feeds/", {
+            method: "POST",
+            body: combinedJson,
+            headers: { "Content-Type": "application/json" },
+        });
+        if (response.ok) {
+            document.location.replace("/profile/" + loggedInUserId);
+        } else {
+            alert(
+                "Failed to follow feed." +
+                    response.status +
+                    ": " +
+                    response.statusText
+            );
+        }
+    } else {
+        alert("Error");
+    }
 };
 
 document
