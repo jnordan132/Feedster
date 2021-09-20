@@ -1,49 +1,51 @@
 .gradient-custom {
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-linear-gradient(
-    to bottom right,
-    rgb(247, 246, 246),
-    #55aceeff
-  );
-  /* fallback for old browsers */
-  background: #55aceeff;
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background: linear-gradient(to bottom right, rgb(247, 246, 246), #55aceeff);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient( to bottom right, rgb(247, 246, 246), #55aceeff);
+    /* fallback for old browsers */
+    background: #55aceeff;
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to bottom right, rgb(247, 246, 246), #55aceeff);
 }
+
+body {
+    background-image: linear-gradient(to top, #55aceeff, #fff);
+}
+
 
 /* input validation on the client side */
 
 input:invalid {
-  border: 2px solid #55aceeff;
+    border: 2px solid #55aceeff;
 }
 
 input:invalid:required {
-  background-color: rgb(212, 226, 233);
+    background-color: rgb(212, 226, 233);
 }
 
 input:valid {
-  border: 2px solid green;
+    border: 2px solid green;
 }
 
 .main-card {
-  background-color: #e1e8ed;
-  border-radius: 5px;
-  border: 2px solid #888888;
+    background-color: #e1e8ed;
+    border-radius: 5px;
+    border: 2px solid #888888;
 }
 
 .submit-signup {
-  background-color: #6d7981;
-  color: #e1e8ed;
-  border-radius: 5px;
-  border: 1px solid #7a7a7a;
+    background-color: #6d7981;
+    color: #e1e8ed;
+    border-radius: 5px;
+    border: 1px solid #7a7a7a;
 }
 
 .form-control {
-  border: 1px solid #888888;
+    border: 1px solid #888888;
 }
+
 
 /* footer h5 */
 
 h5 {
-  text-align: center;
+    text-align: center;
 }
