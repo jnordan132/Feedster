@@ -10,10 +10,6 @@
                     class="header"
                     style="padding-left: .8rem; font-size: 250%"
                 >{{UserAndFeedData.username}}</label>
-                {{!-- <button
-                    style="background-color: #66757f; color: #e1e8ed; border-radius: 5px; border: 1px solid #595959; margin-left: .8rem; height: 3rem; vertical-align: center;">
-                    FOLLOW
-                </button> --}}
             </div>
             <div
                 style="display: flex; flex-direction: row; float: left; flex-wrap: wrap; margin-top: 2%; justify-content: stretch; height: 2rem; width: 28rem;">
@@ -110,7 +106,6 @@
             </ul>
         </section>
     </main>
-
 <!-- Modal -->
 <div class="modal fade" id="createFeedModal" tabindex="-1" aria-labelledby="createFeedLabel" aria-modal="true"
     role="dialog">
@@ -123,14 +118,16 @@
                 </button>
             </div>
             <div class="modal-body">
-                ...
+                <label for="feedTitle">Feed Title</label>
+                <input type="text" class="form-control" id="feedTitle" placeholder="Fun Programming Challenges">
+                <button type="button" class="btn btn-primary add-feed-button">Add Feed</button>
+                <div class="feed-entries"></div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-primary">Submit</button>
             </div>
         </div>
     </div>
 </div>
 <div class="modal-backdrop fade show" id="backdrop" style="display: none;"></div>
-
 <script src="../js/profile.js"></script>

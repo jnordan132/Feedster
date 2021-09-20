@@ -1,7 +1,4 @@
-// var createFeedmodal = document.getElementById("createFeedModal");
-
 //https://dev.to/ara225/how-to-use-bootstrap-modals-without-jquery-3475
-//
 function openModal() {
     document.getElementById("backdrop").style.display = "block";
     document.getElementById("createFeedModal").style.display = "block";
@@ -53,6 +50,11 @@ const followFeedHandler = async (event) => {
     }
 };
 
+const addFeedSource = async (event) => {
+    event.preventDefault();
+    console.log("cc");
+};
+
 document
     .querySelector(".new-feed-button")
     .addEventListener("click", openCreateFeedModal);
@@ -61,3 +63,7 @@ const followFeedButtons = document.querySelectorAll(".follow-feed-button");
 followFeedButtons.forEach((el) =>
     el.addEventListener("click", (event) => followFeedHandler(event))
 );
+
+document
+    .querySelector(".add-feed-button")
+    .addEventListener("click", addFeedSource);
