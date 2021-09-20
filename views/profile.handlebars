@@ -47,7 +47,9 @@
                                     class="list-group-item"
                                     style="background: #ccd6dd"
                                 >
-                                    <h5 style="float: left">{{this.feed.title}}</h5>
+                            <h5 style="float: left"><a
+                                    href="/feed/{{this.id}}"
+                                >{{this.feed.title}}</a> by <a href="/profile/{{this.feed.user.id}}">{{this.feed.user.username}}</a></h5>
                             {{#if ../loggedIn}}
                                 <button
                                     style="float: right"
@@ -78,7 +80,9 @@
                                     class="list-group-item"
                                     style="background: #ccd6dd"
                                 >
-                                    <h5 style="float: left">{{this.title}}</h5>
+                            <h5 style="float: left"><a
+                                    href="/feed/{{this.id}}"
+                                >{{this.title}}</a> by <a href="/profile/{{this.user.id}}">{{this.user.username}}</a></h5>
                             {{#if ../loggedIn}}
                                 <button
                                     style="float: right"
