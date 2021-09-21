@@ -29,7 +29,6 @@ input:valid {
     border: 2px solid green;
 }
 
-
 .main-card {
     background-color: #e1e8ed;
     border-radius: 5px;
@@ -53,3 +52,4 @@ input:valid {
 h5 {
     text-align: center;
 }
+

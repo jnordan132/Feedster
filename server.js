@@ -48,6 +48,6 @@ app.use(controllers);
 //force start should be false if using 'npm run seed' to populate and create db as it will recreate tables each server reload
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () =>
-        console.log("Now listening: http://localhost:" + PORT)
+        console.log("App is now listening on: http://localhost:" + PORT)
     );
 });

@@ -69,10 +69,11 @@
                 </div>
                 {{! added a check box to agree to terms of service }}
                 <div class="form-check d-flex justify-content-center mb-3">
-                  <input class="form-check-input me-2" type="checkbox" value="" id="Terms" required />
-                  <label class="form-check-label" for="Terms">
+                  <input class="form-check-input me-2" type="checkbox" id="terms" required />
+                  <label class="form-check-label" for="terms">
                     I agree to all
-                    <a href="#!">Terms of service</a>
+                    {{!-- this href references the terms of service html page can be written in handlebars format as well as seen in ../views/tos.handlebars in which case a route similar to /login needs to be created --}}
+                    <a href="../public/tos.html" target="_blank">Terms of Service</a>
                   </label>
                 </div>
                 <button class="btn text-white btn-black btn-outline-dark btn-lg px-5 submit-signup" type="submit">
@@ -85,7 +86,6 @@
             </form>
           </div>
         </div>
-
       </div>
     </div>
   </div>
