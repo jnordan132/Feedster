@@ -8,7 +8,6 @@ const path = require("path");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const sequelize = require("./config/connection");
 const controllers = require("./controllers");
-// Import the custom helper methods
 const helpers = require("./utils/helpers");
 const {
     errorMonitor
@@ -92,3 +91,4 @@ app.use((error, req, res, next) => {
             });
 
         });
+

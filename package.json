@@ -1,42 +1,45 @@
 {
-    "name": "proj-2",
-    "version": "1.0.0",
-    "description": "Feedster: Full Stack Web App Project2",
-    "main": ".eslintrc.js",
-    "scripts": {
-        "test": "jest",
-        "start": "node server.js",
-        "seed": "node seeds/index.js",
-        "dev": "nodemon server.js",
-        "lint": "eslint ./"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/jnordan132/Feedster"
-    },
-    "author": "",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/jnordan132/Feedster/issues"
-    },
-    "homepage": "https://github.com/jnordan132/Feedster#readme",
-    "dependencies": {
-        "bcrypt": "^5.0.1",
-        "connect-session-sequelize": "^7.1.2",
-        "dotenv": "^10.0.0",
-        "express": "^4.17.1",
-        "express-handlebars": "^5.3.3",
-        "express-session": "^1.17.2",
-        "http-errors": "^1.8.0",
-        "jest": "^26.6.3",
-        "mysql2": "^2.3.0",
-        "sequelize": "^6.6.5",
-        "serve-favicon": "^2.5.0"
-    },
-    "devDependencies": {
-        "eslint": "^7.32.0",
-        "eslint-config-prettier": "^8.3.0",
-        "nodemon": "^2.0.12",
-        "prettier": "^2.4.0"
-    }
+  "name": "proj-2",
+  "version": "1.0.0",
+  "description": "Feedster: Full Stack Web App Project2",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js",
+    "seed": "node seeds/index.js",
+    "dev": "nodemon server.js",
+    "lint": "eslint ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jnordan132/Feedster.git"
+  },
+  "author": "David Tunnell, Jacob Nordan, Leland Hayes & Dionne Noella Barretto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jnordan132/Feedster/issues"
+  },
+  "homepage": "https://github.com/jnordan132/Feedster#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.2",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.3",
+    "express-session": "^1.17.2",
+    "http-errors": "^1.8.0",
+    "jest": "^26.6.3",
+    "mysql2": "^2.3.0",
+    "sequelize": "^6.6.5",
+    "serve-favicon": "^2.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "nodemon": "^2.0.12",
+    "prettier": "^2.4.0"
+  },
+  "directories": {
+    "test": "tests"
+  }
 }
