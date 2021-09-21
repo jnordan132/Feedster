@@ -2,12 +2,14 @@ const router = require("express").Router();
 const { Users, Feeds, FeedFollowers, FeedSources } = require("../models");
 const Sequelize = require("sequelize");
 // const AppError = require("./utils/appError");
-
+const twitterClient = require("../config/twitter-connection");
 
 // router.get("/:id", async (req, res) => {
-    //--> using this line instead of doing explicit catches on line 82 of this file so as to opt for line 83 instead as defined in error handler in server js file
-    router.get("/:id", async (req, res) => { 
+//--> using this line instead of doing explicit catches on line 82 of this file so as to opt for line 83 instead as defined in error handler in server js file
+router.get("/:id", async (req, res) => {
     try {
+        twitterConnection1(params);
+
         const userData = await Users.findOne({
             where: {
                 id: req.params.id,
@@ -37,7 +39,6 @@ const Sequelize = require("sequelize");
                 user_created_id: req.params.id,
             },
         });
-
 
         const feedFollowedCountData = await FeedFollowers.count({
             where: {
@@ -90,9 +91,28 @@ const Sequelize = require("sequelize");
     } catch (err) {
         // res.status(500).json(err);
         next(err);
-                // or could call next(err) since the error handler is now set up in server.js
-
+        // or could call next(err) since the error handler is now set up in server.js
     }
 });
+
+var params = { screen_name: "nodejs" };
+
+async function twitterConnection1(paramsObject) {
+    twitterClient.get(
+        "statuses/user_timeline",
+        paramsObject,
+        async function (error, tweets, response) {
+            if (!error) {
+                const test = await response;
+                myTest(test);
+            }
+        }
+    );
+}
+
+function myTest(test) {
+    var testr = JSON.parse(test.body);
+    console.log(testr[0]);
+}
 
 module.exports = router;
