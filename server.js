@@ -75,9 +75,8 @@ sequelize.sync({
 
 // catch errors and forward to error handler
 app.use((req, res, next) => {
-    const error = new Error(`Oops! Page '${req.url}' not Found! Please check the url and try again..`)
+    const error = new Error(`Oops! Page '${req.path}' not found! Please check the url and try again..`)
     error.status=404;
-    // 
     next(error);
 });
 // middleware with 4 parameters to handle a error
