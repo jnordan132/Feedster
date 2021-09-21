@@ -73,7 +73,8 @@
                   <label class="form-check-label" for="terms">
                     I agree to all
                     {{!-- this href references the terms of service html page can be written in handlebars format as well as seen in ../views/tos.handlebars in which case a route similar to /login needs to be created --}}
-                    <a href="../public/tos.html" target="_blank">Terms of Service</a>
+                    {{!-- <a href="../public/tos.html" target="_blank">Terms of Service</a> --}}
+                                      <a href="/tos" target="_blank">Terms of Service</a>
                   </label>
                 </div>
                 <button class="btn text-white btn-black btn-outline-dark btn-lg px-5 submit-signup" type="submit">
