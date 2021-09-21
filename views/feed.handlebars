@@ -1,57 +1,55 @@
 <section style="background-image: linear-gradient(to top, #fff, #55aceeff)">
-        <ul>
-            <div>
-                <ol>
-                    <div
-                        class="card"
-                        style="width: 20%; float: left; margin-left: 7%"
-                    >
-                        <li class="list-group-item" style="background: #ccd6dd">
-                            <h5 style="float: left"><a href="/feed/{{currentFeed.id}}">{{currentFeed.title}}</a> by <a href="/profile/{{currentFeed.user.id}}">{{currentFeed.user.username}}</a></h5>
-                            {{#if ../loggedIn}}
-                                <button
-                                    style="float: right"
-                                    class="follow-feed-button"
-                                    data-feed-id="{{currentFeed.id}}"
-                                    data-logged-in-user-id="{{../loggedInUserData.id}}"
-                                    data-user-created-id="{{currentFeed.user_id}}"
-                                >+</button>
-                            {{/if}}
-                        </li>
-                        <ul class="list-group list-group-flush">
-                            {{#each currentFeed.feed_sources}}
-                                <li class="list-group-item">{{this.source}}</li>
-                            {{/each}}
-                        </ul>
-                    </div>
-                </ol>
-            </div>
-    </ul>
-        <div class="container my-5 py-5">
-            <div class="row d-flex justify-content-center">
-                <div class="col-md-12 col-lg-6">
-                    <div class="card text-dark">
-                        {{#each feedComments}}
-                            <div class="card-body p-4">
-                                <div class="d-flex flex-start">
-                                    <img class="rounded-circle shadow-1-strong me-3" src="../assets/default-profile.png" alt="avatar" width="60" height="60" />
-                                    <div>
-                                        <h6 class="fw-bold mb-1"><a href="/profile/{{this.user.id}}">{{this.user.username}}</a> - {{format_time this.createdAt}}</h6>
-                                        <div class="d-flex align-items-center mb-3"></div>
-                                        <p class="mb-0 commentText">
-                                            {{this.comment}}
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        {{/each}}
-                        <hr class="my-0" />
-                        {{#if loggedIn}}
-                            <input placeholder="Write a comment..." type="comment" class="comment-input"><button id="postBtn" data-logged-in-user-id="{{loggedInUserData.id}}" data-current-feed-id="{{currentFeed.id}}">Post</button></input>
+    <ul>
+        <div>
+            <ol>
+                <div class="card" style="width: 20%; float: left; margin-left: 7%">
+                    <li class="list-group-item" style="background: #ccd6dd">
+                        <h5 style="float: left"><a href="/feed/{{currentFeed.id}}">{{currentFeed.title}}</a> by <a
+                                href="/profile/{{currentFeed.user.id}}">{{currentFeed.user.username}}</a></h5>
+                        {{#if ../loggedIn}}
+                        <button style="float: right" class="follow-feed-button" data-feed-id="{{currentFeed.id}}"
+                            data-logged-in-user-id="{{../loggedInUserData.id}}"
+                            data-user-created-id="{{currentFeed.user_id}}">+</button>
                         {{/if}}
+                    </li>
+                    <ul class="list-group list-group-flush">
+                        {{#each currentFeed.feed_sources}}
+                        <li class="list-group-item">{{this.source}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </ol>
+        </div>
+    </ul>
+    <div class="container my-5 py-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-12 col-lg-6">
+                <div class="card text-dark">
+                    {{#each feedComments}}
+                    <div class="card-body p-4">
+                        <div class="d-flex flex-start">
+                            <img class="rounded-circle shadow-1-strong me-3" src="../assets/default-profile.png"
+                                alt="avatar" width="60" height="60" />
+                            <div>
+                                <h6 class="fw-bold mb-1"><a href="/profile/{{this.user.id}}">{{this.user.username}}</a>
+                                    - {{format_time this.createdAt}}</h6>
+                                <div class="d-flex align-items-center mb-3"></div>
+                                <p class="mb-0 commentText">
+                                    {{this.comment}}
+                                </p>
+                            </div>
+                        </div>
                     </div>
+                    {{/each}}
+                    <hr class="my-0" />
+                    {{#if loggedIn}}
+                    <input placeholder="Write a comment..." type="comment" class="comment-input"><button id="postBtn"
+                        data-logged-in-user-id="{{loggedInUserData.id}}"
+                        data-current-feed-id="{{currentFeed.id}}">Post</button></input>
+                    {{/if}}
                 </div>
             </div>
         </div>
+    </div>
 </section>
 <script src="../js/comment.js"></script>

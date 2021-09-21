@@ -41,6 +41,12 @@ app.use(express.urlencoded({ extended: false }));
 //set public folder
 app.use(express.static(path.join(__dirname, "public")));
 
+
+// GET Route for terms of services page
+app.get('/tos', (req, res) =>
+  res.sendFile(path.join(__dirname, '/public/tos.html'))
+);
+
 // Sets up the routes
 app.use(controllers);
 
