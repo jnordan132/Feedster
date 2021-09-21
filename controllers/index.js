@@ -5,11 +5,13 @@ const profileRoutes = require("./profile-routes");
 const homepageRoutes = require("./homepage-routes");
 const feedRoutes = require("./feed-routes");
 
+
 //use each of the routes files in the controllers folder
 router.use("/api", apiRoutes);
 router.use("/profile", profileRoutes);
 router.use("/", homepageRoutes);
 router.use("/feed", feedRoutes);
+
 
 router.get("/signup", async (req, res) => {
     res.render("signup", {
