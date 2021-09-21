@@ -98,6 +98,7 @@ router.get("/:id", async (req, res) => {
             }
             element.tweetFeed = tweetArray;
         }
+        console.log(userDataCleaned);
         //get to each feed source that was followed by user who's profile it is
         // followedFeedDataCleaned.forEach((element) => {
         //     let feedToModify = element.feed;
