@@ -1,8 +1,8 @@
 const router = require("express").Router();
 const { Users, Feeds, FeedSources } = require("../models");
 
-
 router.get("/", async (req, res) => {
+    // router.get("/", async (req, res,next) => { //--> could use this line if instead of doing explicit catches on line 29 of this file we opt for line 30 instead as defined in error handler
     try {
         const feedsData = await Feeds.findAll({
             include: [
@@ -26,6 +26,7 @@ router.get("/", async (req, res) => {
         });
     } catch (err) {
         res.status(500).json(err);
+        // or could call next(err) since the error handler is now set up in server.js
     }
 });
 
