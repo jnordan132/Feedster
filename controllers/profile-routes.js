@@ -76,32 +76,28 @@ router.get("/:id", async (req, res) => {
             record.get({ plain: true })
         );
 
-        var params = { screen_name: "nodejs" };
-        var test = await getTweets(params);
-        console.log(test);
+        // "statuses/user_timeline"
+        // var params = { screen_name: "@IAJournal_CH", count: 1 };
+        // var test = await getTweets(params);
+        // console.log(test);
 
         //NEED to add tweet data to each feed_source object TODO
         //get to each feed source that was created by profile
-        // let feedDataWithTwitterDataAdded = [];
-        // userDataCleaned.feeds.forEach((feedToModify) => {
-        //     feedToModify.feed_sources.forEach((feedSource) => {
-        //         // console.log(feedSource);
-        //         var myTest = [];
-        //         twitterClient.get(
-        //             "statuses/user_timeline",
-        //             { screen_name: feedSource.source },
-        //             async function (error, tweets, response) {
-        //                 if (!error) {
-        //                     var jsonResponse = await JSON.parse(response.body);
-        //                     console.log(jsonResponse);
-        //                     myTest.push[jsonResponse];
-        //                 }
-        //             }
-        //         );
-        //         console.log(myTest);
-        //     });
-        // });
-        // console.log(userDataCleaned);
+        var tweetArray = [];
+        var tweetCount = 1;
+        for (let i = 0; i < userDataCleaned.feeds.length; i++) {
+            const element = userDataCleaned.feeds[i];
+            for (let j = 0; j < element.feed_sources.length; j++) {
+                const ele = element.feed_sources[j];
+                var params = { screen_name: ele.source, count: tweetCount };
+                var twitterFeed = await getTweets(params);
+                for (let k = 0; k < twitterFeed.length; k++) {
+                    const el = twitterFeed[k];
+                    tweetArray.push(el);
+                }
+            }
+            element.tweetFeed = tweetArray;
+        }
         //get to each feed source that was followed by user who's profile it is
         // followedFeedDataCleaned.forEach((element) => {
         //     let feedToModify = element.feed;
