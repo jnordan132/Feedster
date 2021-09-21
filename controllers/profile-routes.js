@@ -76,19 +76,39 @@ router.get("/:id", async (req, res) => {
             record.get({ plain: true })
         );
 
-        // twitterConnection1(params);
+        var params = { screen_name: "nodejs" };
+        var test = await getTweets(params);
+        console.log(test);
 
         //NEED to add tweet data to each feed_source object TODO
         //get to each feed source that was created by profile
-        userDataCleaned.feeds.forEach((element) => {
-            let feedToModify = element;
-            console.log(feedToModify);
-        });
+        // let feedDataWithTwitterDataAdded = [];
+        // userDataCleaned.feeds.forEach((feedToModify) => {
+        //     feedToModify.feed_sources.forEach((feedSource) => {
+        //         // console.log(feedSource);
+        //         var myTest = [];
+        //         twitterClient.get(
+        //             "statuses/user_timeline",
+        //             { screen_name: feedSource.source },
+        //             async function (error, tweets, response) {
+        //                 if (!error) {
+        //                     var jsonResponse = await JSON.parse(response.body);
+        //                     console.log(jsonResponse);
+        //                     myTest.push[jsonResponse];
+        //                 }
+        //             }
+        //         );
+        //         console.log(myTest);
+        //     });
+        // });
+        // console.log(userDataCleaned);
         //get to each feed source that was followed by user who's profile it is
-        followedFeedDataCleaned.forEach((element) => {
-            let feedToModify = element.feed;
-            console.log(feedToModify);
-        });
+        // followedFeedDataCleaned.forEach((element) => {
+        //     let feedToModify = element.feed;
+
+        //     console.log(feedToModify);
+        //     console.log("---------------");
+        // });
 
         res.render("profile", {
             UserAndFeedData: userDataCleaned,
@@ -106,24 +126,20 @@ router.get("/:id", async (req, res) => {
     }
 });
 
-var params = { screen_name: "nodejs" };
-
-async function getTwitterFeed(paramsObject) {
-    twitterClient.get(
-        "statuses/user_timeline",
-        paramsObject,
-        async function (error, tweets, response) {
-            if (!error) {
-                const test = await response;
-                myTest(test);
+async function getTweets(parameterObject) {
+    return new Promise(function (resolve, reject) {
+        twitterClient.get(
+            "statuses/user_timeline",
+            parameterObject,
+            function (error, tweets, response) {
+                if (!error) {
+                    return resolve(JSON.parse(response.body));
+                } else {
+                    console.log(error);
+                }
             }
-        }
-    );
-}
-
-function myTest(test) {
-    var testr = JSON.parse(test.body);
-    console.log(testr[0]);
+        );
+    });
 }
 
 module.exports = router;
