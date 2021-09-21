@@ -18,7 +18,8 @@
                                         <i class="fas fa-envelope fa-lg me-3 fa-fw"></i> {{!-- added a font icon --}}
                                         <div class="form-outline flex-fill mb-0"></div> {{!-- mb-0 eliminates the margin
                                         bottom --}}
-                                        <input type="email" id="typeEmailX"
+                                        {{!-- email autocomplete DOM best practice: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete --}}
+                                        <input type="email" autocomplete="email" id="typeEmailX"
                                             placeholder="Email e.g. feedsterfan2021@gmail.com"
                                             class="form-control form-control-lg" required/> {{!-- marked the field
                                         required and added a pattern pattern="^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$" --}}
@@ -31,8 +32,9 @@
                                         <i class="fas fa-lock fa-lg me-3 fa-fw"></i>{{!-- added a font icon --}}
                                         <div class="form-outline flex-fill mb-0"> {{!-- mb-0 eliminates the margin
                                             bottom --}}
-                                            <input type="password" placeholder="Password (minimum 6 characters)"
-                                                id="typePasswordX" class="form-control form-control-lg" required min="6"/> {{!-- marked the field required and added a
+                                            {{!-- best practices for signup pages: https://web.dev/sign-in-form-best-practices/, specifying multiple id's using ',': https://stackoverflow.com/questions/25416717/can-input-form-attribute-specify-multiple-form-ids-or-not --}}
+                                            <input type="password" autocomplete="current-password" placeholder="Password (minimum 6 characters)"
+                                                id="typePasswordX, current-password" class="form-control form-control-lg" required min="6"/> {{!-- marked the field required and added a
                                             pattern pattern="[A-Za-z0-9]"--}}
                                             <label class="form-label" for="typePasswordX"></label>
                                         </div>
