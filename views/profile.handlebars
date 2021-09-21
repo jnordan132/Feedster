@@ -46,6 +46,7 @@
                             <h5 style="float: left"><a
                                     href="/feed/{{this.id}}"
                                 >{{this.feed.title}}</a> by <a href="/profile/{{this.feed.user.id}}">{{this.feed.user.username}}</a></h5>
+                                <h5>Test-favorited: {{this.feed.tweetFeed.0.text}}</h5>
                             {{#if ../loggedIn}}
                                 <button
                                     style="float: right"
@@ -79,6 +80,7 @@
                             <h5 style="float: left"><a
                                     href="/feed/{{this.id}}"
                                 >{{this.title}}</a> by <a href="/profile/{{this.user.id}}">{{this.user.username}}</a></h5>
+                                <h5>Test-created: {{this.tweetFeed.0.text}}</h5>
                             {{#if ../loggedIn}}
                                 <button
                                     style="float: right"
