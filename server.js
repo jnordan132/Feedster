@@ -1,6 +1,6 @@
 // Dependencies
 const express = require("express");
-const favicon = require('serve-favicon');
+const favicon = require("serve-favicon");
 const expressHandlebars = require("express-handlebars");
 const session = require("express-session");
 const path = require("path");
@@ -39,14 +39,13 @@ app.set("view engine", "handlebars");
 //allow api to use json and url encoding
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
 //set public folder
 app.use(express.static(path.join(__dirname, "public")));
 
 //favicon as defined: https://www.npmjs.com/package/serve-favicon
-// app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.get('/favicon', (req, res) =>
-  res.sendFile(path.join(__dirname, '/public/favicon.ico'))
-);
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+
 
 // GET Route for terms of services page
 app.get('/tos', (req, res) =>
