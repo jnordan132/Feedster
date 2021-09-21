@@ -2,7 +2,9 @@ const router = require("express").Router();
 const { Users, Feeds, FeedFollowers, FeedSources } = require("../models");
 const Sequelize = require("sequelize");
 
-router.get("/:id", async (req, res) => {
+// router.get("/:id", async (req, res) => {
+    //--> using this line instead of doing explicit catches on line 82 of this file so as to opt for line 83 instead as defined in error handler in server js file
+    router.get("/:id", async (req, res) => { 
     try {
         const userData = await Users.findOne({
             where: {
@@ -77,7 +79,10 @@ router.get("/:id", async (req, res) => {
             profileFollowedFeeds: followedFeedDataCleaned,
         });
     } catch (err) {
-        res.status(500).json(err);
+        // res.status(500).json(err);
+        next(err);
+                // or could call next(err) since the error handler is now set up in server.js
+
     }
 });
 
