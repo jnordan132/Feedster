@@ -8,8 +8,6 @@ const twitterClient = require("../config/twitter-connection");
 //--> using this line instead of doing explicit catches on line 82 of this file so as to opt for line 83 instead as defined in error handler in server js file
 router.get("/:id", async (req, res) => {
     try {
-        twitterConnection1(params);
-
         const userData = await Users.findOne({
             where: {
                 id: req.params.id,
@@ -78,7 +76,20 @@ router.get("/:id", async (req, res) => {
             record.get({ plain: true })
         );
 
-        console.log(userDataCleaned);
+        // twitterConnection1(params);
+
+        //NEED to add tweet data to each feed_source object TODO
+        //get to each feed source that was created by profile
+        userDataCleaned.feeds.forEach((element) => {
+            let feedToModify = element;
+            console.log(feedToModify);
+        });
+        //get to each feed source that was followed by user who's profile it is
+        followedFeedDataCleaned.forEach((element) => {
+            let feedToModify = element.feed;
+            console.log(feedToModify);
+        });
+
         res.render("profile", {
             UserAndFeedData: userDataCleaned,
             profileFollowersCount: feedFollowersCountData,
@@ -90,14 +101,14 @@ router.get("/:id", async (req, res) => {
         });
     } catch (err) {
         // res.status(500).json(err);
-        next(err);
+        // next(err);
         // or could call next(err) since the error handler is now set up in server.js
     }
 });
 
 var params = { screen_name: "nodejs" };
 
-async function twitterConnection1(paramsObject) {
+async function getTwitterFeed(paramsObject) {
     twitterClient.get(
         "statuses/user_timeline",
         paramsObject,
