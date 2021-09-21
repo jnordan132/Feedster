@@ -97,16 +97,28 @@ router.get("/:id", async (req, res) => {
                 }
             }
             element.tweetFeed = tweetArray;
+            tweetArray = [];
         }
-        console.log(userDataCleaned);
-        //get to each feed source that was followed by user who's profile it is
-        // followedFeedDataCleaned.forEach((element) => {
-        //     let feedToModify = element.feed;
 
-        //     console.log(feedToModify);
-        //     console.log("---------------");
-        // });
-
+        var tweetArray2 = [];
+        for (let x = 0; x < followedFeedDataCleaned.length; x++) {
+            const element = followedFeedDataCleaned[x].feed;
+            for (let y = 0; y < element.feed_sources.length; y++) {
+                const ele = element.feed_sources[y];
+                var params2 = {
+                    screen_name: ele.source,
+                    count: tweetCount,
+                };
+                var twitterFeed2 = await getTweets(params2);
+                for (let q = 0; q < twitterFeed2.length; q++) {
+                    const el = twitterFeed2[q];
+                    tweetArray2.push(el);
+                }
+            }
+            element.tweetFeed = tweetArray2;
+            tweetArray2 = [];
+        }
+        // console.log(followedFeedDataCleaned[1].feed.tweetFeed);
         res.render("profile", {
             UserAndFeedData: userDataCleaned,
             profileFollowersCount: feedFollowersCountData,
