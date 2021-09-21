@@ -31,7 +31,8 @@
     "jest": "^26.6.3",
     "mysql2": "^2.3.0",
     "sequelize": "^6.6.5",
-    "serve-favicon": "^2.5.0"
+    "serve-favicon": "^2.5.0",
+    "twitter": "^1.7.1"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
