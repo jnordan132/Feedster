@@ -69,28 +69,29 @@ font-family: 'Ultra', serif;}}
           <li class="nav-item">
             {{#if loggedIn}}
               <a href="/profile/{{loggedInUserData.id}}">
+              {{!-- To meet accessibility standards - updated the nav bar tabs for signup/login buttons to have more contrast as per the report: https://wave.webaim.org/report#/https://feedster-twitter-feed.herokuapp.com/ ( We may need to change the font color top right for the signup/login buttons and make the text white )  --}}
                 <button
                   class="no-button"
-                  style="background-color: #66757f; color: #000000; border-radius: 5px; border: 1px solid #595959; margin-left: 4px; margin-right: 10px;"
+                  style="background-color: #6d7981; color: #e1e8ed; border-radius: 5px; border: 1px solid #7a7a7a; margin-left: 4px; margin-right: 10px;"
                   id="profile"
                 >Profile</button></a>
               <a href="/logout/">
                 <button
                   class="no-button"
-                  style="background-color: #66757f; color: #000000; border-radius: 5px; border: 1px solid #595959; margin-left: 4px; margin-right: 10px;"
+                  style="background-color: #6d7981; color: #e1e8ed; border-radius: 5px; border: 1px solid #7a7a7a; margin-left: 4px; margin-right: 10px;"
                   id="logout"
                 >Logout</button></a>
 
             {{else}}
               <a href="/signup/">
                 <button
-                  style="background-color: #66757f; color: #000000; border-radius: 5px; border: 1px solid #595959; margin-top: 4px; margin-right: 10px;"
+                  style="background-color: #6d7981; color: #e1e8ed; border-radius: 5px; border: 1px solid #7a7a7a; margin-top: 4px; margin-right: 10px;"
                 >
                   Sign up
                 </button></a>
               <a href="/login/">
                 <button
-                  style="background-color: #66757f; color: #000000; border-radius: 5px; border: 1px solid #595959; margin-top: 4px; margin-right: 10px;"
+                  style="background-color: #6d7981; color: #e1e8ed; border-radius: 5px; border: 1px solid #7a7a7a; margin-top: 4px; margin-right: 10px;"
                 >
                   Login
                 </button></a>
