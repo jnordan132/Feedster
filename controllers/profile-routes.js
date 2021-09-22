@@ -84,7 +84,7 @@ router.get("/:id", async (req, res) => {
         //NEED to add tweet data to each feed_source object TODO
         //get to each feed source that was created by profile
         var tweetArray = [];
-        var tweetCount = 1;
+        var tweetCount = 2;
         for (let i = 0; i < userDataCleaned.feeds.length; i++) {
             const element = userDataCleaned.feeds[i];
             for (let j = 0; j < element.feed_sources.length; j++) {
@@ -93,7 +93,7 @@ router.get("/:id", async (req, res) => {
                 var twitterFeed = await getTweets(params);
                 for (let k = 0; k < twitterFeed.length; k++) {
                     const el = twitterFeed[k];
-                    el.text = wrapWithHtml(el.text);
+                    // el.text = wrapWithHtml(el.text);
                     tweetArray.push(el);
                 }
             }
@@ -113,6 +113,7 @@ router.get("/:id", async (req, res) => {
                 var twitterFeed2 = await getTweets(params2);
                 for (let q = 0; q < twitterFeed2.length; q++) {
                     const el = twitterFeed2[q];
+                    // el.text = wrapWithHtml(el.text);
                     tweetArray2.push(el);
                 }
             }

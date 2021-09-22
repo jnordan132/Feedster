@@ -28,4 +28,10 @@ module.exports = {
             minute: "numeric",
         });
     },
+    at_sign_format_twitter: (str) => {
+        if (str.charAt(0) !== "@") {
+            return "@" + str;
+        }
+        return str;
+    },
 };

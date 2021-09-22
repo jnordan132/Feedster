@@ -148,6 +148,7 @@ document.querySelector(".submit-feed").addEventListener("click", submitNewFeed);
 const tweetTexts = document.querySelectorAll(".timeline-Tweet-text");
 tweetTexts.forEach((el) => (el.innerHTML = decodeHTMLEntities(el.innerHTML)));
 
+//https://stackoverflow.com/questions/5796718/html-entity-decode
 function decodeHTMLEntities(text) {
     var entities = [
         ["amp", "&"],
