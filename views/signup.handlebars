@@ -56,7 +56,7 @@
                       https://stackoverflow.com/questions/21727317/how-to-check-confirm-password-field-in-form-without-reloading-page/21727518
                       --}}
                       <input type="password" autocomplete="new-password" placeholder="Password (minimum 6 characters)"
-                        id="typePasswordX, new-password" class="form-control form-control-lg" onkeyup='return check()' onkeydown='check();'
+                        id="typePasswordX, new-password" class="form-control form-control-lg" oninput='return check()'
                         required min="6" />
                       {{! marked the field required and added a pattern pattern="[A-Za-z0-9]"
                       }}
@@ -73,7 +73,7 @@
                       {{! mb-0 eliminates the margin bottom }}
                       <input type="password" autocomplete="new-password"
                         placeholder="Repeat Password (should match what was entered above)" id="typePasswordAgainX"
-                        class="form-control form-control-lg" onkeyup='return check()' onkeydown='check();' oninput='return match()' required />
+                        class="form-control form-control-lg" oninput='return match()' required />
                       {{! marked the field required and added a pattern pattern="[A-Za-z0-9]""
                       }}
                       <label class="form-label" for="typePasswordAgainX"></label>
