@@ -1,9 +1,22 @@
-const signupFormHandler = async (event) => {
+    const signupFormHandler = async (event) => {
     event.preventDefault();
 
     const username = document.querySelector("#typeUsernameX").value.trim();
     const email = document.querySelector("#typeEmailX").value.trim();
     const password = document.querySelector("#typePasswordX").value.trim();
+    const confirmPassword = document.querySelector("#typePasswordAgainX").value.trim();
+    
+    // check for password match
+    const check = function () {
+        if (password == confirmPassword) {
+            document.getElementById('message').style.color = 'green';
+            document.getElementById('message').innerHTML = 'Password is matching';
+        } else {
+            document.getElementById('message').style.color = 'red';
+            document.getElementById('message').innerHTML = 'Password is not matching';
+        }
+    }
+
     console.log(username);
     //new accounts by default are not admins
     const is_admin = false;

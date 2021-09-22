@@ -4,12 +4,13 @@
     <div class="row d-flex justify-content-center align-items-center mt-5">
       <div class="col-12 col-lg-12 col-lg-6 col-xl-11 col-xl-5 col-md-8">
         <div class="card main-card card-body p-5 text-center" style="border-radius: 1rem">
-          <div class="mt-md-3 pb-5">
+          <div class="mt-md-2 pb-2">
             {{! updated for smaller screen responsiveness }}
             <h2 class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-2 text-uppercase">Sign up</h2>
             <p class="text-black mb-4">
               Please enter a Username, an Email, and a Password!
             </p>
+
             {{! grouped all these inputs into a form for responsiveness }}
             <form class="mx-1 mx-md-4" title="Please fill out all required fields highlighted before proceeding!">
               <div class="form-outline form-white mb-4">
@@ -17,9 +18,10 @@
                   <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                   <div class="form-outline flex-fill mb-0">
                     {{! mb-0 eliminates the margin bottom }}
-                    {{!-- trying to fix the dom console warnings as stated per the recommended sign up page guidelines/best practices: https://web.dev/sign-in-form-best-practices/#element-attributes --}}
-                    <input type="username" id="typeUsernameX" autocomplete="username" placeholder="Username e.g. FeedsterFan2021"
-                      class="form-control form-control-lg" required />
+                    {{!-- trying to fix the dom console warnings as stated per the recommended sign up page
+                    guidelines/best practices: https://web.dev/sign-in-form-best-practices/#element-attributes --}}
+                    <input type="username" id="typeUsernameX" autocomplete="username"
+                      placeholder="Username e.g. FeedsterFan2021" class="form-control form-control-lg" required />
                     {{! marked the field required and added a pattern pattern="[A-Za-z0-9]" }}
                     <label class="form-label" for="typeUsernameX" placeholder="Username"></label>
                   </div>
@@ -31,9 +33,12 @@
                     {{! added a font icon }}
                     <div class="form-outline flex-fill mb-0"></div>
                     {{! mb-0 eliminates the margin bottom }}
-                   {{!-- fixed the dom warning in chrome browsers as defined here: https://stackoverflow.com/questions/48525114/chrome-warning-dom-password-forms-should-have-optionally-hidden-username-fi --}}
-                    <input type="email" id="typeEmailX, email" autocomplete="username email" placeholder="Email e.g. feedsterfan2021@gmail.com"
-                      class="form-control form-control-lg" required />
+                    {{!-- fixed the dom warning in chrome browsers as defined here:
+                    https://stackoverflow.com/questions/48525114/chrome-warning-dom-password-forms-should-have-optionally-hidden-username-fi
+                    --}}
+                    <input type="email" id="typeEmailX, email" autocomplete="username email"
+                      placeholder="Email e.g. feedsterfan2021@gmail.com" class="form-control form-control-lg"
+                      required />
                     {{! marked the field required and added, a pattern . referenced :
                     https://docs.netapp.com/oci-73/index.jsp?topic=%2Fcom.netapp.doc.oci-acg%2FGUID-452051E1-0F8B-415E-87FE-D8AD97881072.html
                     pattern="^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}$"}}
@@ -46,8 +51,13 @@
                     <i class="fas fa-lock fa-lg me-3 fa-fw"></i>{{! added a font icon }}
                     <div class="form-outline flex-fill mb-0">
                       {{! mb-0 eliminates the margin bottom }}
-                      <input type="password" autocomplete="new-password" placeholder="Password (minimum 6 characters)" id="typePasswordX, new-password"
-                        class="form-control form-control-lg" required min="6" />
+                      {{!-- https://www.w3schools.com/jsref/event_onkeyup.asp - onkeyup is used to check the match
+                      between the password confirm password fields as suggested here:
+                      https://stackoverflow.com/questions/21727317/how-to-check-confirm-password-field-in-form-without-reloading-page/21727518
+                      --}}
+                      <input type="password" autocomplete="new-password" placeholder="Password (minimum 6 characters)"
+                        id="typePasswordX, new-password" class="form-control form-control-lg" onkeyup='return check()' onkeydown='check();'
+                        required min="6" />
                       {{! marked the field required and added a pattern pattern="[A-Za-z0-9]"
                       }}
                       <label class="form-label" for="typePasswordX"></label>
@@ -61,24 +71,33 @@
                     <i class="fas fa-key fa-lg me-3 fa-fw"></i>{{! added a font icon }}
                     <div class="form-outline flex-fill mb-0">
                       {{! mb-0 eliminates the margin bottom }}
-                      <input type="password" autocomplete="new-password" placeholder="Repeat Password (should match what was entered above)"
-                        id="typePasswordAgainX" class="form-control form-control-lg" required />
+                      <input type="password" autocomplete="new-password"
+                        placeholder="Repeat Password (should match what was entered above)" id="typePasswordAgainX"
+                        class="form-control form-control-lg" onkeyup='return check()' onkeydown='check();' oninput='return match()' required />
                       {{! marked the field required and added a pattern pattern="[A-Za-z0-9]""
                       }}
                       <label class="form-label" for="typePasswordAgainX"></label>
                     </div>
                   </div>
+                  <div class="passCheck">
+                    <p id='up'> At least 1 uppercase character</p>
+                    <p id='num'> At least 1 number</p>
+                  </div>
                 </div>
+
                 {{! added a check box to agree to terms of service }}
                 <div class="form-check d-flex justify-content-center mb-3">
                   <input class="form-check-input me-2" type="checkbox" id="terms" required />
                   <label class="form-check-label" for="terms">
                     I agree to all
-                    {{!-- this href references the terms of service html page can be written in handlebars format as well as seen in ../views/tos.handlebars in which case a route similar to /login needs to be created --}}
+                    {{!-- this href references the terms of service html page can be written in handlebars format as
+                    well as seen in ../views/tos.handlebars in which case a route similar to /login needs to be created
+                    --}}
                     {{!-- <a href="../public/tos.html" target="_blank">Terms of Service</a> --}}
-                                      <a href="/tos" target="_blank">Terms of Service</a>
+                    <a href="/tos" target="_blank">Terms of Service</a>
                   </label>
                 </div>
+
                 <button class="btn text-white btn-black btn-outline-dark btn-lg px-5 submit-signup" type="submit">
                   Sign up
                 </button>
@@ -99,3 +118,4 @@
   }
 </style>
 <script src="../js/signup.js"></script>
+<script src="../js/passcheck.js"></script>

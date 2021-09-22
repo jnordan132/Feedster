@@ -53,3 +53,9 @@ h5 {
     text-align: center;
 }
 
+.passCheck{
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+    color: #6e6e6e
+}
