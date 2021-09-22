@@ -18,4 +18,20 @@ module.exports = {
             return content;
         }
     },
+    format_time_twitter: (str) => {
+        const myDate = new Date(str);
+        return myDate.toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+            hour: "numeric",
+            minute: "numeric",
+        });
+    },
+    at_sign_format_twitter: (str) => {
+        if (str.charAt(0) !== "@") {
+            return "@" + str;
+        }
+        return str;
+    },
 };
