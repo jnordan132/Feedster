@@ -73,16 +73,17 @@
                       {{! mb-0 eliminates the margin bottom }}
                       <input type="password" autocomplete="new-password"
                         placeholder="Repeat Password (should match what was entered above)" id="typePasswordAgainX"
-                        class="form-control form-control-lg" oninput='return match()' required />
+                        class="form-control form-control-lg" required />
                       {{! marked the field required and added a pattern pattern="[A-Za-z0-9]""
                       }}
                       <label class="form-label" for="typePasswordAgainX"></label>
                     </div>
                   </div>
-                  <div class="passCheck">
+                  {{!-- visual check for pass requirements being met --}}
+                  {{!-- <div class="passCheck">
                     <p id='up'> At least 1 uppercase character</p>
                     <p id='num'> At least 1 number</p>
-                  </div>
+                  </div> --}}
                 </div>
 
                 {{! added a check box to agree to terms of service }}
@@ -118,4 +119,4 @@
   }
 </style>
 <script src="../js/signup.js"></script>
-<script src="../js/passcheck.js"></script>
+{{!-- <script src="../js/passcheck.js"></script> --}}
