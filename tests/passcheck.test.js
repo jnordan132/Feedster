@@ -1,5 +1,10 @@
 const {not} = require('expect');
 const passLen = require('../public/js/passcheck');
+const testExample = require('../models/testExample');
+
+test('Prints Testing Suite Status', () => {
+  expect(testExample("Testing using Jest has been successfully setup!")).toBe("Testing using Jest has been successfully setup!");
+});
 
 // describe groups test together
 describe("Password Requirements Checks", () => {
