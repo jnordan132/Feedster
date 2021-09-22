@@ -1,10 +1,10 @@
 .gradient-custom {
     /* Chrome 10-25, Safari 5.1-6 */
-    background: -webkit-linear-gradient(to top,#55aceeff,rgb(247, 246, 246));
+    background: -webkit-linear-gradient(to top, #55aceeff, rgb(247, 246, 246));
     /* fallback for old browsers */
     background: #55aceeff;
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(to top,#55aceeff,rgb(247, 246, 246));
+    background: linear-gradient(to top, #55aceeff, rgb(247, 246, 246));
 }
 
 body {
@@ -42,6 +42,13 @@ input:valid {
     border: 1px solid #7a7a7a;
 }
 
+.login-submit {
+    background-color: #6d7981;
+    color: #e1e8ed;
+    border-radius: 5px;
+    border: 1px solid #7a7a7a;
+}
+
 .form-control {
     border: 1px solid #888888;
 }
@@ -51,6 +58,7 @@ input:valid {
 
 h5 {
     text-align: center;
+
 }
 
 .passCheck{
