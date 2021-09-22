@@ -1,47 +1,46 @@
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Feedster</title>
-        {{! favicon }}
-        <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
-            crossorigin="anonymous"
-        />
-        {{! google font import}}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        {{! this is just an example for the options pasted here: https://uncralfsf052021.slack.com/archives/C02EGGUQB4L/p1632194733118600 }}
-        <link
-            href="https://fonts.googleapis.com/css2?family=Audiowide&family=Bungee+Inline&family=Creepster&family=Frijole&family=Gluten:wght@900&family=Luckiest+Guy&family=Righteous&family=Rock+Salt&family=Rubik+Beastly&family=Ultra&display=swap"
-            rel="stylesheet"
-        />
-        <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
-        />
-        {{!  font awesome import }}
-        <link
-            rel="stylesheet"
-            href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-            integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
-            crossorigin="anonymous"
-        />
-        <link rel="stylesheet" href="../css/style.css" />
-        <link rel="stylesheet" href="../css/twitter-feed.css" />
-    </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feedster</title>
+    {{! favicon }}
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    {{! google font import}}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    {{! this is just an example for the options pasted here: https://uncralfsf052021.slack.com/archives/C02EGGUQB4L/p1632194733118600 }}
+    <link
+      href="https://fonts.googleapis.com/css2?family=Audiowide&family=Bungee+Inline&family=Creepster&family=Frijole&family=Gluten:wght@900&family=Luckiest+Guy&family=Righteous&family=Rock+Salt&family=Rubik+Beastly&family=Ultra&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    {{!  font awesome import }}
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+      integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
 
-    <body>
-        <nav
-            style="background-image: linear-gradient(to bottom,#55aceeff,rgb(247, 246, 246));"
-            class="navbar"
-        >
-            <div class="container-fluid">
-                {{! font family can be replaced per selection 
+  <body>
+    <nav
+      style="background-image: linear-gradient(to bottom,#55aceeff,rgb(247, 246, 246));"
+      class="navbar"
+    >
+      <div class="container-fluid">
+        {{! font family can be replaced per selection 
         font-family: 'Audiowide', cursive;
 font-family: 'Bungee Inline', cursive;
 font-family: 'Creepster', cursive;
@@ -52,62 +51,59 @@ font-family: 'Righteous', cursive;
 font-family: 'Rock Salt', cursive;
 font-family: 'Rubik Beastly', cursive;
 font-family: 'Ultra', serif;}}
-                {{! increased size and weight of the text }}
-                <a
-                    style="color: rgb(0, 0, 0); font-weight: bold; font-size:2rem;"
-                    class="navbar-brand"
-                    href="/"
-                ><i style="margin-left: .5rem" class="fab fa-twitter"></i>
-                    Feedster</a>
-                <ul class="nav justify-content-end">
-                    <li class="nav-item">
-                        <a
-                            class="nav-link active"
-                            aria-current="page"
-                            href="/"
-                        ><i
-                                class="bi bi-house-fill"
-                                style="color: rgb(0, 0, 0); font-size: 21px"
-                            ></i></a>
-                    </li>
-                    <li class="nav-item"></li>
-                    <li class="nav-item">
-                        {{#if loggedIn}}
-                            <a href="/profile/{{loggedInUserData.id}}">
-                                <button
-                                    class="no-button"
-                                    style="background-color: #66757f; color: #000000; border-radius: 5px; border: 1px solid #595959; margin-left: 4px; margin-right: 10px;"
-                                    id="profile"
-                                >Profile</button></a>
-                            <a href="/logout/">
-                                <button
-                                    class="no-button"
-                                    style="background-color: #66757f; color: #000000; border-radius: 5px; border: 1px solid #595959; margin-left: 4px; margin-right: 10px;"
-                                    id="logout"
-                                >Logout</button></a>
+        {{! increased size and weight of the text }}
+        <a
+          style="color: rgb(0, 0, 0); font-weight: bold; font-size:2rem;"
+          class="navbar-brand"
+          href="/"
+        ><i style="margin-left: .5rem" class="fab fa-twitter"></i>
+          Feedster</a>
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/"><i
+                class="bi bi-house-fill"
+                style="color: rgb(0, 0, 0); font-size: 21px"
+              ></i></a>
+          </li>
+          <li class="nav-item"></li>
+          <li class="nav-item">
+            {{#if loggedIn}}
+              <a href="/profile/{{loggedInUserData.id}}">
+              {{!-- To meet accessibility standards - updated the nav bar tabs for signup/login buttons to have more contrast as per the report: https://wave.webaim.org/report#/https://feedster-twitter-feed.herokuapp.com/ ( We may need to change the font color top right for the signup/login buttons and make the text white )  --}}
+                <button
+                  class="no-button"
+                  style="background-color: #6d7981; color: #e1e8ed; border-radius: 5px; border: 1px solid #7a7a7a; margin-left: 4px; margin-right: 10px;"
+                  id="profile"
+                >Profile</button></a>
+              <a href="/logout/">
+                <button
+                  class="no-button"
+                  style="background-color: #6d7981; color: #e1e8ed; border-radius: 5px; border: 1px solid #7a7a7a; margin-left: 4px; margin-right: 10px;"
+                  id="logout"
+                >Logout</button></a>
 
-                        {{else}}
-                            <a href="/signup/">
-                                <button
-                                    style="background-color: #66757f; color: #000000; border-radius: 5px; border: 1px solid #595959; margin-top: 4px; margin-right: 10px;"
-                                >
-                                    Sign up
-                                </button></a>
-                            <a href="/login/">
-                                <button
-                                    style="background-color: #66757f; color: #000000; border-radius: 5px; border: 1px solid #595959; margin-top: 4px; margin-right: 10px;"
-                                >
-                                    Login
-                                </button></a>
-                        {{/if}}
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <main>
-            {{{body}}}
-        </main>
-        <script src="../js/main.js"></script>
-    </body>
+            {{else}}
+              <a href="/signup/">
+                <button
+                  style="background-color: #6d7981; color: #e1e8ed; border-radius: 5px; border: 1px solid #7a7a7a; margin-top: 4px; margin-right: 10px;"
+                >
+                  Sign up
+                </button></a>
+              <a href="/login/">
+                <button
+                  style="background-color: #6d7981; color: #e1e8ed; border-radius: 5px; border: 1px solid #7a7a7a; margin-top: 4px; margin-right: 10px;"
+                >
+                  Login
+                </button></a>
+            {{/if}}
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <main>
+      {{{body}}}
+    </main>
+    <script src="../js/main.js"></script>
+  </body>
 
 </html>

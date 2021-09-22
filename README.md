@@ -23,7 +23,7 @@ This repository is for group 8's Project2 - Interactive Full-Stack Application: 
 
 ## Project Resources:
 👉[Watch - Project App Demo]()<br/>
-👉[Project Live URL (Heroku)]()<br/>
+👉[Project Live URL (Heroku)](https://feedster-twitter-feed.herokuapp.com/)<br/>
 👉[Project Wireframe/Plan/Proposal](https://docs.google.com/document/d/1UkL3EaRt6hdjlgQpQYlR67exUwjlNt862YEAd5OwlI8/edit#)<br/>
 👉[Project Presentation Deck](https://docs.google.com/presentation/d/10QaO9KH8HtUXj__81ve0SZcpO5DbMbqqQr4iPpbwKks/edit?usp=sharing)<br/>
 👉[Database Schema](./assets/database-schema.png)
