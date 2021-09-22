@@ -4,7 +4,7 @@
   "description": "Feedster: Full Stack Web App Project2",
   "main": ".eslintrc.js",
   "scripts": {
-    "test": "jest --verbose",
+    "test": "jest --coverage",
     "start": "node server.js",
     "seed": "node seeds/index.js",
     "dev": "nodemon server.js",

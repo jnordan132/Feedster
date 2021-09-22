@@ -21,7 +21,7 @@
                     {{!-- trying to fix the dom console warnings as stated per the recommended sign up page
                     guidelines/best practices: https://web.dev/sign-in-form-best-practices/#element-attributes --}}
                     <input type="username" id="typeUsernameX" autocomplete="username"
-                      placeholder="Username e.g. FeedsterFan2021" class="form-control form-control-lg" required />
+                      placeholder="Username e.g. FeedsterFan2021" class="form-control form-control-lg" pattern="[A-Za-z0-9]" required />
                     {{! marked the field required and added a pattern pattern="[A-Za-z0-9]" }}
                     <label class="form-label" for="typeUsernameX" placeholder="Username"></label>
                   </div>
@@ -37,7 +37,7 @@
                     https://stackoverflow.com/questions/48525114/chrome-warning-dom-password-forms-should-have-optionally-hidden-username-fi
                     --}}
                     <input type="email" id="typeEmailX, email" autocomplete="username email"
-                      placeholder="Email e.g. feedsterfan2021@gmail.com" class="form-control form-control-lg"
+                      placeholder="Email e.g. feedsterfan2021@gmail.com" class="form-control form-control-lg" pattern="^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}$"
                       required />
                     {{! marked the field required and added, a pattern . referenced :
                     https://docs.netapp.com/oci-73/index.jsp?topic=%2Fcom.netapp.doc.oci-acg%2FGUID-452051E1-0F8B-415E-87FE-D8AD97881072.html
@@ -56,7 +56,7 @@
                       https://stackoverflow.com/questions/21727317/how-to-check-confirm-password-field-in-form-without-reloading-page/21727518
                       --}}
                       <input type="password" autocomplete="new-password" placeholder="Password (minimum 6 characters)"
-                        id="typePasswordX, new-password" class="form-control form-control-lg" oninput='return check()'
+                        id="typePasswordX, new-password" class="form-control form-control-lg" pattern="[A-Za-z0-9]"
                         required min="6" />
                       {{! marked the field required and added a pattern pattern="[A-Za-z0-9]"
                       }}
@@ -73,7 +73,7 @@
                       {{! mb-0 eliminates the margin bottom }}
                       <input type="password" autocomplete="new-password"
                         placeholder="Repeat Password (should match what was entered above)" id="typePasswordAgainX"
-                        class="form-control form-control-lg" required />
+                        class="form-control form-control-lg" pattern="[A-Za-z0-9]" required />
                       {{! marked the field required and added a pattern pattern="[A-Za-z0-9]""
                       }}
                       <label class="form-label" for="typePasswordAgainX"></label>
@@ -119,4 +119,5 @@
   }
 </style>
 <script src="../js/signup.js"></script>
-{{!-- <script src="../js/passcheck.js"></script> --}}
+{{!--
+<script src="../js/passcheck.js"></script> --}}
