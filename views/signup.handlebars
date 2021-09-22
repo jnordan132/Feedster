@@ -31,7 +31,8 @@
                     {{! added a font icon }}
                     <div class="form-outline flex-fill mb-0"></div>
                     {{! mb-0 eliminates the margin bottom }}
-                    <input type="email" id="typeEmailX" placeholder="Email e.g. feedsterfan2021@gmail.com"
+                   {{!-- fixed the dom warning in chrome browsers as defined here: https://stackoverflow.com/questions/48525114/chrome-warning-dom-password-forms-should-have-optionally-hidden-username-fi --}}
+                    <input type="email" id="typeEmailX, email" autocomplete="username email" placeholder="Email e.g. feedsterfan2021@gmail.com"
                       class="form-control form-control-lg" required />
                     {{! marked the field required and added, a pattern . referenced :
                     https://docs.netapp.com/oci-73/index.jsp?topic=%2Fcom.netapp.doc.oci-acg%2FGUID-452051E1-0F8B-415E-87FE-D8AD97881072.html
