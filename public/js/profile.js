@@ -145,8 +145,8 @@ document
 
 document.querySelector(".submit-feed").addEventListener("click", submitNewFeed);
 
-const tweetText = document.querySelector(".timeline-Tweet-text");
-tweetText.innerHTML = decodeHTMLEntities(tweetText.innerHTML);
+const tweetTexts = document.querySelectorAll(".timeline-Tweet-text");
+tweetTexts.forEach((el) => (el.innerHTML = decodeHTMLEntities(el.innerHTML)));
 
 function decodeHTMLEntities(text) {
     var entities = [
