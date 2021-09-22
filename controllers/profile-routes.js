@@ -93,6 +93,7 @@ router.get("/:id", async (req, res) => {
                 var twitterFeed = await getTweets(params);
                 for (let k = 0; k < twitterFeed.length; k++) {
                     const el = twitterFeed[k];
+                    el.text = wrapWithHtml(el.text);
                     tweetArray.push(el);
                 }
             }
@@ -118,7 +119,7 @@ router.get("/:id", async (req, res) => {
             element.tweetFeed = tweetArray2;
             tweetArray2 = [];
         }
-        // console.log(followedFeedDataCleaned[1].feed.tweetFeed);
+        console.log(userDataCleaned.feeds[0].tweetFeed);
         res.render("profile", {
             UserAndFeedData: userDataCleaned,
             profileFollowersCount: feedFollowersCountData,
@@ -149,6 +150,49 @@ async function getTweets(parameterObject) {
             }
         );
     });
+}
+
+function wrapWithHtml(str) {
+    let hashTagStartIndex = str.indexOf("#");
+    let hashTagEndIndex = str.indexOf(" ", hashTagStartIndex);
+    let hashtagSubstring = "";
+    if (hashTagStartIndex != -1) {
+        hashtagSubstring = str.substring(hashTagStartIndex, hashTagEndIndex);
+        if (
+            hashtagSubstring[hashtagSubstring.length - 1] == "." ||
+            hashtagSubstring[hashtagSubstring.length - 1] == "?" ||
+            hashtagSubstring[hashtagSubstring.length - 1] == "!"
+        ) {
+            hashtagSubstring = hashtagSubstring.substring(
+                0,
+                hashtagSubstring.length - 1
+            );
+        }
+    } else {
+        hashtagSubstring = null;
+    }
+    let linkStartIndex = str.indexOf("http");
+    let linkEndIndex = str.length;
+    let linkSubstring = str.substring(linkStartIndex, linkEndIndex);
+    let newHashtagSubstring = null;
+    if (hashtagSubstring) {
+        let removeHashtag = hashtagSubstring.substring(
+            1,
+            hashtagSubstring.length
+        );
+        newHashtagSubstring = `<a href="https://twitter.com/hashtag/${removeHashtag}?src=hashtag_click" target="_blank">${hashtagSubstring}</a>`;
+    }
+    let newLinkSubstring = null;
+    if (linkSubstring) {
+        newLinkSubstring = `<a href="${linkSubstring}" target="_blank">${linkSubstring}</a>`;
+    }
+    //now generate the whole string and return it
+    let linkReplaced = str.replace(linkSubstring, newLinkSubstring);
+    let hashtagReplaced = linkReplaced.replace(
+        hashtagSubstring,
+        newHashtagSubstring
+    );
+    return hashtagReplaced;
 }
 
 module.exports = router;

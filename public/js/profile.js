@@ -144,3 +144,29 @@ document
     .addEventListener("click", addFeedSource);
 
 document.querySelector(".submit-feed").addEventListener("click", submitNewFeed);
+
+const tweetText = document.querySelector(".timeline-Tweet-text");
+tweetText.innerHTML = decodeHTMLEntities(tweetText.innerHTML);
+
+function decodeHTMLEntities(text) {
+    var entities = [
+        ["amp", "&"],
+        ["apos", "'"],
+        ["#x27", "'"],
+        ["#x2F", "/"],
+        ["#39", "'"],
+        ["#47", "/"],
+        ["lt", "<"],
+        ["gt", ">"],
+        ["nbsp", " "],
+        ["quot", '"'],
+    ];
+
+    for (var i = 0, max = entities.length; i < max; ++i)
+        text = text.replace(
+            new RegExp("&" + entities[i][0] + ";", "g"),
+            entities[i][1]
+        );
+
+    return text;
+}
