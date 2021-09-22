@@ -24,8 +24,8 @@
                         </li>
                         <ul class="list-group list-group-flush">
                             {{#each this.feed_sources}}
-                                <li class="list-group-item">{{this.source}}</li>
-                            {{/each}}
+                                <li class="list-group-item"><a class="twitter-timeline" data-lang="en" data-width="400" data-height="200" data-theme="light" href="https://twitter.com/{{this.source}}>?ref_src=twsrc%5Etfw"></a></li>
+                            {{/each}} 
                         </ul>
                     </div>
                 </ol>
@@ -34,3 +34,4 @@
     </ul>
 </section>
 <script src="../js/homepage.js"></script>
+<script src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
