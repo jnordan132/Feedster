@@ -66,7 +66,8 @@
                     </div>
                     {{/each}}
                     {{#if loggedIn}}
-                    <input placeholder="Write a comment..." type="comment" class="comment-input"><button id="postBtn"
+                    <input placeholder="Write a comment..." type="comment" class="comment-input">
+                    <button id="postBtn"
                         data-logged-in-user-id="{{loggedInUserData.id}}"
                         data-current-feed-id="{{currentFeed.id}}">Post</button></input>
                     {{/if}}
