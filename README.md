@@ -88,6 +88,8 @@ h.Finally, to run this application enter `node server.js` or `npm start` to be p
 ⏭️More Social Media Handles <br/>
 ⏭️Improve Accessibility/Performance Scores<br/>
 ⏭️Increased Testing functionality integrated <br/>
+⏭️[Convert Alerts to Modals](https://kanecohen.github.io/modal-vanilla/)  <br/>
+⏭️[Improve the comment input on the feed page to be text area](https://www.quackit.com/html/codes/comment_box_colors.cfm) <br/>
 
 
 ## Mock-Up (Screenshots & Responsive UI View)

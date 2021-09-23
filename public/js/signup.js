@@ -33,6 +33,7 @@
             if (response.ok) {
                 document.location.replace("/");
             } else {
+                // need to convert this alert to modal: https://kanecohen.github.io/modal-vanilla/
                 alert(
                     "Failed to sign up. " + response.status + ": " + response.statusText
                 );
