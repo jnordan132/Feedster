@@ -120,7 +120,6 @@ router.get("/:id", async (req, res) => {
             element.tweetFeed = tweetArray2;
             tweetArray2 = [];
         }
-        console.log(userDataCleaned.feeds[0].tweetFeed);
         res.render("profile", {
             UserAndFeedData: userDataCleaned,
             profileFollowersCount: feedFollowersCountData,
