@@ -49,6 +49,7 @@
         <div class="row d-flex justify-content-center" >
             <div class="col-md-12 col-lg-6" style="width: 59rem; margin-left: 4rem">
                 <div class="card text-dark" style="border: 1px solid #7a7a7a">
+                    {{!-- iterate through data from controller and create tweet feed --}}
                     {{#each feedComments}}
                     <div class="card-body p-3" style="border: 1px solid #7a7a7a">
                         <h7 style="float: right; color: #7a7a7a; font-size: 12px;">{{format_time_twitter this.createdAt}}</h7>

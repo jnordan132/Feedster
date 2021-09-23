@@ -32,10 +32,12 @@ const followFeedHandler = async (event) => {
     }
 };
 
+//follow a feed when logged in
 const followFeedButtons = document.querySelectorAll(".follow-feed-button");
 followFeedButtons.forEach((el) =>
     el.addEventListener("click", (event) => followFeedHandler(event))
 );
 
+//decode tweet contents and add links to urls and hashtags
 const tweetTexts = document.querySelectorAll(".timeline-Tweet-text");
 tweetTexts.forEach((el) => (el.innerHTML = decodeHTMLEntities(el.innerHTML)));
