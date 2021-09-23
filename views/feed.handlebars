@@ -66,9 +66,10 @@
                     </div>
                     {{/each}}
                     {{#if loggedIn}}
-                    <input placeholder="Write a comment..." type="comment" class="comment-input"><button id="postBtn"
+                    {{!--Changed from input to text areahttps://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_textarea_placeholder --}}
+                    <textarea rows="4" cols="50" placeholder="Write a comment..." type="comment" class="comment-input"><button id="postBtn"
                         data-logged-in-user-id="{{loggedInUserData.id}}"
-                        data-current-feed-id="{{currentFeed.id}}">Post</button></input>
+                        data-current-feed-id="{{currentFeed.id}}">Post</button></textarea>
                     {{/if}}
                 </div>
             </div>
