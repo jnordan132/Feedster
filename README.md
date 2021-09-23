@@ -98,6 +98,7 @@ h.Finally, to run this application enter `node server.js` or `npm start` to be p
 **SignUp Page with Client-side input validation (passing)** <img src= "./public/assets/SignUpSuccess.png"> <br/>
 **SignUp Terms of Service Page** <img src= "./public/assets/TermsOfService.png"> <br/>
 **Login Page with Client-side input validation (unmet conditions)** <img src= "./public/assets/LoginUnmetConditions.png"> <br/>
+<!-- **Form Input Reset to nirvana state:** <img src= "public\assets\ResetInputFieldsInForm.png"> <br/> -->
 **No Console Errors on Page Load (Browser - Inspect Element>Console)** <img src= "./public/assets/NoErrors.png"> <br/>
 **WrongURL Json Prompt:** <img src= "./public/assets/WrongURLJSONPROMPT.png"> <br/>
 **User Profile Page: (URL: /profile/id#)** <img src= ""> <br/>
