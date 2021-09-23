@@ -33,4 +33,5 @@ submit.addEventListener("click", async (event) => {
 });
 
 const tweetTexts = document.querySelectorAll(".timeline-Tweet-text");
+console.log(tweetTexts);
 tweetTexts.forEach((el) => (el.innerHTML = decodeHTMLEntities(el.innerHTML)));
