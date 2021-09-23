@@ -6,12 +6,9 @@
                 <ol>
                     <div
                         class="card"
-                        style="width: 20%; float: left; margin-left: 7%"
+                        style="width: 25%; float: left; margin-left: 5.5%"
                     >
                         <li class="list-group-item" style="background: #ccd6dd">
-                            <h5 style="float: left"><a
-                                    href="/feed/{{this.id}}"
-                                >{{this.title}}</a> by <a href="/profile/{{this.user.id}}">{{this.user.username}}</a></h5>
                             {{#if ../loggedIn}}
                                 <button
                                     style="float: right"
@@ -21,6 +18,9 @@
                                     data-user-created-id="{{this.user_id}}"
                                 >+</button>
                             {{/if}}
+                            <h5 style="text-align: center"><a
+                                    href="/feed/{{this.id}}"
+                                >{{this.title}}</a> by <a href="/profile/{{this.user.id}}">{{this.user.username}}</a></h5>
                         </li>
                         <ul class="list-group list-group-flush">
                             {{#each this.tweetFeed}}
