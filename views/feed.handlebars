@@ -4,8 +4,8 @@
             <ol>
                 <div class="container pt-4">
                     <div class="row d-flex justify-content-center">
-                        <div class="card" style="width: 57.5rem; padding: 0">
-                            <li class="list-group-item" style="background: #ccd6dd; justify-content: center">
+                        <div class="card" style="width: 57.5rem; padding: 0; border: 1px #7a7a7a">
+                            <li class="list-group-item" style="background: #ccd6dd; justify-content: center; border: 2px solid #7a7a7a; border-bottom: none">
                                 <h5 style="text-align: center"><a href="/feed/{{currentFeed.id}}">{{currentFeed.title}}</a> by <a
                                         href="/profile/{{currentFeed.user.id}}">{{currentFeed.user.username}}</a></h5>
                                 {{#if ../loggedIn}}
@@ -14,9 +14,9 @@
                                     data-user-created-id="{{currentFeed.user_id}}">+</button>
                                 {{/if}}
                             </li>
-                            <ul class="list-group list-group-flush">
+                            <ul class="list-group list-group-flush" style="border: 1px solid #7a7a7a">
                                 {{#each currentFeed.tweetFeed}}
-                                    <div class="tw-block-parent tw-background">
+                                    <div class="tw-block-parent tw-background" style="border: 1px solid #7a7a7a">
                                         <div class="timeline-TweetList-tweet">
                                             <div class="timeline-Tweet">
                                             <div class="timeline-Tweet-brand">
@@ -46,7 +46,7 @@
             </div>
     </ul>
     <div class="container mb-5 pb-5">
-        <div class="row d-flex justify-content-center">
+        <div class="row d-flex justify-content-center" >
             <div class="col-md-12 col-lg-6" style="width: 59rem; margin-left: 4rem">
                 <div class="card text-dark" style="border: 1px solid #7a7a7a">
                     {{#each feedComments}}
@@ -66,10 +66,12 @@
                     </div>
                     {{/each}}
                     {{#if loggedIn}}
-                    <input placeholder="Write a comment..." type="comment" class="comment-input">
-                    <button id="postBtn"
-                        data-logged-in-user-id="{{loggedInUserData.id}}"
-                        data-current-feed-id="{{currentFeed.id}}">Post</button></input>
+                    <input placeholder="Write a comment..." type="comment" class="comment-input" style="border: 1px solid #7a7a7a; height: 2.5rem;">
+                        <button id="postBtn"
+                            data-logged-in-user-id="{{loggedInUserData.id}}"
+                            data-current-feed-id="{{currentFeed.id}}" style="position: absolute; bottom:0; right: 0; border-radius: 4px; border: 1px solid #7a7a7a; width: 10%; height: 2.5rem; background-color: #6d7981; color: #e1e8ed;">Post
+                        </button>
+                    </input>
                     {{/if}}
                 </div>
             </div>
