@@ -2,6 +2,7 @@
 node_modules
 desktop.ini
 .env
+.env.OLD
 
 # Logs
 

@@ -36,3 +36,6 @@ const followFeedButtons = document.querySelectorAll(".follow-feed-button");
 followFeedButtons.forEach((el) =>
     el.addEventListener("click", (event) => followFeedHandler(event))
 );
+
+const tweetTexts = document.querySelectorAll(".timeline-Tweet-text");
+tweetTexts.forEach((el) => (el.innerHTML = decodeHTMLEntities(el.innerHTML)));
