@@ -1,6 +1,5 @@
 const router = require("express").Router();
 const { Feeds, Users, FeedSources, Comments } = require("../models");
-// const twitterClient = require("../config/twitter-connection");
 const twitterHelpers = require("../utils/twitterHelpers");
 
 router.get("/:id", async (req, res) => {
@@ -19,11 +18,13 @@ router.get("/:id", async (req, res) => {
         ],
     });
     const feed = feedData.get({ plain: true });
+    //connect to twitter and get relevant feed data and then add it to json to pass to client
     var tweetArray = [];
     var tweetCount = 2;
     for (let j = 0; j < feed.feed_sources.length; j++) {
         const ele = feed.feed_sources[j];
         var params = { screen_name: ele.source, count: tweetCount };
+        //twitter get
         var twitterFeed = await twitterHelpers.getTweets(params);
         for (let k = 0; k < twitterFeed.length; k++) {
             const el = twitterFeed[k];
@@ -31,6 +32,7 @@ router.get("/:id", async (req, res) => {
             tweetArray.push(el);
         }
     }
+    twitterHelpers.sortTweetArray(tweetArray);
     feed.tweetFeed = tweetArray;
     const commentData = await Comments.findAll({
         where: {
@@ -43,8 +45,9 @@ router.get("/:id", async (req, res) => {
             },
         ],
     });
+    //clean data for consumption
     const comments = commentData.map((post) => post.get({ plain: true }));
-    console.log(feed);
+    //pass to handlebars
     res.render("feed", {
         loggedIn: req.session.loggedIn,
         loggedInUserData: req.session.loggedInUserData,

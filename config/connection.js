@@ -4,6 +4,7 @@ require("dotenv").config();
 let sequelize;
 //sequelize object with .env config parameter used throughout app
 //if statement contains logic to run on heroku or local
+//environmental variables can be found in .env file
 if (process.env.JAWSDB_URL) {
     sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {

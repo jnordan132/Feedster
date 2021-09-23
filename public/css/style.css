@@ -7,10 +7,10 @@
     background: linear-gradient(to top, #55aceeff, rgb(247, 246, 246));
 }
 
+
 body {
     background-image: linear-gradient(to top, #55aceeff, #fff);
 }
-
 
 /* input validation on the client side */
 
@@ -53,7 +53,22 @@ body {
     border: 1px solid #888888;
 }
 
-
+/* Updated the logic for links to be color coded https://www.w3schools.com/css/tryit.asp?filename=trycss_link */
+/* unvisited link */
+h2 a:link {
+    color: rgb(17, 0, 255);
+  }
+  
+  /* visited link */
+  a:visited {
+    color: rgb(24, 92, 24);
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: rgb(69, 10, 117);
+  }
+  
 /* footer h5 */
 
 h5 {
