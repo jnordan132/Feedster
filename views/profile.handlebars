@@ -159,10 +159,10 @@
                 </button>
             </div>
             <div class="modal-body">
-                <label for="feedTitle">Enter a Feed Title</label>
-                <input type="text" class="form-control" id="feedTitle" placeholder="Fun Programming Challenges">
-                <button type="button" class="btn btn-primary add-feed-button">Add Feed</button>
-                <div class="feed-entries"></div>
+                <label for="feedTitle" title="Enter a feed title here">Enter a Feed Title</label> <br>
+                <input type="text" class="form-control" id="feedTitle" placeholder="Fun Programming Challenges" required> <br>
+                <button type="button" style="background: #e1e8ed;" class="btn btn-primaryadd-feed-button" title="Click 'Add Feed' to add multiple Twitter Feed Sources at once">Add Feed</button><br>
+                <div class="feed-entries" title="Enter the '@twitterhandlename' here"></div><br>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary submit-feed" data-logged-in-user-id="{{loggedInUserData.id}}">Submit</button>
