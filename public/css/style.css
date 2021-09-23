@@ -14,17 +14,17 @@ body {
 
 /* input validation on the client side */
 
-input:invalid {
+.form-control:invalid {
     /* visual indication of the field is highlighted in red if the input doesn't meet standards*/
     border: 2px solid red;
 }
 
-input:invalid:required {
+.form-control:invalid:required {
     /* background-color: rgb(212, 226, 233); */
     background-color: #fff;
 }
 
-input:valid {
+.form-control:valid {
     /* visual indication of the field is highlighted in green if the input does meet standards*/
     border: 2px solid green;
 }
@@ -68,5 +68,6 @@ h5 {
 }
 
 .comment-input {
-    border: 1px solid black;
+    border: 1px solid #7a7a7a;
+    height: 30px;
 }
