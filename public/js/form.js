@@ -77,5 +77,4 @@ FormValidation.formValidation(form, {
     }
 });  
 
-
 document.querySelector(".submit-signup").addEventListener("click", form);
