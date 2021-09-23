@@ -23,9 +23,9 @@ This repository is for group 8's Project2 - Interactive Full-Stack Application: 
 
 ## Project Resources:
 👉[Watch - Project App Demo]()<br/>
-👉[Project Live URL (Heroku)](https://feedster-twitter-feed.herokuapp.com/)<br/>
+👉[Project Live URL (Heroku)]()<br/>
 👉[Project Wireframe/Plan/Proposal](https://docs.google.com/document/d/1UkL3EaRt6hdjlgQpQYlR67exUwjlNt862YEAd5OwlI8/edit#)<br/>
-👉[Project Presentation Deck](https://docs.google.com/presentation/d/10QaO9KH8HtUXj__81ve0SZcpO5DbMbqqQr4iPpbwKks/edit?usp=sharing)<br/>
+👉[Project Presentation Deck](https://docs.google.com/presentation/d/1mRIDBl0DP-tDFZV7GiqyeLykqNoXN9z3CVnP8862yow/edit?usp=sharing)<br/>
 👉[Database Schema](./assets/database-schema.png)
 
 ## User Story
@@ -56,9 +56,10 @@ Apply everything we’ve learnt over the past six units to create a real-world f
 ```
 
 ## Technology Used in this Project
+**Accessibility Testing:** <a href="https://github.com/GoogleChrome/lighthouse" target="_blank"> <img align="center" width="60" src="./public/assets/lighthouse-logo.svg"> </a>  <br>
 **IDE/OS:** <img align="center" src="https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white"> <img align="center" src="https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=apple&logoColor=white"> <img align="center" src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white"> <br>
 **Cloud Hosting:** <img align="center" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"> <img align="center" src="https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white"> <br>
-**Frontend:** <img align="center" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> <img align="center" src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white"> <img align="center" src="https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white"> <img align="center" src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E"> <br>
+**Frontend:** <img align="center" src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E"> <img align="center" src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white"> <img align="center" src="https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white"> <br>
 **Backend:** <img align="center" src="https://img.shields.io/badge/json-5E5C5C?style=for-the-badge&logo=json&logoColor=white"> <img align="center" src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E"><br>
 **Database:** <img align="center" src="https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white"> <br>
 **Frameworks:** <img align="center" src="https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white"> <img align="center" src="https://img.shields.io/badge/Handlebars-JS-f0772b?style=for-the-badge&logo=Handlebars-JS&logoColor=fff"> <img align="center" src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"> <img align="center" src="https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white"> <img align="center" src="https://img.shields.io/badge/-Sequelize-090909?style=for-the-badge&logo=Sequelize"> <img align="center" src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white"> <img align="center" src="https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white"> <br>
@@ -68,14 +69,40 @@ Apply everything we’ve learnt over the past six units to create a real-world f
 
 
 ## App Usage/ Installation Instructions: 
-To use **Feedster** web interface, first run 'npm install' or 'npm i' after cloning this repository to your local system in order to install the npm package dependencies as specified in the 'package.json'. Prior to proceeding update the .env.EXAMPLE file by editing your mysql username and password for the db & updating the file name to .env in the root folder itself. Next proceed to source the schema and seed files by connecting to the mysql db using your login credentials & running source db/schema.sql; command and then exiting form the mysql connection to seed the db by running npm run seed. Finally, to run this application enter 'node server.js' or 'npm start' to be prompted with the localhost/port# url.
+To use **Feedster** web interface, 
+a. Clone this repository to your local system
+b. Run `npm install` or `npm i` in order to install the npm package dependencies as specified in the `package.json` file 
+c. Update the `.env.EXAMPLE` file by editing your mysql username and password for the db; including twitter specifics as defined in *https://www.npmjs.com/package/twitter*
+d. Update the file name from `.env.EXAMPLE` to `.env` and ensure this file is in the root folder itself
+e. Connect to the mysql DB locally and source the `schema.sql;` file by running `source db/schema.sql;` command
+*Example:* <img src= "./public/assets/MySqlCommands.png">
+f. `exit` from the mysql connection to and `seed` the db by running `npm run seed` 
+*Example:* <img src= "./public/assets/npmRunSeed.png">
+g. Optionally, you can run `node run test` for *Jest* - a javascript testing framework to kick off a series of quick tests
+*Example:* <img src= "./public/assets/npmRunTest.png">
+h.Finally, to run this application enter `node server.js` or `npm start` to be prompted with the `localhost/port#` url
 
 
 ## Project Future Enhancements
 ⏭️More Social Media Handles <br/>
+⏭️Improve Accessibility/Performance Scores<br/>
+⏭️Increased Testing functionality integrated <br/>
+
 
 ## Mock-Up (Screenshots & Responsive UI View)
-First Screen when web app loads: <img src= ""> <br/>
+**First Screen when web app loads:** <img src= ""> <br/>
+**SignUp Page with Client-side input validation (not passing)** <img src= "./public/assets/SignUpPage.png"> <br/>
+**SignUp Page with Client-side input validation (passing)** <img src= "./public/assets/SignUpSuccess.png"> <br/>
+**SignUp Terms of Service Page** <img src= "./public/assets/TermsOfService.png"> <br/>
+**Login Page with Client-side input validation (unmet conditions)** <img src= "./public/assets/LoginUnmetConditions.png"> <br/>
+**No Console Errors on Page Load (Browser - Inspect Element>Console)** <img src= "./public/assets/NoErrors.png"> <br/>
+**User Profile Page: (URL: /profile/id#)** <img src= ""> <br/>
+**Feed Page (URL: /feed/id#):** <img src= ""> <br/>
+**First Screen when web app loads:** <img src= ""> <br/>
+**First Screen when web app loads:** <img src= ""> <br/>
+
+## AccessibilityScores (LightHouseReports)
+
 
 ## Presentation Requirements
 ```
@@ -86,6 +113,8 @@ Demo 💻: Show your stuff!
 Directions for Future ⏭️ Development
 Links 🔗: to the deployed application in Heroku and the GitHub repository
 ```
+
+
 ## Grading Requirements=
 
 This project is graded based on the following criteria:
