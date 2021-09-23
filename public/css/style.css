@@ -7,7 +7,6 @@
     background: linear-gradient(to top, #55aceeff, rgb(247, 246, 246));
 }
 
-
 body {
     background-image: linear-gradient(to top, #55aceeff, #fff);
 }
@@ -57,18 +56,18 @@ body {
 /* unvisited link */
 h2 a:link {
     color: rgb(17, 0, 255);
-  }
-  
-  /* visited link */
-  a:visited {
+}
+
+/* visited link */
+a:visited {
     color: rgb(24, 92, 24);
-  }
-  
-  /* mouse over link */
-  a:hover {
+}
+
+/* mouse over link */
+a:hover {
     color: rgb(69, 10, 117);
-  }
-  
+}
+
 /* footer h5 */
 
 h5 {
@@ -81,7 +80,6 @@ h5 {
     text-align: center;
     color: #6e6e6e;
 }
-
 
 /* Comment Section */
 
@@ -145,4 +143,8 @@ h5 {
     height: 2.5rem;
     background-color: #6d7981;
     color: #e1e8ed;
+}
+
+.add-feed-button {
+    margin: 0.5em;
 }
