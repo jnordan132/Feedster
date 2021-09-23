@@ -2,7 +2,8 @@ const router = require("express").Router();
 const { Users, Feeds, FeedFollowers, FeedSources } = require("../models");
 const Sequelize = require("sequelize");
 // const AppError = require("./utils/appError");
-const twitterClient = require("../config/twitter-connection");
+// const twitterClient = require("../config/twitter-connection");
+const twitterHelpers = require("../utils/twitterHelpers");
 
 // router.get("/:id", async (req, res) => {
 //--> using this line instead of doing explicit catches on line 82 of this file so as to opt for line 83 instead as defined in error handler in server js file
@@ -90,10 +91,10 @@ router.get("/:id", async (req, res) => {
             for (let j = 0; j < element.feed_sources.length; j++) {
                 const ele = element.feed_sources[j];
                 var params = { screen_name: ele.source, count: tweetCount };
-                var twitterFeed = await getTweets(params);
+                var twitterFeed = await twitterHelpers.getTweets(params);
                 for (let k = 0; k < twitterFeed.length; k++) {
                     const el = twitterFeed[k];
-                    // el.text = wrapWithHtml(el.text);
+                    el.text = twitterHelpers.wrapURL(el.text);
                     tweetArray.push(el);
                 }
             }
@@ -110,17 +111,16 @@ router.get("/:id", async (req, res) => {
                     screen_name: ele.source,
                     count: tweetCount,
                 };
-                var twitterFeed2 = await getTweets(params2);
+                var twitterFeed2 = await twitterHelpers.getTweets(params2);
                 for (let q = 0; q < twitterFeed2.length; q++) {
                     const el = twitterFeed2[q];
-                    // el.text = wrapWithHtml(el.text);
+                    el.text = twitterHelpers.wrapURL(el.text);
                     tweetArray2.push(el);
                 }
             }
             element.tweetFeed = tweetArray2;
             tweetArray2 = [];
         }
-        console.log(userDataCleaned.feeds[0].tweetFeed);
         res.render("profile", {
             UserAndFeedData: userDataCleaned,
             profileFollowersCount: feedFollowersCountData,
@@ -136,64 +136,5 @@ router.get("/:id", async (req, res) => {
         // or could call next(err) since the error handler is now set up in server.js
     }
 });
-
-async function getTweets(parameterObject) {
-    return new Promise(function (resolve, reject) {
-        twitterClient.get(
-            "statuses/user_timeline",
-            parameterObject,
-            function (error, tweets, response) {
-                if (!error) {
-                    return resolve(JSON.parse(response.body));
-                } else {
-                    console.log(error);
-                }
-            }
-        );
-    });
-}
-
-function wrapWithHtml(str) {
-    let hashTagStartIndex = str.indexOf("#");
-    let hashTagEndIndex = str.indexOf(" ", hashTagStartIndex);
-    let hashtagSubstring = "";
-    if (hashTagStartIndex != -1) {
-        hashtagSubstring = str.substring(hashTagStartIndex, hashTagEndIndex);
-        if (
-            hashtagSubstring[hashtagSubstring.length - 1] == "." ||
-            hashtagSubstring[hashtagSubstring.length - 1] == "?" ||
-            hashtagSubstring[hashtagSubstring.length - 1] == "!"
-        ) {
-            hashtagSubstring = hashtagSubstring.substring(
-                0,
-                hashtagSubstring.length - 1
-            );
-        }
-    } else {
-        hashtagSubstring = null;
-    }
-    let linkStartIndex = str.indexOf("http");
-    let linkEndIndex = str.length;
-    let linkSubstring = str.substring(linkStartIndex, linkEndIndex);
-    let newHashtagSubstring = null;
-    if (hashtagSubstring) {
-        let removeHashtag = hashtagSubstring.substring(
-            1,
-            hashtagSubstring.length
-        );
-        newHashtagSubstring = `<a href="https://twitter.com/hashtag/${removeHashtag}?src=hashtag_click" target="_blank">${hashtagSubstring}</a>`;
-    }
-    let newLinkSubstring = null;
-    if (linkSubstring) {
-        newLinkSubstring = `<a href="${linkSubstring}" target="_blank">${linkSubstring}</a>`;
-    }
-    //now generate the whole string and return it
-    let linkReplaced = str.replace(linkSubstring, newLinkSubstring);
-    let hashtagReplaced = linkReplaced.replace(
-        hashtagSubstring,
-        newHashtagSubstring
-    );
-    return hashtagReplaced;
-}
 
 module.exports = router;
