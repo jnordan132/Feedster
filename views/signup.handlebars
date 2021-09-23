@@ -18,7 +18,8 @@
                   <div class="form-outline flex-fill mb-0">
                     {{! mb-0 eliminates the margin bottom }}
                     <input type="username" title="username must be at least 3 characters long"  id="typeUsernameX" placeholder="Username e.g. FeedsterFan2021"
-                      class="form-control form-control-lg" pattern="[A-Za-z0-9]{3}" required />
+                    {{!-- added a , after 3 for username to be minimum of 3 chars not just 3 chars --}}
+                      class="form-control form-control-lg" pattern="[A-Za-z0-9]{3,}" required />
                     {{! marked the field required and added a pattern pattern="[A-Za-z0-9]{3}" }}
                     <label class="form-label" for="typeUsernameX" placeholder="Username"></label>
                   </div>

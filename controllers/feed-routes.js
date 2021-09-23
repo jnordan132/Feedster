@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const { Feeds, Users, FeedSources, Comments } = require("../models");
-const twitterClient = require("../config/twitter-connection");
+// const twitterClient = require("../config/twitter-connection");
+const twitterHelpers = require("../utils/twitterHelpers");
 
 router.get("/:id", async (req, res) => {
     const feedData = await Feeds.findOne({
@@ -23,10 +24,10 @@ router.get("/:id", async (req, res) => {
     for (let j = 0; j < feed.feed_sources.length; j++) {
         const ele = feed.feed_sources[j];
         var params = { screen_name: ele.source, count: tweetCount };
-        var twitterFeed = await getTweets(params);
+        var twitterFeed = await twitterHelpers.getTweets(params);
         for (let k = 0; k < twitterFeed.length; k++) {
             const el = twitterFeed[k];
-            // el.text = wrapWithHtml(el.text);
+            el.text = twitterHelpers.wrapURL(el.text);
             tweetArray.push(el);
         }
     }
@@ -51,21 +52,5 @@ router.get("/:id", async (req, res) => {
         feedComments: comments,
     });
 });
-
-async function getTweets(parameterObject) {
-    return new Promise(function (resolve, reject) {
-        twitterClient.get(
-            "statuses/user_timeline",
-            parameterObject,
-            function (error, tweets, response) {
-                if (!error) {
-                    return resolve(JSON.parse(response.body));
-                } else {
-                    console.log(error);
-                }
-            }
-        );
-    });
-}
 
 module.exports = router;
