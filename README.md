@@ -23,7 +23,7 @@ This repository is for group 8's Project2 - Interactive Full-Stack Application: 
 
 ## Project Resources:
 👉[Watch - Project App Demo]()<br/>
-👉[Project Live URL (Heroku)]()<br/>
+👉[Project Live URL (Heroku)](https://feedster-twitter-feed.herokuapp.com/)<br/>
 👉[Project Wireframe/Plan/Proposal](https://docs.google.com/document/d/1UkL3EaRt6hdjlgQpQYlR67exUwjlNt862YEAd5OwlI8/edit#)<br/>
 👉[Project Presentation Deck](https://docs.google.com/presentation/d/1mRIDBl0DP-tDFZV7GiqyeLykqNoXN9z3CVnP8862yow/edit?usp=sharing)<br/>
 👉[Database Schema](./assets/database-schema.png)
@@ -98,11 +98,17 @@ h.Finally, to run this application enter `node server.js` or `npm start` to be p
 **No Console Errors on Page Load (Browser - Inspect Element>Console)** <img src= "./public/assets/NoErrors.png"> <br/>
 **User Profile Page: (URL: /profile/id#)** <img src= ""> <br/>
 **Feed Page (URL: /feed/id#):** <img src= ""> <br/>
-**First Screen when web app loads:** <img src= ""> <br/>
+**WrongURL Json Prompt:** <img src= "./public/assets/WrongURLJSONPROMPT.png"> <br/>
 **First Screen when web app loads:** <img src= ""> <br/>
 
 ## AccessibilityScores (LightHouseReports)
-
+**Landing Page Score:** <img src= "./public/assets/LandingPageScore.png"> <br/>
+**SignUp Page Score:** <img src= "./public/assets/SingUpPageScore.png"> <br/>
+**Terms Of Service Page Score:** <img src= "./public/assets/TermsOfServiceScore.png"> <br/>
+**User Profile Page Score:** <img src= "./public/assets/ProfilePageScore.png"> <br/>
+**Feed Page  Score:** <img src= "./public/assets/FeedPageScore.png"> <br/>
+**Login Page Score:** <img src= "./public/assets/LoginPageScore.png"> <br/>
+**Log Out Score:** <img src= "./public/assets/LogOutPageScore.png"> <br/>
 
 ## Presentation Requirements
 ```

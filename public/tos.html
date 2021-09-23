@@ -19,6 +19,8 @@
 
 <body style="background-color: #e1e8ed" class=" mx-auto container vh-100 row d-flex justify-content-center align-items-center
 ">
+<!-- added a main to improve accessibility score https://fae.disability.illinois.edu/pages/17c10b798cbc0686/rc/landmarks/page/1/  -->
+<main>
     <div style="
                 border-radius: 0.7rem;
                 border: dashed;
@@ -40,14 +42,21 @@
                     <i class="fas fa-hand-point-left"></i> Go back
                 </a>
             </h1>
+            <br>
+
             <h2>'Feedster' Terms of Service</h2>
+                                        <!-- adds a script to display last modified date and time -->
+                                        <script>
+                                            document.write("<u>Last modified on:</u> " + document.lastModified + "");
+                                        </script>
+                                        <br>
             <br />
             <h3>
                 PLEASE READ THE FOLLOWING TERMS OF SERVICE CAREFULLY BEFORE
                 USING, OR ACCESSING ANY PART OF THE 'FEEDSTER' WEB
                 APPLICATION!
             </h3>
-            <img src="../assets/mindless_scrolling.gif" width="200px" height="300px" alt="mindless scrolling Gif" />
+            <img src="../public/assets/mindless_scrolling.gif" width="200px" height="300px" alt="mindless scrolling Gif" />
             <br />
         </div>
 
@@ -70,24 +79,23 @@
             <br />
         </p>
         <strong class="text-center">Don't forget to read the fine print below!</strong>
-        <img src="../assets/contract-official.gif" width="300px" alt="contract Gif" />
+        <img src="../public/assets/contract-official.gif" width="300px" alt="contract Gif" />
         <br />
     </div>
-</body>
-<footer>
-    <marquee direction="left" scrollamount="15">
-        <h5>
-            <!-- adds a script to display last modified date and time -->
-            <script>
-                document.write("Last modified on: " + document.lastModified + "");
-            </script><br>
-            &copy; Copyright 2021 | <a href="https://github.com/DavidTunnell">David Tunnell</a>, <a
-                href="https://github.com/jnordan132">Jacob Nordan</a>, <a href="https://github.com/ilelandhayes">Leland
-                Hayes</a> and <a href="https://github.com/DionneNoellaBarretto">Dionne Noella Barretto</a>
-        </h5>
+</main>
+    <!-- <footer  style="background-image: linear-gradient(to bottom right,#55aceeff,rgb(247, 246, 246))"> -->
+        <!-- https://getbootstrap.com/docs/4.4/utilities/text/ - text wrapping in bootstrap -->
+        <marquee behavior="scroll" direction="left" width="80%" scrollamount="18" class="text-wrap" >
 
-    </marquee>
-</footer>
+            <h5>
+                © Copyright 2021 | <a href="https://github.com/DavidTunnell">David Tunnell</a>, <a
+                    href="https://github.com/jnordan132">Jacob Nordan</a>, <a href="https://github.com/ilelandhayes">Leland
+                    Hayes</a> and <a href="https://github.com/DionneNoellaBarretto">Dionne Noella Barretto</a>
+            </h5>
+        </marquee>
+
+</body>
+
 <script src="../js/login.js"></script>
 
 </html>
