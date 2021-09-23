@@ -23,6 +23,7 @@
                                 >{{this.title}}</a> by <a href="/profile/{{this.user.id}}">{{this.user.username}}</a></h5>
                         </li>
                         <ul class="list-group list-group-flush">
+                            {{!-- iterate through data from controller and create tweet feed --}}
                             {{#each this.tweetFeed}}
                                 <div class="tw-block-parent tw-background" style="border: 1px solid #dddddd">
                                     <div class="timeline-TweetList-tweet">
@@ -54,4 +55,3 @@
     </ul>
 </section>
 <script src="../js/homepage.js"></script>
-<script src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

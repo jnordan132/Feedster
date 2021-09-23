@@ -1,4 +1,5 @@
 //https://stackoverflow.com/questions/5796718/html-entity-decode
+//turns html symbols to the actual symbol
 function decodeHTMLEntities(text) {
     var entities = [
         ["amp", "&"],

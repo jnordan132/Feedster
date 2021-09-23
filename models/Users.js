@@ -43,7 +43,7 @@ Users.init(
         },
     },
     {
-        //Hooks (also known as lifecycle events), are functions which are called before and after calls in sequelize are executed.
+        //Hooks (aka lifecycle events), are functions which are called before and after calls in sequelize are executed.
         hooks: {
             //beforeCreate hook is used to work with data before a new instance is created
             async beforeCreate(newUserData) {

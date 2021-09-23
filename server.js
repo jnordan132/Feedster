@@ -1,13 +1,13 @@
 // Dependencies
 const express = require("express");
 const favicon = require("serve-favicon");
-const createError = require("http-errors"); // https://www.npmjs.com/package/http-errors
+// https://www.npmjs.com/package/http-errors
+const createError = require("http-errors");
 const expressHandlebars = require("express-handlebars");
 const session = require("express-session");
 const path = require("path");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const sequelize = require("./config/connection");
-// const twitterConnection = require("./config/twitter-connection");
 const controllers = require("./controllers");
 const helpers = require("./utils/helpers");
 const { errorMonitor } = require("events");
@@ -52,12 +52,7 @@ app.use(
 app.use(express.static(path.join(__dirname, "public")));
 
 //favicon as defined: https://www.npmjs.com/package/serve-favicon
-app.use(favicon(path.join(__dirname, "public", "favicon.ico")));
-
-// GET Route for terms of services page
-app.get("/tos", (req, res) =>
-    res.sendFile(path.join(__dirname, "/public/tos.html"))
-);
+app.use(favicon(path.join(__dirname, "public", "./assets/favicon.ico")));
 
 // Sets up the routes
 app.use(controllers);
