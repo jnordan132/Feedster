@@ -34,8 +34,11 @@ function wrapURL(text) {
             hashTagWrapped.slice(0, indexToRemove + 3) +
             hashTagWrapped.slice(indexToRemove + 4);
     }
-
-    return hashTagWrapped;
+    let atSignWrapped = hashTagWrapped.replace(
+        /(^|\W)(@[a-z\d][\w-]*)/gi,
+        `$1<a href="https://twitter.com/$2" target="_blank">$2</a>`
+    );
+    return atSignWrapped;
 }
 
 //https://stackoverflow.com/questions/10123953/how-to-sort-an-object-array-by-date-property
