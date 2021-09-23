@@ -31,3 +31,6 @@ submit.addEventListener("click", async (event) => {
         alert("Please enter a comment before submitting.");
     }
 });
+
+const tweetTexts = document.querySelectorAll(".timeline-Tweet-text");
+tweetTexts.forEach((el) => (el.innerHTML = decodeHTMLEntities(el.innerHTML)));
