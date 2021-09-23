@@ -18,13 +18,13 @@
                                     data-user-created-id="{{this.user_id}}"
                                 >+</button>
                             {{/if}}
-                            <h5 style="text-align: center"><a
+                            <h5 style="text-align: center; padding-left: 1rem; padding-right: 1rem"><a
                                     href="/feed/{{this.id}}"
                                 >{{this.title}}</a> by <a href="/profile/{{this.user.id}}">{{this.user.username}}</a></h5>
                         </li>
                         <ul class="list-group list-group-flush">
                             {{#each this.tweetFeed}}
-                                <div class="tw-block-parent tw-background">
+                                <div class="tw-block-parent tw-background" style="border: 1px solid #dddddd">
                                     <div class="timeline-TweetList-tweet">
                                         <div class="timeline-Tweet">
                                         <div class="timeline-Tweet-brand">
