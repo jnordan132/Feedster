@@ -85,7 +85,8 @@ h.Finally, to run this application enter `node server.js` or `npm start` to be p
 
 
 ## Project Future Enhancements
-⏭️More Social Media Handles <br/>
+⏭️More Social Media API Support/Integration <br/>
+⏭️Drill into feeds,followers, following from User's Profile Page <br/>
 ⏭️Improve Accessibility/Performance Scores<br/>
 ⏭️Increased Testing functionality integrated <br/>
 ⏭️[Convert Alerts to Modals](https://kanecohen.github.io/modal-vanilla/)  <br/>
@@ -96,10 +97,10 @@ h.Finally, to run this application enter `node server.js` or `npm start` to be p
 **First Screen when web app loads:** <img src= ""> <br/>
 **SignUp Page with Client-side input validation (not passing)** <img src= "./public/assets/SignUpPage.png"> <br/>
 **SignUp Page with Client-side input validation (passing)** <img src= "./public/assets/SignUpSuccess.png"> <br/>
-**SignUp Terms of Service Page** <img src= "./public/assets/TermsOfService.png"> <br/>
+**Feedster Terms of Service Page** <img src= "./public/assets/TermsOfService.png"> <br/>
 **Login Page with Client-side input validation (unmet conditions)** <img src= "./public/assets/LoginUnmetConditions.png"> <br/>
 <!-- **Form Input Reset to nirvana state:** <img src= "public\assets\ResetInputFieldsInForm.png"> <br/> -->
-**No Console Errors on Page Load (Browser - Inspect Element>Console)** <img src= "./public/assets/NoErrors.png"> <br/>
+**No Console Errors on Page Load (Browser -Right click for Inspect Element>Navigate to Console tab)** <img src= "./public/assets/NoErrors.png"> <br/>
 **WrongURL Json Prompt:** <img src= "./public/assets/WrongURLJSONPROMPT.png"> <br/>
 **User Profile Page: (URL: /profile/id#)** <img src= ""> <br/>
 **Feed Page (URL: /feed/id#):** <img src= ""> <br/>
