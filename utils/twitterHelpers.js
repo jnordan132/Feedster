@@ -27,8 +27,6 @@ function wrapURL(text) {
         /(^|\W)(#[a-z\d][\w-]*)/gi,
         `$1<a href="https://twitter.com/hashtag/$2?src=hashtag_click" target="_blank">$2</a>`
     );
-    console.log(hashTagWrapped);
-    console.log(hashTagWrapped.indexOf("ag/#"));
     var indexToRemove = hashTagWrapped.indexOf("ag/#");
     if (indexToRemove !== -1) {
         hashTagWrapped =
@@ -39,4 +37,13 @@ function wrapURL(text) {
     return hashTagWrapped;
 }
 
-module.exports = { getTweets, wrapURL };
+//https://stackoverflow.com/questions/10123953/how-to-sort-an-object-array-by-date-property
+function sortTweetArray(arr) {
+    arr.sort(function (a, b) {
+        // Turn your strings into dates, and then subtract them
+        // to get a value that is either negative, positive, or zero.
+        return new Date(b.created_at) - new Date(a.created_at);
+    });
+}
+
+module.exports = { getTweets, wrapURL, sortTweetArray };

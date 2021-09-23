@@ -98,6 +98,7 @@ router.get("/:id", async (req, res) => {
                     tweetArray.push(el);
                 }
             }
+            twitterHelpers.sortTweetArray(tweetArray);
             element.tweetFeed = tweetArray;
             tweetArray = [];
         }
@@ -118,6 +119,7 @@ router.get("/:id", async (req, res) => {
                     tweetArray2.push(el);
                 }
             }
+            twitterHelpers.sortTweetArray(tweetArray2);
             element.tweetFeed = tweetArray2;
             tweetArray2 = [];
         }

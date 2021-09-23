@@ -31,6 +31,7 @@ router.get("/:id", async (req, res) => {
             tweetArray.push(el);
         }
     }
+    twitterHelpers.sortTweetArray(tweetArray);
     feed.tweetFeed = tweetArray;
     const commentData = await Comments.findAll({
         where: {

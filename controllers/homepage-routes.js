@@ -37,9 +37,11 @@ router.get("/", async (req, res) => {
                     tweetArray.push(el);
                 }
             }
+            twitterHelpers.sortTweetArray(tweetArray);
             element.tweetFeed = tweetArray;
             tweetArray = [];
         }
+
         res.render("homepage", {
             UserAndFeedData: feedsDataCleaned,
             loggedIn: req.session.loggedIn,
