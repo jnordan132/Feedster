@@ -69,18 +69,19 @@ Apply everything we’ve learnt over the past six units to create a real-world f
 
 
 ## App Usage/ Installation Instructions: 
-To use **Feedster** web interface, 
-a. Clone this repository to your local system
-b. Run `npm install` or `npm i` in order to install the npm package dependencies as specified in the `package.json` file 
-c. Update the `.env.EXAMPLE` file by editing your mysql username and password for the db; including twitter specifics as defined in *https://www.npmjs.com/package/twitter*
-d. Update the file name from `.env.EXAMPLE` to `.env` and ensure this file is in the root folder itself
-e. Connect to the mysql DB locally and source the `schema.sql;` file by running `source db/schema.sql;` command
-*Example:*<br> <img src= "./public/assets/MySqlCommands.png">
-f. `exit` from the mysql connection to and `seed` the db by running `npm run seed` 
-*Example:*<br> <img src= "./public/assets/npmRunSeed.png">
-g. Optionally, you can run `node run test` for *Jest* - a javascript testing framework to kick off a series of quick tests
-*Example:* <br><img src= "./public/assets/npmRunTest.png">
-h.Finally, to run this application enter `node server.js` or `npm start` to be prompted with the `localhost/port#` url
+To use **Feedster** web interface:
+
+a. Clone this repository to your local system <br>
+b. Run `npm install` or `npm i` in order to install the npm package dependencies as specified in the `package.json` file  <br>
+c. Update the `.env.EXAMPLE` file by editing your mysql username and password for the db; including twitter specifics as defined in *https://www.npmjs.com/package/twitter* <br>
+d. Update the file name from `.env.EXAMPLE` to `.env` and ensure this file is in the root folder itself <br>
+e. Connect to the mysql DB locally and source the `schema.sql;` file by running `source db/schema.sql;` command <br>
+*Example:*<br> <img src= "./public/assets/MySqlCommands.png"> <br>
+f. `exit` from the mysql connection to and `seed` the db by running `npm run seed` <br>
+*Example:*<br> <img src= "./public/assets/npmRunSeed.png"> <br>
+g. Optionally, you can run `node run test` for *Jest* - a javascript testing framework to kick off a series of quick tests <br>
+*Example:* <br><img src= "./public/assets/npmRunTest.png"> <br>
+h.Finally, to run this application enter `node server.js` or `npm start` to be prompted with the `localhost/port#` url <br>
 
 
 ## Project Future Enhancements
@@ -96,10 +97,11 @@ h.Finally, to run this application enter `node server.js` or `npm start` to be p
 **SignUp Terms of Service Page** <img src= "./public/assets/TermsOfService.png"> <br/>
 **Login Page with Client-side input validation (unmet conditions)** <img src= "./public/assets/LoginUnmetConditions.png"> <br/>
 **No Console Errors on Page Load (Browser - Inspect Element>Console)** <img src= "./public/assets/NoErrors.png"> <br/>
+**WrongURL Json Prompt:** <img src= "./public/assets/WrongURLJSONPROMPT.png"> <br/>
 **User Profile Page: (URL: /profile/id#)** <img src= ""> <br/>
 **Feed Page (URL: /feed/id#):** <img src= ""> <br/>
-**WrongURL Json Prompt:** <img src= "./public/assets/WrongURLJSONPROMPT.png"> <br/>
-**First Screen when web app loads:** <img src= ""> <br/>
+
+**Log Out Prompt:** <img src= ""> <br/>
 
 ## AccessibilityScores (LightHouseReports)
 **Landing Page Score:** <img src= "./public/assets/LandingPageScore.png"> <br/>
