@@ -1,5 +1,6 @@
 const twitterClient = require("../config/twitter-connection");
 
+//get tweet feed data
 async function getTweets(parameterObject) {
     return new Promise(function (resolve, reject) {
         twitterClient.get(
@@ -16,8 +17,8 @@ async function getTweets(parameterObject) {
     });
 }
 
+//wrap hashtags and urls, used for tweet text in feeds
 function wrapURL(text) {
-    // Create your regex pattern for urls
     let urlPattern =
         /\b((?:[a-z][\w-]+:(?:\/{1,3}|[a-z0-9%])|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}\/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\z`!()\[\]{};:'".,<>?«»“”‘’]))/gi;
     let urlWrapped = text.replace(urlPattern, function (url) {

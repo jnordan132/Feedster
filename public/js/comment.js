@@ -1,12 +1,13 @@
 const submit = document.getElementById("postBtn");
 
-// Event listener for post button
+// Event listener for submit comment button
 submit.addEventListener("click", async (event) => {
     event.preventDefault();
 
     const commentInput = document.querySelector(".comment-input").value.trim();
     const loggedInUserId = event.target.getAttribute("data-logged-in-user-id");
     const currentFeedId = event.target.getAttribute("data-current-feed-id");
+    //post to our api
     if (commentInput && loggedInUserId && currentFeedId) {
         const response = await fetch("/api/comments/", {
             method: "POST",
@@ -32,6 +33,6 @@ submit.addEventListener("click", async (event) => {
     }
 });
 
+//decode tweet contents and add links to urls and hashtags
 const tweetTexts = document.querySelectorAll(".timeline-Tweet-text");
-console.log(tweetTexts);
 tweetTexts.forEach((el) => (el.innerHTML = decodeHTMLEntities(el.innerHTML)));

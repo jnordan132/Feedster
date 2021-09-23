@@ -1,8 +1,6 @@
 const router = require("express").Router();
 const { Users, Feeds, FeedFollowers, FeedSources } = require("../models");
 const Sequelize = require("sequelize");
-// const AppError = require("./utils/appError");
-// const twitterClient = require("../config/twitter-connection");
 const twitterHelpers = require("../utils/twitterHelpers");
 
 // router.get("/:id", async (req, res) => {
@@ -76,14 +74,7 @@ router.get("/:id", async (req, res) => {
         const followedFeedDataCleaned = followedFeedData.map((record) =>
             record.get({ plain: true })
         );
-
-        // "statuses/user_timeline"
-        // var params = { screen_name: "@IAJournal_CH", count: 1 };
-        // var test = await getTweets(params);
-        // console.log(test);
-
-        //NEED to add tweet data to each feed_source object TODO
-        //get to each feed source that was created by profile
+        // get and add tweets for both created and followed feeds
         var tweetArray = [];
         var tweetCount = 2;
         for (let i = 0; i < userDataCleaned.feeds.length; i++) {
@@ -102,7 +93,7 @@ router.get("/:id", async (req, res) => {
             element.tweetFeed = tweetArray;
             tweetArray = [];
         }
-
+        //followed feeds
         var tweetArray2 = [];
         for (let x = 0; x < followedFeedDataCleaned.length; x++) {
             const element = followedFeedDataCleaned[x].feed;
@@ -119,6 +110,7 @@ router.get("/:id", async (req, res) => {
                     tweetArray2.push(el);
                 }
             }
+            //sort by date
             twitterHelpers.sortTweetArray(tweetArray2);
             element.tweetFeed = tweetArray2;
             tweetArray2 = [];
@@ -133,9 +125,7 @@ router.get("/:id", async (req, res) => {
             profileFollowedFeeds: followedFeedDataCleaned,
         });
     } catch (err) {
-        // res.status(500).json(err);
-        // next(err);
-        // or could call next(err) since the error handler is now set up in server.js
+        res.status(500).json(err);
     }
 });
 

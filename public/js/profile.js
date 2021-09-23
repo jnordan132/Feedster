@@ -1,21 +1,23 @@
 //https://dev.to/ara225/how-to-use-bootstrap-modals-without-jquery-3475
+//open create feed modal
 function openModal() {
     document.getElementById("backdrop").style.display = "block";
     document.getElementById("createFeedModal").style.display = "block";
     document.getElementById("createFeedModal").classList.add("show");
 }
-
+//close create feed modal
 function closeModal() {
     document.getElementById("backdrop").style.display = "none";
     document.getElementById("createFeedModal").style.display = "none";
     document.getElementById("createFeedModal").classList.remove("show");
 }
-
+//open create feed modal event function
 const openCreateFeedModal = async (event) => {
     event.preventDefault();
     openModal();
 };
 
+//follow a feed logged in
 const followFeedHandler = async (event) => {
     event.preventDefault();
 
@@ -50,6 +52,7 @@ const followFeedHandler = async (event) => {
     }
 };
 
+//add a new source to feed modal
 const addFeedSource = async (event) => {
     event.preventDefault();
     const feedEntryContainer = document.querySelector(".feed-entries");
@@ -119,6 +122,7 @@ const submitNewFeed = async (event) => {
     }
 };
 
+//hide add button if it's not current logged in users own profile
 function toggleAddButton() {
     const loggedInUserId =
         document.querySelector(".logged-in-user-id").innerHTML;
@@ -128,12 +132,15 @@ function toggleAddButton() {
     }
 }
 
+//run on page load
 toggleAddButton();
 
+//create click event for create feed button
 document
     .querySelector(".new-feed-button")
     .addEventListener("click", openCreateFeedModal);
 
+//add click events for each follow feed button
 const followFeedButtons = document.querySelectorAll(".follow-feed-button");
 followFeedButtons.forEach((el) =>
     el.addEventListener("click", (event) => followFeedHandler(event))
@@ -145,5 +152,6 @@ document
 
 document.querySelector(".submit-feed").addEventListener("click", submitNewFeed);
 
+//decode tweet contents and add links to urls and hashtags
 const tweetTexts = document.querySelectorAll(".timeline-Tweet-text");
 tweetTexts.forEach((el) => (el.innerHTML = decodeHTMLEntities(el.innerHTML)));
