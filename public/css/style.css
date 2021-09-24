@@ -11,7 +11,6 @@ body {
     background-image: linear-gradient(to top, #55aceeff, #fff);
 }
 
-
 /* input validation on the client side */
 
 .form-control:invalid {
@@ -53,6 +52,21 @@ body {
     border: 1px solid #888888;
 }
 
+/* Updated the logic for links to be color coded https://www.w3schools.com/css/tryit.asp?filename=trycss_link */
+/* unvisited link */
+ a:link {
+    color: rgb(10, 152, 196);
+}
+
+/* visited link */
+a:visited {
+    color: rgb(54, 66, 54);
+}
+
+/* mouse over link */
+a:hover {
+    color: rgb(69, 10, 117);
+}
 
 /* footer h5 */
 
@@ -67,7 +81,70 @@ h5 {
     color: #6e6e6e;
 }
 
+/* Comment Section */
+
+#header-title {
+    background: #ccd6dd;
+    justify-content: center;
+    border: 2px solid #7a7a7a;
+    border-bottom: none;
+}
+
+#main-section {
+    width: 57.5rem;
+    padding: 0;
+    border: 1px #7a7a7a;
+}
+
+#section-cards {
+    border: 1px solid #7a7a7a;
+}
+
+#single-cards {
+    border: 1px solid #7a7a7a;
+}
+
+#comment-section {
+    width: 59rem;
+    margin-left: 4rem;
+}
+
+#main-comment-card {
+    border: 1px solid #7a7a7a;
+}
+
+#comment-body {
+    border: 1px solid #7a7a7a;
+}
+
+#comment-time {
+    float: right;
+    color: #7a7a7a;
+    font-size: 12px;
+}
+
+#commenter-name {
+    text-decoration: none;
+}
+
 .comment-input {
     border: 1px solid #7a7a7a;
-    height: 30px;
+    height: 2.5rem;
+    width: 100%;
+}
+
+#postBtn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-radius: 4px;
+    border: 1px solid #7a7a7a;
+    width: 10%;
+    height: 2.5rem;
+    background-color: #6d7981;
+    color: #e1e8ed;
+}
+
+.add-feed-button {
+    margin: 0.5em;
 }

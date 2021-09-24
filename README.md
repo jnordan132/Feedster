@@ -28,6 +28,11 @@ This repository is for group 8's Project2 - Interactive Full-Stack Application: 
 👉[Project Presentation Deck](https://docs.google.com/presentation/d/1mRIDBl0DP-tDFZV7GiqyeLykqNoXN9z3CVnP8862yow/edit?usp=sharing)<br/>
 👉[Database Schema](./assets/database-schema.png)
 
+## Feedster Motivation:
+ On all social media platforms a user has the ability to follow several different accounts that post about the same interest, but are they able to put all those account postings into one category to see the most relevant information at hand? **NO**. 
+ 👉 This was the motivation behind 'Feedster', giving the user the ability to have multiple account feeds/postings about a specific category they passionately like to follow, but **all in one place**. 
+
+
 ## User Story
 ```
 AS a user (for example: millennials and beyond or basically any one with an internet connected device) I 
@@ -85,18 +90,24 @@ h.Finally, to run this application enter `node server.js` or `npm start` to be p
 
 
 ## Project Future Enhancements
-⏭️More Social Media Handles <br/>
+⏭️Giving the users the ability to follow other users and compare alike category cards with other users they follow <br/>
+⏭️Pull feeds from all main social media platforms (Instagram, Facebook, LinkedIn, Youtube) to view with each category card<br/>
+⏭️ Allow users to update/edit (Profile pictures, background, add bio, etc. . .) profile pages to their desire <br/>
+⏭️Drill into feeds,followers, following from User's Profile Page <br/>
 ⏭️Improve Accessibility/Performance Scores<br/>
-⏭️Increased Testing functionality integrated <br/>
+⏭️Integrate robust Testing functionality<br/>
+⏭️[Convert Alerts to Modals](https://kanecohen.github.io/modal-vanilla/)  <br/>
+⏭️[Improve the comment input on the feed page to be text area](https://www.quackit.com/html/codes/comment_box_colors.cfm) <br/>
 
 
 ## Mock-Up (Screenshots & Responsive UI View)
 **First Screen when web app loads:** <img src= ""> <br/>
 **SignUp Page with Client-side input validation (not passing)** <img src= "./public/assets/SignUpPage.png"> <br/>
 **SignUp Page with Client-side input validation (passing)** <img src= "./public/assets/SignUpSuccess.png"> <br/>
-**SignUp Terms of Service Page** <img src= "./public/assets/TermsOfService.png"> <br/>
+**Feedster Terms of Service Page** <img src= "./public/assets/TermsOfService.png"> <br/>
 **Login Page with Client-side input validation (unmet conditions)** <img src= "./public/assets/LoginUnmetConditions.png"> <br/>
-**No Console Errors on Page Load (Browser - Inspect Element>Console)** <img src= "./public/assets/NoErrors.png"> <br/>
+<!-- **Form Input Reset to nirvana state:** <img src= "public\assets\ResetInputFieldsInForm.png"> <br/> -->
+**No Console Errors on Page Load (Browser -Right click for Inspect Element>Navigate to Console tab)** <img src= "./public/assets/NoErrors.png"> <br/>
 **WrongURL Json Prompt:** <img src= "./public/assets/WrongURLJSONPROMPT.png"> <br/>
 **User Profile Page: (URL: /profile/id#)** <img src= ""> <br/>
 **Feed Page (URL: /feed/id#):** <img src= ""> <br/>

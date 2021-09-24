@@ -4,8 +4,8 @@
             <ol>
                 <div class="container pt-4">
                     <div class="row d-flex justify-content-center">
-                        <div class="card" style="width: 57.5rem; padding: 0">
-                            <li class="list-group-item" style="background: #ccd6dd; justify-content: center">
+                        <div class="card" id="main-section">
+                            <li class="list-group-item" id="header-title">
                                 <h5 style="text-align: center"><a href="/feed/{{currentFeed.id}}">{{currentFeed.title}}</a> by <a
                                         href="/profile/{{currentFeed.user.id}}">{{currentFeed.user.username}}</a></h5>
                                 {{#if ../loggedIn}}
@@ -14,9 +14,9 @@
                                     data-user-created-id="{{currentFeed.user_id}}">+</button>
                                 {{/if}}
                             </li>
-                            <ul class="list-group list-group-flush">
+                            <ul class="list-group list-group-flush" id="section-cards">
                                 {{#each currentFeed.tweetFeed}}
-                                    <div class="tw-block-parent tw-background">
+                                    <div class="tw-block-parent tw-background" id="single-cards">
                                         <div class="timeline-TweetList-tweet">
                                             <div class="timeline-Tweet">
                                             <div class="timeline-Tweet-brand">
@@ -46,17 +46,17 @@
             </div>
     </ul>
     <div class="container mb-5 pb-5">
-        <div class="row d-flex justify-content-center">
-            <div class="col-md-12 col-lg-6" style="width: 59rem; margin-left: 4rem">
-                <div class="card text-dark" style="border: 1px solid #7a7a7a">
+        <div class="row d-flex justify-content-center" >
+            <div class="col-md-12 col-lg-6" id="comment-section">
+                <div class="card text-dark" id="main-comment-card">
                     {{#each feedComments}}
-                    <div class="card-body p-3" style="border: 1px solid #7a7a7a">
-                        <h7 style="float: right; color: #7a7a7a; font-size: 12px;">{{format_time_twitter this.createdAt}}</h7>
+                    <div class="card-body p-3" id="comment-body">
+                        <h7 id="comment-time">{{format_time_twitter this.createdAt}}</h7>
                         <div class="d-flex flex-start">
                             <img class="rounded-circle shadow-1-strong me-3" src="../assets/default-profile.png"
                                 alt="avatar" width="45" height="45" />
                             <div>
-                                <h6 class="fw-bold mb-1"><a href="/profile/{{this.user.id}}" style="text-decoration: none">{{this.user.username}}</a></h6>
+                                <h6 class="fw-bold mb-1"><a id="commenter-name"href="/profile/{{this.user.id}}">{{this.user.username}}</a></h6>
                                 <div class="d-flex align-items-center mb-2"></div>
                                 <p class="mb-0 commentText">
                                     {{this.comment}}
@@ -66,11 +66,12 @@
                     </div>
                     {{/each}}
                     {{#if loggedIn}}
-
                     <input placeholder="Write a comment..." type="comment" class="comment-input">
-                    <button id="postBtn"
-                        data-logged-in-user-id="{{loggedInUserData.id}}"
-                        data-current-feed-id="{{currentFeed.id}}">Post</button></textarea>
+                        <button id="postBtn"
+                            data-logged-in-user-id="{{loggedInUserData.id}}"
+                            data-current-feed-id="{{currentFeed.id}}">Post
+                        </button>
+                    </input>
                     {{/if}}
                 </div>
             </div>

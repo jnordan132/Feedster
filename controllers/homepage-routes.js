@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const { Users, Feeds, FeedSources } = require("../models");
-// const twitterClient = require("../config/twitter-connection");
 const twitterHelpers = require("../utils/twitterHelpers");
+
 router.get("/", async (req, res) => {
     // router.get("/", async (req, res,next) => { //--> could use this line if instead of doing explicit catches on line 29 of this file we opt for line 30 instead as defined in error handler
     try {
@@ -37,9 +37,12 @@ router.get("/", async (req, res) => {
                     tweetArray.push(el);
                 }
             }
+            //sort tweet array and add it to object for handlebars consumption
+            twitterHelpers.sortTweetArray(tweetArray);
             element.tweetFeed = tweetArray;
             tweetArray = [];
         }
+
         res.render("homepage", {
             UserAndFeedData: feedsDataCleaned,
             loggedIn: req.session.loggedIn,
