@@ -54,13 +54,13 @@ body {
 
 /* Updated the logic for links to be color coded https://www.w3schools.com/css/tryit.asp?filename=trycss_link */
 /* unvisited link */
-h2 a:link {
-    color: rgb(17, 0, 255);
+ a:link {
+    color: rgb(10, 152, 196);
 }
 
 /* visited link */
 a:visited {
-    color: rgb(24, 92, 24);
+    color: rgb(54, 66, 54);
 }
 
 /* mouse over link */
