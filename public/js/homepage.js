@@ -45,11 +45,11 @@ tweetTexts.forEach((el) => (el.innerHTML = decodeHTMLEntities(el.innerHTML)));
 //feed-cards
 const feedCards = document.querySelectorAll(".feed-cards");
 feedCards.forEach((el) => {
+    const feedsTweets = el.querySelector(".list-group-flush");
     const feedHeaderLength = el.querySelector(".list-group-item").offsetHeight;
-    const feedContentLength =
-        el.querySelector(".list-group-flush").offsetHeight;
-
-    const gridHeight = ~~((feedHeaderLength + feedContentLength) * 0.1024);
-    console.log(gridHeight);
+    const feedContentLength = feedsTweets.offsetHeight;
+    const gridHeight = ~~((feedHeaderLength + feedContentLength) * 0.1008);
     el.style = `height:${gridHeight}%`;
+    const lastFeedTweet = feedsTweets.children[feedsTweets.children.length - 1];
+    lastFeedTweet.style = `border-radius: 0px 0px 15px 15px;`;
 });

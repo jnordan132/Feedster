@@ -25,7 +25,7 @@
     padding: 1;
     margin: 15px 10px;
     border-radius: var(--card_border_radius);
-    background-color: #6c757d;
+    /* background-color: white; */
 }
 
 .card_small {
