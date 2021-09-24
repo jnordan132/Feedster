@@ -154,6 +154,8 @@
 }
 
 .TweetAuthor-screenName {
+    position: absolute;
+    bottom: 2px;
     margin-left: 5px;
     font-size: 13px;
     line-height: 18px;
