@@ -1,10 +1,11 @@
+/* https://dev.to/anobjectisa/build-a-pinterest-layout-using-html-css-2m2d */
 :root {
     --card_width: 400px;
     --row_increment: 10px;
     --card_border_radius: 16px;
     --card_small: 26;
     --card_medium: 33;
-    --card_large: 45;
+    --card_large: 100;
 }
 
 .pin_container {
@@ -21,9 +22,10 @@
 }
 
 .card {
-    padding: 0;
+    padding: 1;
     margin: 15px 10px;
     border-radius: var(--card_border_radius);
+    background-color: #6c757d;
 }
 
 .card_small {

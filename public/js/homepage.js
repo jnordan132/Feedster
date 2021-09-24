@@ -41,3 +41,22 @@ followFeedButtons.forEach((el) =>
 //decode tweet contents and add links to urls and hashtags
 const tweetTexts = document.querySelectorAll(".timeline-Tweet-text");
 tweetTexts.forEach((el) => (el.innerHTML = decodeHTMLEntities(el.innerHTML)));
+
+//feed-cards
+const feedCards = document.querySelectorAll(".feed-cards");
+console.log(feedCards);
+// feedCards.forEach((el) => (el.style = "grid-row-end: span 50;"));
+feedCards.forEach((el) => {
+    const feedLength = el
+        .querySelector(".list-group-flush")
+        .querySelectorAll(".tw-block-parent").length;
+    let gridHeight = 20 * feedLength;
+    if (gridHeight === 0) {
+        gridHeight = 1;
+    }
+    el.style = `grid-row-end: span ${gridHeight};`;
+});
+// //grid-row-end: span 50
+// feedCards.forEach((el) => (el.style = "grid-row-end: span 50;"));
+// feedCards[0].style = "grid-row-end: span 10;";
+// feedCards[1].style = "grid-row-end: span 100;";
