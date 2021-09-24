@@ -44,19 +44,12 @@ tweetTexts.forEach((el) => (el.innerHTML = decodeHTMLEntities(el.innerHTML)));
 
 //feed-cards
 const feedCards = document.querySelectorAll(".feed-cards");
-console.log(feedCards);
-// feedCards.forEach((el) => (el.style = "grid-row-end: span 50;"));
 feedCards.forEach((el) => {
-    const feedLength = el
-        .querySelector(".list-group-flush")
-        .querySelectorAll(".tw-block-parent").length;
-    let gridHeight = 20 * feedLength;
-    if (gridHeight === 0) {
-        gridHeight = 1;
-    }
-    el.style = `grid-row-end: span ${gridHeight};`;
+    const feedHeaderLength = el.querySelector(".list-group-item").offsetHeight;
+    const feedContentLength =
+        el.querySelector(".list-group-flush").offsetHeight;
+
+    const gridHeight = ~~((feedHeaderLength + feedContentLength) * 0.1024);
+    console.log(gridHeight);
+    el.style = `height:${gridHeight}%`;
 });
-// //grid-row-end: span 50
-// feedCards.forEach((el) => (el.style = "grid-row-end: span 50;"));
-// feedCards[0].style = "grid-row-end: span 10;";
-// feedCards[1].style = "grid-row-end: span 100;";
