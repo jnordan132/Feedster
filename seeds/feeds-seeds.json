@@ -14,5 +14,13 @@
     {
         "title": "MySQL",
         "user_id": "1"
+    },
+    {
+        "title": "Sequelize",
+        "user_id": "1"
+    },
+    {
+        "title": "React",
+        "user_id": "1"
     }
 ]

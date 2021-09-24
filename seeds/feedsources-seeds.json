@@ -42,5 +42,21 @@
     {
         "feed_id": 4,
         "source": "@lefred"
+    },
+    {
+        "feed_id": 5,
+        "source": "@SequelizeJS"
+    },
+    {
+        "feed_id": 6,
+        "source": "@reactjs"
+    },
+    {
+        "feed_id": 6,
+        "source": "@brian_d_vaughn"
+    },
+    {
+        "feed_id": 6,
+        "source": "@devongovett"
     }
 ]

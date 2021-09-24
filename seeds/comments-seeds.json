@@ -28,5 +28,15 @@
         "comment": "This is a cool feed. Comment #6.",
         "user_id": "2",
         "feed_id": "3"
+    },
+    {
+        "comment": "This is a cool feed. Comment #7.",
+        "user_id": "2",
+        "feed_id": "5"
+    },
+    {
+        "comment": "This is a cool feed. Comment #8.",
+        "user_id": "2",
+        "feed_id": "6"
     }
 ]

@@ -43,5 +43,15 @@
         "feed_id": "4",
         "user_following_id": "3",
         "user_created_id": "1"
+    },
+    {
+        "feed_id": "5",
+        "user_following_id": "3",
+        "user_created_id": "1"
+    },
+    {
+        "feed_id": "6",
+        "user_following_id": "3",
+        "user_created_id": "1"
     }
 ]
