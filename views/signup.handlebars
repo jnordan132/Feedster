@@ -2,26 +2,48 @@
 <section class="mw-60 mh-100 vh-100 p-3 gradient-custom">
   <div class="container">
     <div class="row d-flex justify-content-center align-items-center mt-5">
-      <div class="col-12 col-lg-12 col-lg-6 col-xl-11 col-xl-5 col-md-8">
-        <div class="card main-card card-body p-5 text-center" style="border-radius: 1rem">
+      <div
+        class="col-12 col-lg-12 col-lg-6 col-xl-11 col-xl-5 col-md-8"
+        style="filter:drop-shadow(5px 5px 5px black)"
+      >
+        <div
+          class="card main-card card-body p-5 text-center"
+          style="border-radius: 1rem"
+        >
           <div class="mt-md-3 pb-5">
             {{! updated for smaller screen responsiveness }}
-            <h2 class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-2 text-uppercase">Sign up</h2>
+            <h2
+              class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-2 text-uppercase"
+            >Sign up</h2>
             <p class="text-black mb-4">
               Please enter a Username, an Email, and a Password!
             </p>
             {{! grouped all these inputs into a form for responsiveness }}
-            <form class="mx-1 mx-md-4" title="Please fill out all required fields highlighted before proceeding to click 'Signup'!">
+            <form
+              class="mx-1 mx-md-4"
+              title="Please fill out all required fields highlighted before proceeding to click 'Signup'!"
+            >
               <div class="form-outline form-white mb-4">
                 <div class="d-flex flex-row align-items-center mb-2">
                   <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                   <div class="form-outline flex-fill mb-0">
                     {{! mb-0 eliminates the margin bottom }}
-                    <input type="username" title="username must be at least 3 characters long"  id="typeUsernameX" placeholder="Username e.g. FeedsterFan2021"
-                    {{!-- added a , after 3 for username to be minimum of 3 chars not just 3 chars --}}
-                      class="form-control form-control-lg" pattern="[A-Za-z0-9]{3,}" required />
+                    <input
+                      type="username"
+                      title="username must be at least 3 characters long"
+                      id="typeUsernameX"
+                      placeholder="Username e.g. FeedsterFan2021"
+                      {{! added a , after 3 for username to be minimum of 3 chars not just 3 chars }}
+                      class="form-control form-control-lg"
+                      pattern="[A-Za-z0-9]{3,}"
+                      required
+                    />
                     {{! marked the field required and added a pattern pattern="[A-Za-z0-9]{3}" }}
-                    <label class="form-label" for="typeUsernameX" placeholder="Username"></label>
+                    <label
+                      class="form-label"
+                      for="typeUsernameX"
+                      placeholder="Username"
+                    ></label>
                   </div>
                 </div>
 
@@ -31,22 +53,42 @@
                     {{! added a font icon }}
                     <div class="form-outline flex-fill mb-0"></div>
                     {{! mb-0 eliminates the margin bottom }}
-                    <input type="email" id="typeEmailX" placeholder="Email e.g. feedsterfan2021@gmail.com" class="form-control form-control-lg" pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$" required />
+                    <input
+                      type="email"
+                      id="typeEmailX"
+                      placeholder="Email e.g. feedsterfan2021@gmail.com"
+                      class="form-control form-control-lg"
+                      pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$"
+                      required
+                    />
                     {{! marked the field required and added, a pattern . referenced :
                     http://zparacha.com/validate-email-address-using-javascript-regular-expression / https://docs.netapp.com/oci-73/index.jsp?topic=%2Fcom.netapp.doc.oci-acg%2FGUID-452051E1-0F8B-415E-87FE-D8AD97881072.html
                     pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"}}
-                    <label class="form-label" for="typeEmailX" placeholder="Email"></label>
+                    <label
+                      class="form-label"
+                      for="typeEmailX"
+                      placeholder="Email"
+                    ></label>
                   </div>
                 </div>
 
                 <div class="form-outline form-white mb-4">
                   <div class="d-flex flex-row align-items-center mb-2">
-                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>{{! added a font icon }}
+                    <i
+                      class="fas fa-lock fa-lg me-3 fa-fw"
+                    ></i>{{! added a font icon }}
                     <div class="form-outline flex-fill mb-0">
                       {{! mb-0 eliminates the margin bottom }}
-                      <input 
-                      title="Must contain at least one  number and one uppercase and lowercase letter, and at least 6 or more characters" type="password" placeholder="Password (minimum 6 characters)" id="typePasswordX"
-                        class="form-control form-control-lg" pattern="[A-Za-z0-9]{6,}" required min="6" />
+                      <input
+                        title="Must contain at least one  number and one uppercase and lowercase letter, and at least 6 or more characters"
+                        type="password"
+                        placeholder="Password (minimum 6 characters)"
+                        id="typePasswordX"
+                        class="form-control form-control-lg"
+                        pattern="[A-Za-z0-9]{6,}"
+                        required
+                        min="6"
+                      />
                       {{! marked the field required and added a pattern pattern="[A-Za-z0-9]{6,}"
                       }}
                       <label class="form-label" for="typePasswordX"></label>
@@ -57,27 +99,47 @@
                 {{! confirming the password entered }}
                 <div class="form-outline form-white mb-4">
                   <div class="d-flex flex-row align-items-center mb-2">
-                    <i class="fas fa-key fa-lg me-3 fa-fw"></i>{{! added a font icon }}
+                    <i
+                      class="fas fa-key fa-lg me-3 fa-fw"
+                    ></i>{{! added a font icon }}
                     <div class="form-outline flex-fill mb-0">
                       {{! mb-0 eliminates the margin bottom }}
-                      <input 
-                      title="Must match your password above and contain at least one  number and one uppercase and lowercase letter, and at least 6 or more characters" type="password" placeholder="Repeat Password (should match what was entered above)"
-                        id="typePasswordAgainX" class="form-control form-control-lg" pattern="[A-Za-z0-9]{6,}" required />
+                      <input
+                        title="Must match your password above and contain at least one  number and one uppercase and lowercase letter, and at least 6 or more characters"
+                        type="password"
+                        placeholder="Repeat Password (should match what was entered above)"
+                        id="typePasswordAgainX"
+                        class="form-control form-control-lg"
+                        pattern="[A-Za-z0-9]{6,}"
+                        required
+                      />
                       {{! marked the field required and added a pattern pattern="[A-Za-z0-9]{6,}""
                       }}
-                      <label class="form-label" for="typePasswordAgainX"></label>
+                      <label
+                        class="form-label"
+                        for="typePasswordAgainX"
+                      ></label>
                     </div>
                   </div>
                 </div>
                 {{! added a check box to agree to terms of service }}
                 <div class="form-check d-flex justify-content-center mb-3">
-                  <input class="form-check-input me-2" type="checkbox" value="" id="Terms" required />
+                  <input
+                    class="form-check-input me-2"
+                    type="checkbox"
+                    value=""
+                    id="Terms"
+                    required
+                  />
                   <label class="form-check-label" for="Terms">
                     I agree to all
                     <a href="/tos">Terms of service</a>
                   </label>
                 </div>
-                <button class="btn text-white btn-black btn-outline-dark btn-lg px-5 submit-signup" type="submit">
+                <button
+                  class="btn text-white btn-black btn-outline-dark btn-lg px-5 submit-signup"
+                  type="submit"
+                >
                   Sign up
                 </button>
                 <p class="text-center text-muted mt-5">Already have an account?
@@ -93,8 +155,6 @@
   </div>
 </section>
 <style>
-  body {
-    overflow: hidden;
-  }
+  body { overflow: hidden; }
 </style>
 <script src="../js/signup.js"></script>
