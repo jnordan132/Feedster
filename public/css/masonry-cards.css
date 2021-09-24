@@ -1,0 +1,38 @@
+.masonry-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1em;
+}
+
+.grid-container {
+    columns: 3 300px;
+    column-gap: 1.5rem;
+    width: 99%;
+    margin: 1em;
+}
+
+.feed-container {
+    margin: 1em;
+}
+
+.grid-container div {
+    display: inline-block;
+    padding: 1px;
+}
+.create-button-container {
+    width: 100%;
+    height: 10em;
+}
+
+.create-button-card {
+    width: 40%;
+    height: 60%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 4em;
+    padding-bottom: 1.7em;
+}

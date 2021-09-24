@@ -4,14 +4,16 @@
     font-family: "Roboto";
     font-style: normal;
     font-weight: 400;
-    src: url(https://fonts.gstatic.com/s/roboto/v29/KFOmCnqEu92Fr1Mu5mxP.ttf) format("truetype");
+    src: url(https://fonts.gstatic.com/s/roboto/v29/KFOmCnqEu92Fr1Mu5mxP.ttf)
+        format("truetype");
 }
 
 @font-face {
     font-family: "Roboto";
     font-style: normal;
     font-weight: 700;
-    src: url(https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmWUlfABc9.ttf) format("truetype");
+    src: url(https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmWUlfABc9.ttf)
+        format("truetype");
 }
 
 .tw-block-parent {
@@ -92,7 +94,7 @@
     font-size: 17px;
 }
 
-.timeline-Tweet-action+.timeline-Tweet-action {
+.timeline-Tweet-action + .timeline-Tweet-action {
     margin-left: 20px;
 }
 
@@ -144,6 +146,7 @@
 }
 
 .TweetAuthor-name {
+    margin-left: 3em;
     margin-top: 5px;
     font-size: 14px;
     font-weight: 700;
@@ -151,6 +154,8 @@
 }
 
 .TweetAuthor-screenName {
+    position: absolute;
+    bottom: 2px;
     margin-left: 5px;
     font-size: 13px;
     line-height: 18px;
@@ -203,7 +208,6 @@
 .Icon--share:hover {
     background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1Ni44IDcyIj48cGF0aCBmaWxsPSJub25lIiBkPSJNMC0uN2g0OHY3MkgweiIvPjxwYXRoIGNsYXNzPSJpY29uIiBmaWxsPSIjMDA4NGI0IiBkPSJNNTIuOCAzMi45TDQyLjIgMjIuM2MtMS40LTEuNC0zLjYtMS40LTUgMHMtMS40IDMuNiAwIDVsNC42IDQuNkgyMC45Yy0xLjkgMC0zLjUgMS42LTMuNSAzLjVzMS42IDMuNSAzLjUgMy41aDIwLjlsLTQuNiA0LjZjLTEuNCAxLjQtMS40IDMuNiAwIDUgLjcuNyAxLjYgMSAyLjUgMXMxLjgtLjMgMi41LTFsMTAuNi0xMC42YzEuNC0xLjQgMS40LTMuNiAwLTV6Ii8+PHBhdGggY2xhc3M9Imljb24iIGZpbGw9IiMwMDg0YjQiIGQ9Ik0yNC40IDQ5LjRoLTEzYy0uNiAwLTEuMS0uNS0xLjItMS4xVjIyLjRjMC0uNy41LTEuMiAxLjItMS4yaDEyLjljMS45IDAgMy41LTEuNiAzLjUtMy41cy0xLjYtMy41LTMuNS0zLjVIOC45Yy0zLjEgMC01LjcgMi41LTUuNyA1Ljd2MzFjMCAzLjEgMi41IDUuNyA1LjcgNS43aDE1LjVjMS45IDAgMy41LTEuNiAzLjUtMy41LjEtMi4xLTEuNS0zLjctMy41LTMuN3oiLz48L3N2Zz4=");
 }
-
 
 /* Custom */
 
