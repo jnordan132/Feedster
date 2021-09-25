@@ -22,9 +22,9 @@ This repository is for group 8's Project2 - Interactive Full-Stack Application: 
 </table>
 
 ## Project Resources:
-👉[Watch - Project App Demo]()<br/>
+<!-- 👉[Watch - Project App Demo]()<br/> -->
 👉[Project Live URL (Heroku)](https://feedster-twitter-feed.herokuapp.com/)<br/>
-👉[Project Wireframe/Plan/Proposal](https://docs.google.com/document/d/1UkL3EaRt6hdjlgQpQYlR67exUwjlNt862YEAd5OwlI8/edit#)<br/>
+👉[Project Wireframe/Plan/Proposal](https://docs.google.com/presentation/d/12Ssp54Pa-8JnnrAwpo0s94ohWYoS_NhuVFpAaEvPIOY/edit?usp=sharing)<br/>
 👉[Project Presentation Deck](https://docs.google.com/presentation/d/1mRIDBl0DP-tDFZV7GiqyeLykqNoXN9z3CVnP8862yow/edit?usp=sharing)<br/>
 👉[Database Schema](./assets/database-schema.png)
 
@@ -68,7 +68,7 @@ Apply everything we’ve learnt over the past six units to create a real-world f
 **Backend:** <img align="center" src="https://img.shields.io/badge/json-5E5C5C?style=for-the-badge&logo=json&logoColor=white"> <img align="center" src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E"><br>
 **Database:** <img align="center" src="https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white"> <br>
 **Frameworks:** <img align="center" src="https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white"> <img align="center" src="https://img.shields.io/badge/Handlebars-JS-f0772b?style=for-the-badge&logo=Handlebars-JS&logoColor=fff"> <img align="center" src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"> <img align="center" src="https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white"> <img align="center" src="https://img.shields.io/badge/-Sequelize-090909?style=for-the-badge&logo=Sequelize"> <img align="center" src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white"> <img align="center" src="https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white"> <br>
-**Linters:** <img align="center" src="https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white"> <img align="center" src="https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E"> <br>
+**Linters:** <img align="center" src="https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white"> <br>
 **Social Media:** <img align="center" src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white"> <br>
 **Communication:** <img align="center" src="https://img.shields.io/badge/Slack-4A154B?logo=slack&logoColor=white" /> <img align="center" src="https://img.shields.io/badge/Google%20Meet-32A350?style=for-the-badge&logo=google-meet&logoColor=white"> <img align="center" src="https://img.shields.io/badge/Zoom-2D8CFF?style=for-the-badge&logo=zoom&logoColor=white">
 
@@ -87,6 +87,8 @@ f. `exit` from the mysql connection to and `seed` the db by running `npm run see
 g. Optionally, you can run `node run test` for *Jest* - a javascript testing framework to kick off a series of quick tests <br>
 *Example:* <br><img src= "./public/assets/npmRunTest.png"> <br>
 h.Finally, to run this application enter `node server.js` or `npm start` to be prompted with the `localhost/port#` url <br>
+i.On the **Feedster** [landing page](https://feedster-twitter-feed.herokuapp.com/) you will be presented with User Feeds you can opt to follow after Signing/Logging in 
+<img src= "./public/assets/LandingPage.png"> <br>
 
 
 ## Project Future Enhancements
@@ -96,6 +98,7 @@ h.Finally, to run this application enter `node server.js` or `npm start` to be p
 ⏭️Drill into feeds,followers, following from User's Profile Page <br/>
 ⏭️Improve Accessibility/Performance Scores<br/>
 ⏭️Integrate robust Testing functionality<br/>
+⏭️Improve Client actionable Error Handling for @twitterhandle not found *Example: [{code: 34, message: 'Sorry, thatpage does not exist.'}]*
 ⏭️[Convert Alerts to Modals](https://kanecohen.github.io/modal-vanilla/)  <br/>
 ⏭️[Improve the comment input on the feed page to be text area](https://www.quackit.com/html/codes/comment_box_colors.cfm) <br/>
 
@@ -107,12 +110,13 @@ h.Finally, to run this application enter `node server.js` or `npm start` to be p
 **Feedster Terms of Service Page** <img src= "./public/assets/TermsOfService.png"> <br/>
 **Login Page with Client-side input validation (unmet conditions)** <img src= "./public/assets/LoginUnmetConditions.png"> <br/>
 <!-- **Form Input Reset to nirvana state:** <img src= "public\assets\ResetInputFieldsInForm.png"> <br/> -->
-**No Console Errors on Page Load (Browser -Right click for Inspect Element>Navigate to Console tab)** <img src= "./public/assets/NoErrors.png"> <br/>
+**No Console Errors on Page Load (Right click for Inspect Element>Console tab)** <img src= "./public/assets/NoErrors.png"> <br/>
 **WrongURL Json Prompt:** <img src= "./public/assets/WrongURLJSONPROMPT.png"> <br/>
-**User Profile Page: (URL: /profile/id#)** <img src= ""> <br/>
-**Feed Page (URL: /feed/id#):** <img src= ""> <br/>
-
-**Log Out Prompt:** <img src= ""> <br/>
+**User Profile Page: (URL: /profile/id#)** <img src= "./public/assets/ProfilePage.png"> <br/>
+**Add Feed : (URL: /profile/id#)** <img src= "./public/assets/AddFeed.png"> <br/>
+**Add Feed Modal: (URL: /profile/id#)** <img src= "./public/assets/AddFeedModal.png"> <br/>
+**Feed Page (URL: /feed/id#):** <img src= "./public/assets/FeedPage.png"> <br/>
+**Log Out Prompt:** <img src= "./public/assets/LogOutPage.png"> <br/>
 
 ## AccessibilityScores (LightHouseReports)
 **Landing Page Score:** <img src= "./public/assets/LandingPageScore.png"> <br/>
