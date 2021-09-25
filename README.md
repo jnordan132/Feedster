@@ -79,7 +79,7 @@ Apply everything we’ve learnt over the past six units to create a real-world f
 To use **Feedster** web interface:
 
 a. Clone this repository to your local system <br>
-b. Run `npm install` or `npm i` in order to install the npm package dependencies as specified in the `package.json` file  <br>
+b. Run `npm install` or `npm i` in order to install the npm package dependencies as specified in the `package.json` file  <br> <img src= "./public/assets/packageJSON.png"> <br>
 c. Update the `.env.EXAMPLE` file by editing your mysql username and password for the db; including twitter specifics as defined in *https://www.npmjs.com/package/twitter* <br>
 d. Update the file name from `.env.EXAMPLE` to `.env` and ensure this file is in the root folder itself <br>
 e. Connect to the mysql DB locally and source the `schema.sql;` file by running `source db/schema.sql;` command <br>
@@ -106,13 +106,13 @@ i.On the **Feedster** [landing page](https://feedster-twitter-feed.herokuapp.com
 
 
 ## Mock-Up (Screenshots & Responsive UI View)
-**First Screen when web app loads:** <img src= ""> <br/>
+**First Screen when web app loads:** <img src= "./public/assets/LandingPage.png"> <br/>
 **SignUp Page with Client-side input validation (not passing)** <img src= "./public/assets/SignUpPage.png"> <br/>
 **SignUp Page with Client-side input validation (passing)** <img src= "./public/assets/SignUpSuccess.png"> <br/>
 **Feedster Terms of Service Page** <img src= "./public/assets/TermsOfService.png"> <br/>
 **Login Page with Client-side input validation (unmet conditions)** <img src= "./public/assets/LoginUnmetConditions.png"> <br/>
 <!-- **Form Input Reset to nirvana state:** <img src= "public\assets\ResetInputFieldsInForm.png"> <br/> -->
-**No Console Errors on Page Load (Right click for Inspect Element>Console tab)** <img src= "./public/assets/NoErrors.png"> <br/>
+**No Console Errors on Page Load (Right click for Inspect Element>Console tab)** <br/> <img src= "./public/assets/NoErrors.png"> <br/>
 **WrongURL Json Prompt:** <img src= "./public/assets/WrongURLJSONPROMPT.png"> <br/>
 **User Profile Page: (URL: /profile/id#)** <img src= "./public/assets/ProfilePage.png"> <br/>
 **Add Feed : (URL: /profile/id#)** <img src= "./public/assets/AddFeed.png"> <br/>
