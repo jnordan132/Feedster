@@ -26,7 +26,9 @@ This repository is for group 8's Project2 - Interactive Full-Stack Application: 
 👉[Project Live URL (Heroku)](https://feedster-twitter-feed.herokuapp.com/)<br/>
 👉[Project Wireframe/Plan/Proposal](https://docs.google.com/presentation/d/12Ssp54Pa-8JnnrAwpo0s94ohWYoS_NhuVFpAaEvPIOY/edit?usp=sharing)<br/>
 👉[Project Presentation Deck](https://docs.google.com/presentation/d/1mRIDBl0DP-tDFZV7GiqyeLykqNoXN9z3CVnP8862yow/edit?usp=sharing)<br/>
-👉[Database Schema](./assets/database-schema.png)
+👉[Database Schema](./public/assets/database-schema.png)
+ <br><img src= "./public/assets/database-schema.png"> <br/>
+
 
 ## Feedster Motivation:
  On all social media platforms a user has the ability to follow several different accounts that post about the same interest, but are they able to put all those account postings into one category to see the most relevant information at hand? **NO**. 
@@ -84,7 +86,7 @@ e. Connect to the mysql DB locally and source the `schema.sql;` file by running 
 *Example:*<br> <img src= "./public/assets/MySqlCommands.png"> <br>
 f. `exit` from the mysql connection to and `seed` the db by running `npm run seed` <br>
 *Example:*<br> <img src= "./public/assets/npmRunSeed.png"> <br>
-g. Optionally, you can run `node run test` for *Jest* - a javascript testing framework to kick off a series of quick tests <br>
+g. Optionally, you can run `node run test` for *Jest* - a javascript testing framework to kick off a series of quick tests (Dummy Tests) <br>
 *Example:* <br><img src= "./public/assets/npmRunTest.png"> <br>
 h.Finally, to run this application enter `node server.js` or `npm start` to be prompted with the `localhost/port#` url <br>
 i.On the **Feedster** [landing page](https://feedster-twitter-feed.herokuapp.com/) you will be presented with User Feeds you can opt to follow after Signing/Logging in 
