@@ -40,7 +40,12 @@ followFeedButtons.forEach((el) =>
 
 //decode tweet contents and add links to urls and hashtags
 const tweetTexts = document.querySelectorAll(".timeline-Tweet-text");
-tweetTexts.forEach((el) => (el.innerHTML = decodeHTMLEntities(el.innerHTML)));
+tweetTexts.forEach((el) => {
+    el.innerHTML = decodeHTMLEntities(el.innerHTML);
+    if (el.innerHTML.length < 150) {
+        el.classList.add("tw-short-text");
+    }
+});
 
 // //feed-cards
 // const feedCards = document.querySelectorAll(".feed-cards");
