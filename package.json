@@ -1,10 +1,10 @@
 {
-  "name": "proj-2",
+  "name": "proj-3",
   "version": "1.0.0",
-  "description": "Feedster: Full Stack Web App Project2",
+  "description": "WorkInProgress",
   "main": ".eslintrc.js",
   "scripts": {
-    "test": "jest --coverage",
+    "test": "jest --coverage --watch",
     "start": "node server.js",
     "seed": "node seeds/index.js",
     "dev": "nodemon server.js",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jnordan132/Feedster.git"
+    "url": "git+https://github.com/dionnenoellabarretto/workinprogress"
   },
-  "author": "David Tunnell, Jacob Nordan, Leland Hayes & Dionne Noella Barretto",
-  "license": "ISC",
+  "author": "Dionne Noella Barretto",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jnordan132/Feedster/issues"
+    "url": "https://github.com/dionnenoellabarretto/workinprogress/issues"
   },
-  "homepage": "https://github.com/jnordan132/Feedster#readme",
+  "homepage": "https://github.com/dionnenoellabarretto/workinprogress#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.2",
@@ -31,14 +31,11 @@
     "jest": "^26.6.3",
     "mysql2": "^2.3.0",
     "sequelize": "^6.6.5",
-    "serve-favicon": "^2.5.0",
-    "twitter": "^1.7.1"
+    "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.3.0",
-    "nodemon": "^2.0.12",
-    "prettier": "^2.4.0"
+    "nodemon": "^2.0.12"
   },
   "directories": {
     "test": "tests"

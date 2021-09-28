@@ -27,7 +27,7 @@ This repository is for group 8's Project2 - Interactive Full-Stack Application: 
 👉[Project Wireframe/Plan/Proposal](https://docs.google.com/presentation/d/12Ssp54Pa-8JnnrAwpo0s94ohWYoS_NhuVFpAaEvPIOY/edit?usp=sharing)<br/>
 👉[Project Presentation Deck](https://docs.google.com/presentation/d/1mRIDBl0DP-tDFZV7GiqyeLykqNoXN9z3CVnP8862yow/edit?usp=sharing)<br/>
 👉[Database Schema](./public/assets/database-schema.png)
- <br><img src= "./public/assets/database-schema.png"> <br/>
+ <br><img src= "../public/assets/database-schema.png"> <br/>
 
 
 ## Feedster Motivation:
